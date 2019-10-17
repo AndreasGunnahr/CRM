@@ -5,11 +5,13 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/customer.css">
         <script src="https://kit.fontawesome.com/fca6d7d29b.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     </head>
     <body>
+        <div id = "wrapper"></div> 
         <nav>
             <div class = "left">
                 <a class = "fontAwesome" href = "#">&#xf015;<span>Dashboard</span></a>
@@ -19,9 +21,16 @@
                 <input class = "fontAwesome" placeholder = "&#xf002; Search for customer"></input>
             </div>
             <div class = "right">
-                <a class = "fontAwesome" href = "#">&#xf234;<span>Add customer</span></a>
+                <div class = "dropdown">
+                    <a type = "button" class = "fontAwesome drop-btn" onclick="toggleDropdown()">&#xf234;<span class = "drop-btn">Add customer</span></a>
+                    <div id="myDropdown" class="dropdown-content">
+                    </div>
+                </div>
                 <a class = "fontAwesome" href = "#">&#xf2f5;<span>Log out</span></a>
             </div>
-        </nav>        
+        </nav>  
+        
+    
+            <script src = "./js/addCustomer.js"></script>
     </body>
 </html>
