@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
-    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +18,7 @@
             <h2>Current Todo's</h2>
             <ul id="current_items_list">
                 <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> 
-                <button class="fa fa-trash"></button>
+                <button class="fa fa-trash" onclick="todo.removeItem();"></button>
             </ul>
         </div>
         
@@ -34,7 +34,7 @@
         </div>
 
     </div>
-    <script src="todo.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

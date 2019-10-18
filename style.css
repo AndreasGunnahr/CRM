@@ -48,16 +48,18 @@ li {
     display: grid;
     grid-row-start: 4;
     grid-row-end: 5;
-    grid-template-columns: 5% 1fr 5% 5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     border-radius: 5px;
     grid-column-gap: 3px;
     margin: 2%;
+    width: 90%;
 
 }
 
 .input_container button {
     grid-column-start: 1;
+    grid-column-end: 2;
     grid-column-end: auto;
     height: 100%;
     border: none;
@@ -67,22 +69,21 @@ li {
 
 #new_todo {
     grid-column-start: 2;
-    grid-column-end: 3; 
+    grid-column-end: 6; 
     grid-row-start: 1;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
 }
 
 #calendar {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 6;
+    grid-column-end: 7;
     cursor: pointer;
 }
 
 #id {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    margin-right: 2%;
+    grid-column-start: 7;
+    grid-column-end: 8;
     cursor: pointer;
 
 }
@@ -108,3 +109,6 @@ button {
     outline: none;
 }
 
+.close {
+    float: right;
+}
