@@ -1,12 +1,6 @@
 
-
-
-//     newDate () {
-//         let today = newDate();
-//         today.setHours(0, 0, 0, 0);
-//     }
-
-var myNodelist = document.getElementsByTagName("LI");
+//Lägger till en X för varje nytt item
+var myNodelist = document.getElementsByTagName("li");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -16,7 +10,7 @@ for (i = 0; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
+// Döljer item om man klickar på X
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
@@ -31,6 +25,23 @@ class TodoList {
     constructor() {
         this.items = [];
         this.itemID = 0;
+        this.finished = [];
+    }
+
+    //Metod för alla items som är markerade som färdiga
+    finishedItem() {
+        let checkedItem = document.getElementById("item");
+        let finishedItems = [];
+
+        finishedItems.push(checkedItem.checked);
+        this.finished.push(new Item(finishedItems));
+
+    }
+}
+
+class Item {
+    constructor(finishedItems) {
+        this.finishedItems = finishedItems;
     }
 }
 
@@ -54,7 +65,6 @@ class TodoItem {
 
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
-        span.setAttribute("class", "fa fa-trash")
         span.className = "close";
         span.appendChild(txt);
         this.item.appendChild(span);
@@ -65,40 +75,10 @@ class TodoItem {
             div.style.display = "none";
           }
         }
-        }
-
-    
-
-    addNewTrash() {
-        this.trash = document.createElement("button");
-        this.trash.setAttribute("class", "fa fa-trash");
-        document.getElementById("current_items_list").appendChild(this.item);
-        this.trash.appendChild(this.trash);
-    }
-
-
-
-    //Metod för att radera ett item
-    removeItem() {
-        var close = document.getElementsByClassName("fa fa-trash");
-        var i;
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function () {
-                var div = this.parentElement;
-                div.style.display = "none";
-            }
-        }
-    }
+     }
 }
 
 
-
-//Class för alla items som är markerade som färdiga
-class FinishedItem {
-    constructor() {
-        this.finishedItems = [];
-    }
-}
 
 let allTodos = new TodoList();
 let todo = null;
@@ -106,8 +86,14 @@ let todo = null;
 todo = new TodoItem(" ", " ");
 
 
+// for (let item of items) {
+//     let x = new Item(item.text, item.date, item.id);
+//     allTodos.items.push(x);
+// }
+
 // document.getElementById("dateInput").addEventListener("change", function() {
 //     var input = this.value;
 //     var dateEntered = new Date(input);
 //     console.log(input); //e.g. 2015-11-13
+// }
     
