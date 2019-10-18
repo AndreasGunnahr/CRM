@@ -1,26 +1,4 @@
 
-//Lägger till en X för varje nytt item
-var myNodelist = document.getElementsByTagName("li");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Döljer item om man klickar på X
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-
 class TodoList {
     constructor() {
         this.items = [];
@@ -56,6 +34,7 @@ class TodoItem {
 
     //Metod för att lägga till ett item
     addNewItem() {
+        this.itemID++;
         this.item = document.createElement("li");
         this.item.setAttribute("class", "fa fa-check-circle");
         this.newItem = document.getElementById("new_todo").value;
@@ -85,15 +64,42 @@ let todo = null;
 
 todo = new TodoItem(" ", " ");
 
+//Lägger till en X för varje nytt item
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Döljer item om man klickar på X
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
 
 // for (let item of items) {
 //     let x = new Item(item.text, item.date, item.id);
 //     allTodos.items.push(x);
 // }
 
-// document.getElementById("dateInput").addEventListener("change", function() {
-//     var input = this.value;
-//     var dateEntered = new Date(input);
-//     console.log(input); //e.g. 2015-11-13
-// }
+document.getElementById("todo_date").addEventListener("change", function() {
+    var date = this.value;
+    var dateEntered = new Date(date);
+    console.log(date); 
+});
+
+document.getElementById("customer_id").addEventListener("change", function() {
+    var customerID = this.value;
+    // var dateEntered = new Date(customerID);
+    console.log(customerID); 
+});
     
