@@ -15,6 +15,7 @@ class TodoList {
         this.finished.push(new Item(finishedItems));
 
     }
+    
 }
 
 class Item {
@@ -30,18 +31,22 @@ class TodoItem {
         this.date = date;
         this.checked = false;
         this.id = id;
+        this.i = 0;
     }
 
     //Metod för att lägga till ett item
     addNewItem() {
-        this.itemID++;
+        
         this.item = document.createElement("li");
         this.item.setAttribute("class", "fa fa-check-circle");
+        this.item.setAttribute("id", "itemID" +i);
         this.newItem = document.getElementById("new_todo").value;
         this.x = document.createTextNode(this.newItem);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
 
+        i++;
+        this.itemID++;
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span.className = "close";
