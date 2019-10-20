@@ -340,6 +340,9 @@ button {
 }
 
 @media only screen and (min-width: 779px) and (max-width: 1166px) {
+  #sidebar {
+    width: 0px !important;
+  }
   #main nav {
     grid-template-columns: 1fr 2fr 1fr;
   }

@@ -18,6 +18,7 @@
     display: flex !important;
 }
 
+
 .sidebar {
     height: 100%;
     width: 0; 
@@ -243,7 +244,6 @@
                     }
                 }
             }
-        
         }
         .center {
             @extend %flex-center;
@@ -320,6 +320,9 @@
 }
 
 @media only screen and (min-width: 779px) and (max-width: 1166px){
+    #sidebar{
+        width: 0px !important;
+    }
     #main{
         nav{
             grid-template-columns: 1fr 2fr 1fr;
@@ -370,3 +373,13 @@
         }
     }
 }
+
+
+// @media only screen and (max-width: 778px){
+
+// }
+
+
+// @media only screen and (min-width: 779px){
+
+// }

@@ -41,14 +41,19 @@ dropdownInformation.generateContent(createCustomer);
 
 /* When the user clicks on the button, toggle between hiding and showing the dropdown */ 
 function toggleDropdown() {
-    if(window.screen.width < 779){
-        document.getElementById("sidebar").style.width = "0";
+    // console.log(document.body.clientWidth);
+    if(document.body.clientWidth < 779){
+        
+        console.log("här1");
+        document.getElementById("sidebar").style.width = "0px";
         document.getElementById("wrapper").classList.toggle("overlay");
         document.getElementsByClassName("create-screen")[0].classList.toggle('show');
-        // document.getElementsByClassName("create-screen")[0].style.height = "100vh";
+        secondCheck = true;
     }else{
+        console.log("här2");
         document.getElementById("myDropdown").classList.toggle("show");
         document.getElementById("wrapper").classList.toggle("overlay");
+        firstCheck = true;
     }
 }
 
@@ -66,17 +71,25 @@ function resetStates(){
 
 
 /* Resetting our menus depending on which screen size we have */ 
+let firstCheck,secondCheck;
 window.addEventListener('resize', () =>{
     let firstBreakpoint = window.matchMedia( "(min-width: 779px)" );
     let secondBreakpoint = window.matchMedia( "(max-width: 779px)" );
-    if(secondBreakpoint.matches){
-        dropdownContent.classList.remove('show');
-        // document.getElementById('wrapper').classList.remove('overlay');
+    if(secondBreakpoint.matches){;
+        if(firstCheck){
+            document.getElementById("wrapper").classList.remove("overlay");
+            dropdownContent.classList.remove('show')
+            firstCheck = false;
+        }
+       
     }
     else if(firstBreakpoint.matches){
-        document.getElementsByClassName("create-screen")[0].classList.remove('show');
-        document.getElementById('wrapper').classList.remove('overlay');
-        document.getElementById("sidebar").style.width = "0px";
+        if(secondCheck){
+            document.getElementById("sidebar").style.width = "0px";
+            document.getElementById("wrapper").classList.remove("overlay");
+            document.getElementsByClassName("create-screen")[0].classList.remove('show');
+            secondCheck = false;
+        }
     }
   });
 
