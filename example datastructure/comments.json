@@ -1,0 +1,18 @@
+{
+    "comments": [
+        {
+            "commentid": 1,
+            "customerid": 1,
+            "dateposted": "01/01/1970",
+            "category": "icon",
+            "body": "lorem ipsum \n haha wow yes placeholder test"
+        },
+        {
+            "commentid": 2,
+            "customerid": 1,
+            "dateposted": "01/01/1970",
+            "category": "icon",
+            "body": "lorem ipsum \n haha wow yes placeholder test"
+        }
+    ]
+}
