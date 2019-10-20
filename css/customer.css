@@ -3,7 +3,7 @@
   font-size: 16px;
 }
 
-#main nav .center {
+.create-screen .create-content, #main nav .center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +37,10 @@ button {
   width: 100%;
   background-color: black;
   opacity: 0.6;
+}
+
+.show {
+  display: flex !important;
 }
 
 .sidebar {
@@ -88,6 +92,67 @@ button {
   font-size: 50px;
   padding: 0;
   color: white;
+}
+
+.create-screen {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-screen .create-content {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  flex-direction: column;
+  background-color: #302F2F;
+  z-index: 100;
+}
+
+.create-screen .create-content .fa-times {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  top: 0;
+  right: 0;
+  margin: 10px 20px 0 0;
+  cursor: pointer;
+}
+
+.create-screen .create-content .add-h1 {
+  font-family: 'Squada One', cursive;
+  color: #FFA500;
+  margin: 30px 0 20px 0;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.create-screen .create-content input {
+  height: 45px;
+  margin: 10px;
+  width: 80%;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+
+.create-screen .create-content .add-btn {
+  height: 55px;
+  width: 80%;
+  border-radius: 50px;
+  margin: 20px;
+  font-size: 25px;
+  font-family: 'Squada One', cursive;
+  color: white;
+  letter-spacing: 1px;
+  background-color: #FFA500;
+  text-transform: uppercase;
+}
+
+#main {
+  transition: margin-left .5s;
 }
 
 #main nav {
@@ -216,10 +281,6 @@ button {
   text-transform: uppercase;
 }
 
-#main nav .right .dropdown .show {
-  display: flex;
-}
-
 #main nav .center input {
   height: 60px;
   width: 100%;
@@ -230,6 +291,12 @@ button {
 }
 
 @media only screen and (max-width: 479px) {
+  .create-screen {
+    margin-top: -90px;
+  }
+  .create-screen .create-content {
+    height: 100vh;
+  }
   #main {
     margin-left: 0 !important;
   }
@@ -250,8 +317,11 @@ button {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 778px) {
-  .overlay {
-    display: none;
+  .create-screen {
+    margin-top: 90px;
+  }
+  .create-screen .create-content {
+    height: 50vh;
   }
   #main nav {
     grid-template-columns: .25fr 2fr 0fr;
@@ -270,9 +340,6 @@ button {
 }
 
 @media only screen and (min-width: 779px) and (max-width: 1166px) {
-  .sidebar {
-    display: none;
-  }
   #main nav {
     grid-template-columns: 1fr 2fr 1fr;
   }

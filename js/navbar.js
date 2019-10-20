@@ -17,9 +17,8 @@ class Navbar{
             if(x == 2){
                 link.classList.add(this.dropBtn);
                 span.classList.add(this.dropBtn);
-                dropdownContainer.appendChild(link);
-                sidebarContent.appendChild(link.cloneNode(true));
-                link.addEventListener("click", toggleDropdown);
+                dropdownContainer.appendChild(link).addEventListener("click", toggleDropdown);
+                sidebarContent.appendChild(link.cloneNode(true)).addEventListener("click", toggleDropdown);
             } else{
                 position.appendChild(link);
                 sidebarContent.appendChild(link.cloneNode(true));
@@ -85,7 +84,7 @@ hamburgerMenu.createLines(hamburger);
 /* Open our sidebar when clicking the hamburger menu */
 function openNav() {
     document.getElementById("sidebar").style.width = "300px";
-    // document.getElementById("main").style.marginLeft = "250px";
+    // document.getElementById("main").style.marginLeft = "200px";
 }
 
 /* Close our sidebar when clicking the X */
