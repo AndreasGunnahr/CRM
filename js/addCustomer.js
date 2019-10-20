@@ -8,6 +8,10 @@ class dropdownContent{
     }
 
     generateContent(dropdown){
+        let exit = document.createElement("i");
+        exit.classList.add("fas");
+        exit.classList.add("fa-times");
+        dropdown.appendChild(exit);
         let h1 = document.createElement("h1");
         h1.innerHTML = "Add new customer";
         h1.classList.add("add-h1");
@@ -35,15 +39,18 @@ dropdownInformation.generateContent(dropdown);
 
 /* When the user clicks on the button, toggle between hiding and showing the dropdown */ 
 function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-    document.getElementById("wrapper").classList.toggle("overlay");
+    if(window.screen.width < 779){
+
+    }else{
+        document.getElementById("myDropdown").classList.toggle("show");
+        document.getElementById("wrapper").classList.toggle("overlay");
+    }
 }
 
 /* Close the dropdown if the user clicks outside of it */
-window.onclick = function(event) {
-    if (!event.target.matches('.drop-btn')) {
-        var dropdown = document.getElementsByClassName("dropdown-content")[0];
-        dropdown.classList.remove('show');
-        document.getElementById('wrapper').classList.remove('overlay')
-    }
-}
+let exitDropdown = document.getElementsByClassName("fa-times")[0].addEventListener("click", () => {
+    var dropdownContent = document.getElementsByClassName("dropdown-content")[0];
+    dropdownContent.classList.remove('show');
+    document.getElementById('wrapper').classList.remove('overlay')
+});
+

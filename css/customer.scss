@@ -21,7 +21,6 @@
     flex-direction: column;
     align-items: center;
     align-items: center;
-    justify-content: center;
     position: fixed; 
     z-index: 1; 
     top: 0;
@@ -31,6 +30,11 @@
     transition: 0.5s; 
     white-space: nowrap;
     .sidebar-content{
+        img{
+            height: 200px;
+            width: 200px;
+            margin: 50px 0 25px 0;
+        }
         a {
             padding: 30px;
             text-decoration: none;
@@ -45,24 +49,21 @@
             span{
                 font-size: 20px;
                 padding-left: 15px;
-                // text-align: right;
             }
         }
-       
-        .closebtn {
+        .fa-times {
             position: absolute;
-            top: 0;
+            top: 10px;
             right: 25px;
-            font-size: 36px;
+            font-size: 50px;
             padding: 0;
-            margin: 10px 0 0 50px;
-            font-family: "Lato", sans-serif;
+            color: white;
         }   
     }
 }
   
 #main{
-    transition: margin-left .5s; 
+    // transition: margin-left .5s; 
     nav {
         height: 90px;
         display: grid;
@@ -185,7 +186,6 @@
                 }
                 .show {
                     display: flex;
-                    // flex-direction: column;        
                 }
             }
         

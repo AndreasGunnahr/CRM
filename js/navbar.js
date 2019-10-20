@@ -6,7 +6,7 @@ class Navbar{
         this.dropBtn = "drop-btn";
     }
 
-    createLinks(position1,position2,index){
+    createLinks(position,index){
         for(let x = index; x < index + 2; x++){
             let link = document.createElement("a");
             let span = document.createElement("span");
@@ -17,40 +17,15 @@ class Navbar{
             if(x == 2){
                 link.classList.add(this.dropBtn);
                 span.classList.add(this.dropBtn);
-                position2.appendChild(link);
-                // sidebarContent.appendChild(link);
+                dropdownContainer.appendChild(link);
+                sidebarContent.appendChild(link.cloneNode(true));
                 link.addEventListener("click", toggleDropdown);
             } else{
-                position1.appendChild(link);
-                // sidebarContent.appendChild(link);
+                position.appendChild(link);
+                sidebarContent.appendChild(link.cloneNode(true));
             }
         }
     }
-    
-    // createSidebarLinks(position,index){
-    //     let link = document.createElement("a");
-    //     link.innerHTML = "X";
-    //     link.classList.add("closebtn");
-    //     link.addEventListener("click", closeNav);
-    //     position.appendChild(link);
-    //     for(let x = index; x < index + 2; x++){
-    //         let link = document.createElement("a");
-    //         let span = document.createElement("span");
-    //         link.innerHTML = this.icons[x];
-    //         span.innerHTML = this.text[x];
-    //         link.appendChild(span);
-    //         link.classList.add(this.fontAwesome);
-    //         if(x == 2){
-    //             link.classList.add(this.dropBtn);
-    //             span.classList.add(this.dropBtn);
-    //             let dropdownContainer = document.getElementsByClassName("dropdown")[0];
-    //             dropdownContainer.appendChild(link);
-    //             link.addEventListener("click", toggleDropdown);
-    //         }
-    //         position.appendChild(link);
-    //         console.log(position)
-    //     }
-    // }
     
     createInput(position){
         let input = document.createElement("input");
@@ -60,7 +35,20 @@ class Navbar{
         position.appendChild(input);
     }
 
-}
+    createExit(){
+        let exit = document.createElement("i");
+        exit.classList.add("fas");
+        exit.classList.add("fa-times");
+        exit.addEventListener("click", closeNav);
+        sidebarContent.appendChild(exit);
+    }
+    
+    createImage(){
+        let image = document.createElement("img");
+        image.src = "./img/logo.svg";
+        sidebarContent.appendChild(image);
+    }
+ }
 
 class Hamburger{
     constructor(){
@@ -86,15 +74,11 @@ let right = document.getElementsByClassName("right")[0];
 let sidebarContent = document.getElementsByClassName("sidebar-content")[0];
 let dropdownContainer = document.getElementsByClassName("dropdown")[0];
 
-navbarMenu.createLinks(left,dropdownContainer,0);
-navbarMenu.createLinks(right,dropdownContainer,2);
+navbarMenu.createImage();
+navbarMenu.createExit();
+navbarMenu.createLinks(left,0);
+navbarMenu.createLinks(right,2);
 navbarMenu.createInput(center);
-navbarMenu.createLinks(sidebarContent,0);
-navbarMenu.createLinks(sidebarContent,2);
-
-
-
-
 hamburgerMenu.createLines(hamburger);
 
 
