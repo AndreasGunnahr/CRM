@@ -13,6 +13,9 @@ min-height: 400px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-row-gap: 5px;
+    overflow: scroll;
+    max-height: 350px;
+    scrollbar-color: #F6F4F0;
 }
 
 h2 {
@@ -49,7 +52,7 @@ li {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
     border-radius: 5px;
     grid-column-gap: 3px;
     margin: 2%;
@@ -92,6 +95,9 @@ li {
 .todo_date {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
+    grid-column-start: 2;
+    grid-column-end: 6; 
+    grid-row-start: 2;
 }
 
 .input_container i {
@@ -100,7 +106,7 @@ li {
 }
 
 
-#todo_date #customer_id {
+#todo_date, #customer_id {
     display: none;
 }
 
@@ -112,3 +118,11 @@ button {
 .close {
     float: right;
 }
+
+
+#chk:checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+

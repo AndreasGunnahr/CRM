@@ -43,7 +43,8 @@ class TodoItem {
 
     //Metod för att lägga till ett item
     addNewItem() {
-
+        let date = document.getElementById("todo_date").value;
+            console.log(date);
         this.item = document.createElement("li");
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -52,7 +53,7 @@ class TodoItem {
         this.item.setAttribute("class", "fa fa-check-circle");
         this.item.setAttribute("id", "itemID" + i);
         this.newItem = document.getElementById("new_todo").value;
-        this.x = document.createTextNode(this.newItem);
+        this.x = document.createTextNode(this.newItem + " " + date);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;
@@ -83,6 +84,7 @@ class TodoItem {
                 // let actualItem = (this.item + checkbox);
                 if (checkbox.checked) {
                     allTodos.finished.push(checkbox);
+                    console.log("checked");
                 }
             });
         }
@@ -116,9 +118,14 @@ var i;
 for (i = 0; i < LI.length; i++) {
     var span = document.createElement("SPAN");
     var text = document.createTextNode("\u00D7");
+
+    // var date = document.createElement("i"); 
+    // date.innerHTML = "fa fa-calendar";
     span.className = "close";
     span.appendChild(text);
+    // date.appendChild(date);
     LI[i].appendChild(span);
+    // LI[i].appendChild(date);
 }
 
 // Döljer item om man klickar på X
@@ -137,14 +144,34 @@ for (i = 0; i < close.length; i++) {
 //     allTodos.items.push(x);
 // }
 
-document.getElementById("todo_date").addEventListener("change", function () {
-    var date = this.value;
-    var dateEntered = new Date(date);
-    console.log(date);
-});
+function openDate () {
+
+    var date = document.getElementById('todo_date');
+    if (date.style.display === 'block') {
+        date.style.display = 'none';
+    } else {
+        date.style.display = 'block';
+    }
+};
+    document.getElementById("todo_date").addEventListener("change", function () {
+        var date = this.value;
+        // var dateEntered = new Date(date);
+        console.log(date);
+    });
+
+
+function openCustomerId () {
+    var customer = document.getElementById("customer_id");
+    if (customer.style.display === "block") {
+        customer.style.display = "none";
+    } else {
+        customer.style.display = "block";
+    }
+    };
 
 document.getElementById("customer_id").addEventListener("change", function () {
     var customerID = this.value;
     // var dateEntered = new Date(customerID);
     console.log(customerID);
+    document.getElementsByTagName("li").innerHTML = this.value;
 });
