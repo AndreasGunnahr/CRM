@@ -22,6 +22,7 @@ class dropdownContent{
         }
         let button = document.createElement("button");
         button.innerHTML = "Add customer";
+        button.classList.add("add-btn");
         dropdown.appendChild(button);
     }
 }
