@@ -72,6 +72,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     .create-content{
         @extend %flex-center;
         position: relative;
@@ -97,7 +98,7 @@
             text-transform: uppercase;
         }
         input {
-            height: 45px;
+            height: 50px;
             margin: 10px;
             width: 80%;
             border-radius: 50px;
@@ -293,10 +294,21 @@
 
 @media only screen and (min-width: 480px) and (max-width: 778px){
     .create-screen{
-        margin-top: 90px;
+        margin-top: -90px;
        .create-content{
-        height: 50vh;
-       }
+            height: 100vh;
+            width: 100vw;
+            input{ 
+                width: 70%;
+            }
+            .add-btn{
+                width: 70%;
+            }
+            .fa-times{
+                margin: 15px 30px 0 0;
+                font-size: 50px;
+            }
+        }
     }
     #main{
         nav{

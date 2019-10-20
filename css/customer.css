@@ -99,6 +99,7 @@ button {
   position: relative;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .create-screen .create-content {
@@ -129,7 +130,7 @@ button {
 }
 
 .create-screen .create-content input {
-  height: 45px;
+  height: 50px;
   margin: 10px;
   width: 80%;
   border-radius: 50px;
@@ -318,10 +319,21 @@ button {
 
 @media only screen and (min-width: 480px) and (max-width: 778px) {
   .create-screen {
-    margin-top: 90px;
+    margin-top: -90px;
   }
   .create-screen .create-content {
-    height: 50vh;
+    height: 100vh;
+    width: 100vw;
+  }
+  .create-screen .create-content input {
+    width: 70%;
+  }
+  .create-screen .create-content .add-btn {
+    width: 70%;
+  }
+  .create-screen .create-content .fa-times {
+    margin: 15px 30px 0 0;
+    font-size: 50px;
   }
   #main nav {
     grid-template-columns: .25fr 2fr 0fr;
