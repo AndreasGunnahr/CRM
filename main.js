@@ -45,6 +45,7 @@ class TodoItem {
     addNewItem() {
         let date = document.getElementById("todo_date").value;
             console.log(date);
+        let customer = document.getElementById("customer_id").value;    
         this.item = document.createElement("li");
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -53,7 +54,7 @@ class TodoItem {
         this.item.setAttribute("class", "fa fa-check-circle");
         this.item.setAttribute("id", "itemID" + i);
         this.newItem = document.getElementById("new_todo").value;
-        this.x = document.createTextNode(this.newItem + " " + date);
+        this.x = document.createTextNode(this.newItem + " " + date + " " + customer);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;
