@@ -6,20 +6,38 @@ class TodoList {
         this.finished = [];
     }
 
-    //Metod för alla items som är markerade som färdiga
-    finishedItem() {
-        // let checkedItem = document.getElementById("item");
-        // let finishedItems = [];
-
-        // finishedItems.push(checkedItem.checked);
-        // this.finished.push(new Item(finishedItems));
-
-    }
-
     collectItem() {
         let collect = new TodoItem();
         this.items.push(collect.item);
         console.log(this.items);
+    }
+
+    addNewItem() {
+        let date = document.getElementById("todo_date").value;
+        console.log(date);
+        let customer = document.getElementById("customer_id").value; 
+        let text = document.getElementById("new_todo").value;
+        let item = new TodoItem(text, date, customer);
+        item.createHTML();
+        item.addToDatabase();
+        this.items.push(item);
+    }
+
+    async getItems() {
+        let items = await mockup.getRandom('todo', 5);
+        let companies = await mockup.getRandom('customer', 5);
+        companies = companies.map((customer) => {
+            return customer.companyName;
+        })
+
+        console.log(companies);
+
+        items.forEach((item, i) => {
+            let todoItem = new TodoItem(item.data, item.date, companies[i]);
+            todoItem.createHTML();
+        })
+
+
     }
 
 }
@@ -28,33 +46,39 @@ class Item {
     constructor(finishedItems) {
         this.finishedItems = finishedItems;
     }
+
+        //Metod för alla items som är markerade som färdiga
+        finishedItem() {
+            // let checkedItem = document.getElementById("item");
+            // let finishedItems = [];
+    
+            // finishedItems.push(checkedItem.checked);
+            // this.finished.push(new Item(finishedItems));
+    
+        }
 }
 
 class TodoItem {
-    constructor(text, date, id) {
+    constructor(text, date, customer) {
         this.item = item;
         this.text = text;
         this.date = date;
         this.checked = 0;
-        this.id = id;
+        this.customer = customer;
         this.i = 0;
         this.itemID = [];
     }
 
     //Metod för att lägga till ett item
-    addNewItem() {
-        let date = document.getElementById("todo_date").value;
-            console.log(date);
-        let customer = document.getElementById("customer_id").value;    
+    createHTML() {  
         this.item = document.createElement("li");
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.id = "chk";
         this.item.appendChild(checkbox);
-        this.item.setAttribute("class", "fa fa-check-circle");
+        // this.item.setAttribute("class", "fa fa-check-circle");
         this.item.setAttribute("id", "itemID" + i);
-        this.newItem = document.getElementById("new_todo").value;
-        this.x = document.createTextNode(this.newItem + " " + date + " " + customer);
+        this.x = document.createTextNode(this.text + " " + this.date + " " + this.customer);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;
@@ -94,6 +118,17 @@ class TodoItem {
 
     }
 
+    addToDatabase() {
+        //Sätter in itemet i databasen
+        let data = {
+            data: this.text,
+            rank: Math.round(Math.random() * 100),
+            date: this.date,
+        };
+
+        mockup.post('todo', data);
+    }
+
 
 
     //         var list = document.querySelector('#chk');
@@ -105,8 +140,6 @@ class TodoItem {
 
 
 }
-
-
 
 let allTodos = new TodoList();
 let todo = null;
@@ -175,4 +208,12 @@ document.getElementById("customer_id").addEventListener("change", function () {
     // var dateEntered = new Date(customerID);
     console.log(customerID);
     document.getElementsByTagName("li").innerHTML = this.value;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    allTodos.getItems();
+});
+
+document.addEventListener("keydown", function() {
+    allTodos.addNewItem();
 });
