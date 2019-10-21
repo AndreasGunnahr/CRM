@@ -71,12 +71,6 @@ class Mockup{
 
 let mockup = new Mockup();
 
-function log(data) {
-    data.forEach((person) => {
-        console.log(person.firstName);
-        console.log(person.lastName);
-    })
-}
 async function get() {
     let random = await mockup.get('Order', 10);
     console.log(random);
