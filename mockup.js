@@ -1,6 +1,15 @@
 class Mockup{
-    async getTable(name, callback) {
-        let url = `https://5da7897d23fa740014697829.mockapi.io/${name}`;
+    constructor() {
+        this.url = 'https://5da7897d23fa740014697829.mockapi.io/';
+    }
+
+    async get(table, id, callback) {
+        let url = this.url + table;
+
+        if(id) {
+            url += `/${id}`;
+        }
+
         let response = await fetch(url).then(res =>{
             return res.json();
         }).then(data => {
@@ -14,16 +23,8 @@ class Mockup{
         return response;
     }
 
-    getID(table, id) {
-        for(let i = 0; i < table.length; i++) {
-            if(table[i].id == id) {
-                return table[i];
-            }
-        }
-    }
-
     async getRandom(table, number) {
-        let items = await this.getTable(table);
+        let items = await this.get(table);
         let filtered = [];
         let randomNumbers = [];
         
@@ -37,6 +38,19 @@ class Mockup{
 
         return filtered;
     }
+
+    async deleteID(table, id) {
+        fetch(`${this.url}${table}/${id}`, {
+            method: 'delete'
+        }).then(res => {
+            console.log(`deleted id ${id} from table ${table}`)
+            console.log(res);
+        })   
+    }
+
+    async put() {
+                
+    }
 }
 
 let mockup = new Mockup();
@@ -48,9 +62,7 @@ function log(data) {
     })
 }
 async function get() {
-    let table = await mockup.getTable('customer');
-    mockup.getID(table, 2);
-    let random = await mockup.getRandom('Order', 10);
+    let random = await mockup.get('Order', 10);
     console.log(random);
 }
 
