@@ -48,8 +48,24 @@ class Mockup{
         })   
     }
 
-    async put() {
-                
+    async put(table, id, data) {
+        fetch(`${this.url}${table}/${id}`, {
+            method: 'put',
+            body: data
+        }).then(res => {
+            console.log(`deleted id ${id} from table ${table}`)
+            console.log(res);
+        })                   
+    }
+
+    async post(table, data) {
+        fetch(`${this.url}${table}`, {
+            method: 'post',
+            body: data
+        }).then(res => {
+            console.log(`deleted id ${id} from table ${table}`)
+            console.log(res);
+        })             
     }
 }
 
