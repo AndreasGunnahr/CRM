@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Squada+One&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
-#element::-webkit-scrollbar {
-  display: none;
-}
-
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
   font-size: 16px;
