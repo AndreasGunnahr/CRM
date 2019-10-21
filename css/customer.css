@@ -157,7 +157,7 @@ button {
 }
 
 #main nav {
-  height: 90px;
+  height: 70px;
   display: grid;
   grid-template-columns: .5fr 2fr .5fr;
   grid-template-rows: 1fr;
@@ -184,7 +184,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   font-size: 30px;
   cursor: pointer;
 }
@@ -199,7 +199,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   font-size: 30px;
   cursor: pointer;
 }
@@ -222,7 +222,7 @@ button {
   background-color: #302F2F;
   width: 500px;
   right: 0;
-  top: 89px;
+  top: 75px;
   border-radius: 3px;
 }
 
@@ -238,9 +238,9 @@ button {
 
 #main nav .right .dropdown .dropdown-content:after {
   border-bottom-color: #302F2F;
-  border-width: 19px;
-  right: 40px;
-  margin-left: -19px;
+  border-width: 15px;
+  right: 35px;
+  margin-left: -15px;
 }
 
 #main nav .right .dropdown .dropdown-content .fa-times {
@@ -283,7 +283,7 @@ button {
 }
 
 #main nav .center input {
-  height: 60px;
+  height: 50px;
   width: 100%;
   border-radius: 50px;
   border: none;
@@ -292,8 +292,14 @@ button {
 }
 
 @media only screen and (max-width: 479px) {
+  .sidebar .sidebar-content a {
+    padding: 15px;
+  }
+  .sidebar .sidebar-content img {
+    margin: 25px 0 25px 0;
+  }
   .create-screen {
-    margin-top: -90px;
+    margin-top: -70px;
   }
   .create-screen .create-content {
     height: 100vh;
@@ -318,8 +324,14 @@ button {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 778px) {
+  .sidebar .sidebar-content a {
+    padding: 20px;
+  }
+  .sidebar .sidebar-content img {
+    margin: 25px 0 25px 0;
+  }
   .create-screen {
-    margin-top: -90px;
+    margin-top: -70px;
   }
   .create-screen .create-content {
     height: 100vh;

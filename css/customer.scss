@@ -125,7 +125,7 @@
 #main{
     transition: margin-left .5s; 
     nav {
-        height: 90px;
+        height: 70px;
         display: grid;
         grid-template-columns: .5fr 2fr .5fr;
         grid-template-rows: 1fr;
@@ -150,7 +150,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 10px;
                 font-size: 30px;
                 cursor: pointer;
             }
@@ -168,7 +168,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 10px;
                 font-size: 30px;
                 cursor: pointer;
             }
@@ -189,7 +189,7 @@
                     background-color: $bg-color;
                     width: 500px;
                     right: 0;
-                    top:89px;
+                    top:75px;
                     border-radius: 3px;
                     &:after{
                         bottom: 100%;
@@ -203,9 +203,9 @@
                     
                     &:after {
                         border-bottom-color: $bg-color;;
-                        border-width: 19px;
-                        right: 40px;
-                        margin-left: -19px;
+                        border-width: 15px;
+                        right: 35px;
+                        margin-left: -15px;
                     }
                     .fa-times{
                         display: block;
@@ -250,7 +250,7 @@
             @extend %flex-center;
 
             input {
-                height: 60px;
+                height: 50px;
                 width: 100%;
                 border-radius: 50px;
                 border: none;
@@ -264,10 +264,20 @@
 
 
 @media only screen and (max-width: 479px){ 
+    .sidebar{
+        .sidebar-content{
+            a{
+                padding: 15px;
+            }
+            img{
+                margin: 25px 0 25px 0;
+            }
+        }
+    }
     .create-screen{
-        margin-top: -90px;
+        margin-top: -70px;
        .create-content{
-        height: 100vh;
+            height: 100vh;
        }
     }
     #main{
@@ -293,8 +303,18 @@
 }
 
 @media only screen and (min-width: 480px) and (max-width: 778px){
+    .sidebar{
+        .sidebar-content{
+            a{
+                padding: 20px;
+            }
+            img{
+                margin: 25px 0 25px 0;
+            }
+        }
+    }
     .create-screen{
-        margin-top: -90px;
+        margin-top: -70px;
        .create-content{
             height: 100vh;
             width: 100vw;
@@ -338,16 +358,8 @@
     #main{
         nav{
             grid-template-columns: 1fr 2fr 1fr;
-            .left,
-            .right{
-                // a {
-                //     font-size: 25px;
-                //     // padding: 0;
-                // }
-            }
             .right{
                 .dropdown{
-                   
                     .dropdown-content{
                         width: 400px;
                         .add-h1{
@@ -372,11 +384,10 @@
 
                         }
                         input {
-                            height: 40px ;
+                            height: 40px;
                         }
                         #add-btn {
-                            height: 50px ;
-                            // font-size: 
+                            height: 50px;
                         }
                     }
                     
@@ -385,13 +396,3 @@
         }
     }
 }
-
-
-// @media only screen and (max-width: 778px){
-
-// }
-
-
-// @media only screen and (min-width: 779px){
-
-// }
