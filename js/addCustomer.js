@@ -1,17 +1,12 @@
 class Customer{
-    constructor(id,firstname,lastname,avatar,email,phone,company){
-        this.id = id;
+    constructor(firstname,lastname,avatar,email,phone,company){
         this.firstname = firstname
         this.lastname = lastname 
         this.avatar = avatar; 
         this.email = email;
         this.phone = phone
         this.company = company 
-    }
-
-    createCustomer(){
-    //    console.log(document.getElementsByClassName("drop-btn")[0]);
-    }
+    } 
 }
 
 
@@ -36,7 +31,6 @@ class DropdownContent{
             let input = document.createElement("input");
             input.classList.add(this.fontAwesome);
             input.classList.add(this.dropBtn);
-            // ? LÄGG TIL EN KLASS FÖR INPUTS FÖR ATT ANVÄNDA I CUSTOMER KLASSEN.
             input.setAttribute("placeholder", this.icons[x] + " " + this.text[x]);
             menu.appendChild(input);
         }
@@ -49,7 +43,6 @@ class DropdownContent{
 
 /* Creating our dropdown menu by our dropdownContent class*/
 let dropdownInformation = new DropdownContent();
-let newCustomer = new Customer();
 let dropdown = document.getElementById("myDropdown");
 let dropdownContent = document.getElementsByClassName("dropdown-content")[0];
 let createCustomerMenu = document.getElementById("createCustomer");
@@ -107,9 +100,19 @@ window.addEventListener('resize', () =>{
     }
 });
 
-
+let newCustomer;
 let addCustomer = document.getElementsByClassName("add-btn");
 [...addCustomer].forEach(button => {
-    button.addEventListener("click", newCustomer.createCustomer);
-    
+    button.addEventListener("click", () => {
+        let storeArray = [];
+        let inputFields = document.getElementsByClassName("drop-btn"); 
+        [...inputFields].forEach(element => {
+            if(element.value != "" && !undefined && element.tagName == "INPUT"){
+                storeArray.push(element.value);
+            }
+            element.value = "";
+        });
+        newCustomer = new Customer(storeArray[0].split(" ")[0], storeArray[0].split(" ")[1], storeArray[1], storeArray[2], storeArray[3],storeArray[4]);
+        resetStates();
+    });    
 });
