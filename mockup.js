@@ -72,7 +72,7 @@ class Mockup{
 let mockup = new Mockup();
 
 async function get() {
-    let random = await mockup.get('Order', 10);
+    let random = await mockup.getRandom('Order', 10);
     console.log(random);
 }
 
