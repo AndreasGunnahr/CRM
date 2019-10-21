@@ -53,7 +53,7 @@ class Mockup{
             method: 'put',
             body: data
         }).then(res => {
-            console.log(`deleted id ${id} from table ${table}`)
+            console.log(`updated id ${id} from table ${table}`)
             console.log(res);
         })                   
     }
@@ -63,7 +63,7 @@ class Mockup{
             method: 'post',
             body: data
         }).then(res => {
-            console.log(`deleted id ${id} from table ${table}`)
+            console.log(`posted to table ${table}`)
             console.log(res);
         })             
     }
