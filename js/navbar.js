@@ -8,8 +8,8 @@ class Navbar{
 
     createLinks(position,index){
         for(let x = index; x < index + 2; x++){
-            let link = document.createElement("a");
-            let span = document.createElement("span");
+            let link = document.createElement("A");
+            let span = document.createElement("SPAN");
             link.innerHTML = this.icons[x];
             span.innerHTML = this.text[x];
             link.appendChild(span);
@@ -27,7 +27,7 @@ class Navbar{
     }
     
     createInput(position){
-        let input = document.createElement("input");
+        let input = document.createElement("INPUT");
         input.classList.add(this.fontAwesome);
         input.classList.add(this.dropBtn);
         input.setAttribute("placeholder", "\uf002 Search for customer");
@@ -35,7 +35,7 @@ class Navbar{
     }
 
     createExit(){
-        let exit = document.createElement("i");
+        let exit = document.createElement("I");
         exit.classList.add("fas");
         exit.classList.add("fa-times");
         exit.addEventListener("click", closeNav);
@@ -43,9 +43,9 @@ class Navbar{
     }
     
     createImage(){
-        let image = document.createElement("img");
-        image.src = "./img/logo.svg";
-        sidebarContent.appendChild(image);
+        let logo = document.createElement("IMG");
+        logo.src = "./img/logo.svg";
+        sidebarContent.appendChild(logo);
     }
  }
 
@@ -56,7 +56,7 @@ class Hamburger{
 
     createLines(position){
         this.line.forEach(element => {
-            let div = document.createElement("div");
+            let div = document.createElement("DIV");
             div.classList.add(element);
             position.appendChild(div);
         });

@@ -113,6 +113,7 @@ let addCustomer = document.getElementsByClassName("add-btn");
             element.value = "";
         });
         newCustomer = new Customer(storeArray[0].split(" ")[0], storeArray[0].split(" ")[1], storeArray[1], storeArray[2], storeArray[3],storeArray[4]);
+        mockup.post("customer",newCustomer);
         resetStates();
     });    
 });
