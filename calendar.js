@@ -106,5 +106,4 @@ class Calendar {
 
 let calendar = new Calendar();
 calendar.createHTML();
-calendar.append(document.querySelector('body'));
-calendar.createEvent(2);
+calendar.append(document.querySelector('main-content'));
