@@ -5,23 +5,33 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/customer.css">
+        <script src = "./js/mockup.js"></script>
         <script src="https://kit.fontawesome.com/fca6d7d29b.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     </head>
-    <body>
-        <nav>
-            <div class = "left">
-                <a class = "fontAwesome" href = "#">&#xf015;<span>Dashboard</span></a>
-                <a class = "fontAwesome" href = "#">&#xf007;<span>Customer</span></a>
+    <body> 
+        <div id = "wrapper"></div> 
+        <div id="sidebar" class="sidebar">
+            <div class = "sidebar-content"></div>
+        </div>
+        <div id = "main">
+            <nav>
+                <div id="hamburger" onclick="openNav()"></div>
+                <div class = "left"></div>
+                <div class = "center"></div>
+                <div class = "right">
+                    <div class = "dropdown">
+                        <div id="myDropdown" class="dropdown-content"></div>
+                    </div>
+                </div>
+            </nav>
+            <div class = "create-screen">
+                <div id = "createCustomer" class = "create-content"></div>
             </div>
-            <div class = "center">
-                <input class = "fontAwesome" placeholder = "&#xf002; Search for customer"></input>
-            </div>
-            <div class = "right">
-                <a class = "fontAwesome" href = "#">&#xf234;<span>Add customer</span></a>
-                <a class = "fontAwesome" href = "#">&#xf2f5;<span>Log out</span></a>
-            </div>
-        </nav>        
+        </div>  
+        <script src = "./js/addCustomer.js"></script>
+        <script src = "./js/navbar.js"></script>
     </body>
 </html>
