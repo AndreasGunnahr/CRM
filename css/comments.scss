@@ -1,0 +1,102 @@
+@import "_global";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.comment-outer-container{
+    max-width: 500px;
+    max-height: 400px;
+    display: grid;
+    padding: 20px;
+    grid-template-rows: repeat(8,1fr);
+    grid-template-columns: repeat(8,1fr);
+    grid-gap: 10px;
+    background-color: $bg-color;
+    margin: 0 auto;
+    .comment-header-h1{
+        @extend %flex-center;
+        grid-column: span 8;
+        grid-row: 1;
+        font-family: $font-h1;
+        color: $color;
+        font-size: 35px;
+    }
+    .comment-inner-container{
+        grid-column: span 8;
+        grid-row: 2/8;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        padding: 10px 15px 0 15px;
+        overflow-y: scroll;
+        .comment-span{
+            font-family: $font-text;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 900;
+            .comment-p{
+                font-size: 16px;
+                font-weight: 100;
+                font-style: normal;
+                word-break: break-all;
+            }
+        }
+    }
+    .comment-input{
+        height: 50px;
+        grid-column: span 6;
+        grid-row: 8/9;
+        border-radius: 15px;
+        padding-left: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        &::placeholder{
+            font-size: 12px;
+            color: #BDBCBB;
+        }
+    }
+    .comment-add-btn{
+        grid-column: 7/9;
+        border-radius: 15px;
+        font-size: 20px;
+        font-family: $font-h1;
+        color: $bg-color;
+        background-color: $color;
+    }
+}
+
+@media screen and (max-width: 479px){
+    .comment-outer-container{
+        // width: 100vw;
+        margin: 0;
+        height: 350px;
+        // padding: 0;
+        .comment-inner-container{
+            .comment-span{
+                font-size: 10px;
+                .comment-p{
+                    font-size: 12px;
+                    // padding-left:5
+                }
+            }
+        }
+        .comment-input{
+            height: 40px;
+        }
+    }
+}
+
+@media screen and (min-width: 479px) and (max-width: 768){
+    .comment-outer-container{
+        width: 100vw;
+        height: 500px;
+    }
+}
