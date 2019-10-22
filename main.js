@@ -2,7 +2,6 @@
 class TodoList {
     constructor() {
         this.items = [];
-        // this.itemID = 0;
         this.finished = [];
         this.textExamples = [
             "Meeting",
@@ -28,6 +27,7 @@ class TodoList {
         console.log(this.items);
     }
 
+    //Lägger till nytt item och pushar upp till array.
     addNewItem() {
         let date = document.getElementById("todo_date").value;
         console.log(date);
@@ -39,6 +39,7 @@ class TodoList {
         this.items.push(item);
     }
 
+    //Hämtar 5 random todos för 5 random kunder från api.
     async getItems() {
         let items = await mockup.getRandom('todo', 5);
         let companies = await mockup.getRandom('customer', 5);
@@ -48,6 +49,7 @@ class TodoList {
 
         console.log(companies);
 
+        //För varje item ska ett random datum skrivas ut.
         items.forEach((item, i) => {
             let year = 2019 + Math.round(1 - Math.sin(Math.random() * (Math.PI / 2)));
             let month = Math.round(Math.random() * 12 + 1);
@@ -78,7 +80,7 @@ class TodoItem {
         this.itemID = [];
     }
 
-    //Metod för att lägga till ett item
+    //Metod för att skapa ett item
     createHTML() {
         this.item = document.createElement("li");
         let checkbox = document.createElement("input");
@@ -96,7 +98,7 @@ class TodoItem {
 
         allTodos.collectItem();
 
-        //Lägger till X för att kunna stänga varje item
+        //Lägger till X för att kunna stänga/ta bort varje item
         var span = document.createElement("SPAN");
         var text = document.createTextNode("\u00D7");
         span.className = "close";
@@ -122,8 +124,8 @@ class TodoItem {
         console.log(allTodos.finished);
     }
 
-    addToDatabase() {
-        //Sätter in itemet i databasen
+    //Sätter in itemet i databasen
+    addToDatabase() {  
         let data = {
             data: this.text,
             rank: Math.round(Math.random() * 100),
@@ -158,8 +160,8 @@ for (i = 0; i < close.length; i++) {
     }
 }
 
+//Döljer och visar datum-inputen
 function openDate() {
-
     var date = document.getElementById('todo_date');
     if (date.style.display === 'block') {
         date.style.display = 'none';
@@ -173,6 +175,7 @@ document.getElementById("todo_date").addEventListener("change", function () {
     console.log(date);
 });
 
+//Döljer och visar kund-inputen och skriver ut när användaren skrivit in vald kund
 function openCustomerId() {
     var customer = document.getElementById("customer_id");
     if (customer.style.display === "block") {
@@ -188,10 +191,12 @@ document.getElementById("customer_id").addEventListener("change", function () {
     document.getElementsByTagName("li").innerHTML = this.value;
 });
 
+//Kallar på getItems för att generera ut 5 random items när sidan laddas.
 document.addEventListener("DOMContentLoaded", function () {
     allTodos.getItems();
 });
 
+//Kallar på addNew items för att användaren ska kunna addera ett item genom att klicka på enter.
 document.addEventListener("keydown", function (e) {
     if (e.keyCode === 13) {
         allTodos.addNewItem();
