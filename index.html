@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="mockup.js"></script>
     <link rel="stylesheet" href="design.scss">
 </head>
@@ -19,23 +20,20 @@
     <div class="Todo">
 
         <div class="items_container">
-            <h2>TODO</h2>
+            <h2>Todo</h2>
             <ul id="current_items_list" class="checked">
-               <!-- <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> -->
-                
+                <!-- <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> -->
+
             </ul>
         </div>
-        
+
         <div class="input_container">
-            <button onclick="allTodos.addNewItem();"><i class="fa fa-plus-circle"></i></button>
-            <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> <i class="fa fa-calendar" onclick="openDate()" id="calendar">
-            </i> <i class="fa fa-id-card" onclick = "openCustomerId()" id="id"></i>
-            <input type="date" name="todo_date" id="todo_date"></input>
-            <input type="text" name="customer_id" id="customer_id"></input>
-        </div>
-
-        <div class="popout_container">
-
+            <button class="addItem" onclick="allTodos.addNewItem();"><i class="fa fa-plus"></i></button>
+            <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> <i class="fa fa-calendar"
+                onclick="openDate()" id="calendar">
+            </i> <i class="fa fa-id-card" onclick="openCustomerId()" id="id"></i>
+            <input type="date" name="todo_date" placeholder="Choose a date" id="todo_date"></input>
+            <input type="text" name="customer_id" placeholder="Assign task to a customer" id="customer_id"></input>
         </div>
 
     </div>
@@ -43,10 +41,3 @@
 </body>
 
 </html>
-
-<!-- collectItem () {
-    console.log(this.item);
-    let bajs = new TodoList();
-    bajs.items.push(this.item);
-    console.log(bajs.items);
-} -->
