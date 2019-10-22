@@ -258,7 +258,25 @@
                 padding-left: 20px;
             }
         }
-    } 
+    }
+    #main-content{
+        // margin-top: 70px;s
+        height: 100vh;
+        display: grid;
+        // grid-template-rows: 
+        grid-template-columns: 240px 1fr 320px;
+        background-image: black;
+        .left-container{
+            background-color: blue;
+        }
+        .middle-container{
+
+        }
+        .right-container{
+            background-color: red;
+        }
+    }
+
 }  
 
 

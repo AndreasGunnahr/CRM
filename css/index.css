@@ -291,6 +291,21 @@ button {
   padding-left: 20px;
 }
 
+#main #main-content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr 320px;
+  background-image: black;
+}
+
+#main #main-content .left-container {
+  background-color: blue;
+}
+
+#main #main-content .right-container {
+  background-color: red;
+}
+
 @media only screen and (max-width: 479px) {
   .sidebar .sidebar-content a {
     padding: 15px;
