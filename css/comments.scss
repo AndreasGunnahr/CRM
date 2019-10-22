@@ -11,8 +11,8 @@
 }
 
 .comment-outer-container{
-    max-width: 500px;
-    max-height: 400px;
+    height: 100%;
+    width: 100%;
     display: grid;
     padding: 20px;
     grid-template-rows: repeat(8,1fr);
@@ -25,7 +25,7 @@
         grid-column: span 8;
         grid-row: 1;
         font-family: $font-h1;
-        color: $color;
+        color: white;
         font-size: 35px;
     }
     .comment-inner-container{
@@ -68,7 +68,7 @@
         border-radius: 15px;
         font-size: 20px;
         font-family: $font-h1;
-        color: $bg-color;
+        color: white;
         background-color: $color;
     }
 }

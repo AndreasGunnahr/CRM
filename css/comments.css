@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Squada+One&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
-#element::-webkit-scrollbar {
-  display: none;
-}
-
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
   font-size: 16px;
@@ -36,8 +32,8 @@ button {
 }
 
 .comment-outer-container {
-  max-width: 500px;
-  max-height: 400px;
+  height: 100%;
+  width: 100%;
   display: grid;
   padding: 20px;
   grid-template-rows: repeat(8, 1fr);
@@ -51,7 +47,7 @@ button {
   grid-column: span 8;
   grid-row: 1;
   font-family: "Squada One", cursive;
-  color: #FFA500;
+  color: white;
   font-size: 35px;
 }
 
@@ -100,7 +96,7 @@ button {
   border-radius: 15px;
   font-size: 20px;
   font-family: "Squada One", cursive;
-  color: #302F2F;
+  color: white;
   background-color: #FFA500;
 }
 
