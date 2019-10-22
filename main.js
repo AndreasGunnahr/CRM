@@ -4,6 +4,17 @@ class TodoList {
         this.items = [];
         // this.itemID = 0;
         this.finished = [];
+        this.textExamples = [
+            "Meeting",
+            "Check up on order",
+            "Send invoice reminder",
+            "Introduce to CEO",
+            "Call",
+            "Email",
+            "Add new order",
+            "Coffee at Starbucks",
+            "Send NPS-survey"
+        ]
     }
 
     collectItem() {
@@ -33,7 +44,13 @@ class TodoList {
         console.log(companies);
 
         items.forEach((item, i) => {
-            let todoItem = new TodoItem(item.data, item.date, companies[i]);
+            let year = 2019 + Math.round(1 - Math.sin(Math.random() * (Math.PI / 2)));
+            let month = Math.round(Math.random() * 12 + 1);
+            let date = Math.round(Math.random() * 30 + 1);
+            let rand = Math.floor(Math.random() * this.textExamples.length) - 1;
+            let data = this.textExamples[rand];
+            console.log(date);
+            let todoItem = new TodoItem(data, `${year}-${month}-${date}`, companies[i]);
             todoItem.createHTML();
         })
 
@@ -59,8 +76,8 @@ class Item {
 }
 
 class TodoItem {
-    constructor(text, date, customer) {
-        this.item = item;
+    constructor(text, customer, date) {
+        this.item;
         this.text = text;
         this.date = date;
         this.checked = 0;
@@ -78,7 +95,7 @@ class TodoItem {
         this.item.appendChild(checkbox);
         // this.item.setAttribute("class", "fa fa-check-circle");
         this.item.setAttribute("id", "itemID" + i);
-        this.x = document.createTextNode(this.text + " " + this.date + " " + this.customer);
+        this.x = document.createTextNode(this.text + " - " + this.date + " " + this.customer);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;
@@ -144,7 +161,7 @@ class TodoItem {
 let allTodos = new TodoList();
 let todo = null;
 
-todo = new TodoItem(" ", " ");
+//todo = new TodoItem(" ", " ");
 
 //Lägger till en X för varje nytt item
 var LI = document.getElementsByTagName("li");

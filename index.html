@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="mockup.js"></script>
+    <link rel="stylesheet" href="design.scss">
 </head>
 
 <body>
@@ -19,13 +21,13 @@
         <div class="items_container">
             <h2>TODO</h2>
             <ul id="current_items_list" class="checked">
-                <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> 
+               <!-- <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> -->
                 
             </ul>
         </div>
         
         <div class="input_container">
-            <button onclick="todo.addNewItem();"><i class="fa fa-plus-circle"></i></button>
+            <button onclick="allTodos.addNewItem();"><i class="fa fa-plus-circle"></i></button>
             <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> <i class="fa fa-calendar" onclick="openDate()" id="calendar">
             </i> <i class="fa fa-id-card" onclick = "openCustomerId()" id="id"></i>
             <input type="date" name="todo_date" id="todo_date"></input>

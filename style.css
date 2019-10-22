@@ -5,17 +5,27 @@ border: 5px solid #FFA500;
 font-family: 'Squada One', cursive;
 width: 100%;
 border-radius: 5px;
-max-height: 450px;
-min-height: 450px;
+max-height: 400px;
+min-height: 400px;
 }
+
+@media only screen and (max-width: 300px) {
+    /* For mobile phones: */
+    [class*="Todo"] {
+        max-height: 270px;
+        min-height: 270px;
+        font-size: 12px;
+    }
+  }
+
 .items_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 5px;
     overflow: scroll;
-    max-height: 330px;
-    min-height: 330px;
+    max-height: 300px;
+    min-height: 300px;
     scrollbar-color: #F6F4F0;
 }
 
@@ -36,8 +46,15 @@ ul {
     color: #302F2F;
     max-height: 190px;
     overflow: auto;
-    font-size: 20px;
+    font-size: 18px;
 }
+
+@media only screen and (max-width: 300px) {
+    /* For mobile phones: */
+    [class*="ul"] {
+      font-size: 11px;
+    }
+  }
 
 li {
     background-color: #F6F4F0;
@@ -121,16 +138,24 @@ li {
 button {
     cursor: pointer;
     outline: none;
+    
 }
 
 .close {
     float: right;
 }
 
+button:focus {
+    outline: none;
+}
+input:focus{
+    outline: none;   
+}
 
-#chk:checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-  }
+
+/* input[type=checkbox] {
+    visibility: hidden;
+} */
+
+
 
