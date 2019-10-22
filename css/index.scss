@@ -260,8 +260,7 @@
         }
     }
     #main-content{
-        // margin-top: 70px;s
-        height: 120vh;
+        height: 100%;
         display: grid;
         grid-template-columns: 240px 1fr 320px;
         background-image: url("../img/bg-1.jpg");
@@ -269,22 +268,30 @@
         background-position: center;
         .left-container{
             background-color: $bg-color;
+            .contact-container{
+                margin-top: 20px;
+                height: 620px;
+                border: 3px solid yellow;
+            }
         }
         .middle-container{
-            // display: flex;
-            // flex-direction: column;
-            padding: 25px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
             .customer-name-h1{
-                font-size: 30px;
+                font-size: 50px;
                 color: $color;
                 font-family: $font-h1;
+                text-align: center;
+                margin-bottom: 20px;
+                
             }
             .comment-container{
-                height: 320px;
+                height: 420px;
                 border: 3px solid purple;
+                margin-bottom: 20px;
             }
             .deals-container{
-                height: 320px;
+                height: 420px;
                 border: 3px solid orange;
             }
         }
@@ -295,14 +302,17 @@
             .calender-container{
                 height: 320px;
                 border: 3px solid red;
+                margin: 20px 0 20px 0;
             }
             .todo-container{
                 height: 320px;
                 border: 3px solid green;
+                margin-bottom: 20px;
             }
             .survey-container{
                 height: 320px;
                 border: 3px solid blue;
+                margin-bottom: 20px;
             }
         }
     }
