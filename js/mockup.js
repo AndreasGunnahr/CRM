@@ -35,7 +35,6 @@ class Mockup{
                 filtered.push(items[num]);
             }
         }
-
         return filtered;
     }
 
