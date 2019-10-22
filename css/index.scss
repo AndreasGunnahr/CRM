@@ -261,19 +261,49 @@
     }
     #main-content{
         // margin-top: 70px;s
-        height: 100vh;
+        height: 120vh;
         display: grid;
-        // grid-template-rows: 
         grid-template-columns: 240px 1fr 320px;
-        background-image: black;
+        background-image: url("../img/bg-1.jpg");
+        background-size: cover;
+        background-position: center;
         .left-container{
-            background-color: blue;
+            background-color: $bg-color;
         }
         .middle-container{
-
+            // display: flex;
+            // flex-direction: column;
+            padding: 25px;
+            .customer-name-h1{
+                font-size: 30px;
+                color: $color;
+                font-family: $font-h1;
+            }
+            .comment-container{
+                height: 320px;
+                border: 3px solid purple;
+            }
+            .deals-container{
+                height: 320px;
+                border: 3px solid orange;
+            }
         }
         .right-container{
-            background-color: red;
+            background-color: $bg-color;
+            display:flex;
+            flex-direction: column;
+            .calender-container{
+                height: 320px;
+                border: 3px solid red;
+            }
+            .todo-container{
+                height: 320px;
+                border: 3px solid green;
+            }
+            .survey-container{
+                height: 320px;
+                border: 3px solid blue;
+            }
         }
     }
 

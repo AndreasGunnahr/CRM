@@ -292,18 +292,56 @@ button {
 }
 
 #main #main-content {
-  height: 100vh;
+  height: 120vh;
   display: grid;
   grid-template-columns: 240px 1fr 320px;
-  background-image: black;
+  background-image: url("../img/bg-1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 #main #main-content .left-container {
-  background-color: blue;
+  background-color: #302F2F;
+}
+
+#main #main-content .middle-container {
+  padding: 25px;
+}
+
+#main #main-content .middle-container .customer-name-h1 {
+  font-size: 30px;
+  color: #FFA500;
+}
+
+#main #main-content .middle-container .comment-container {
+  height: 320px;
+  border: 3px solid purple;
+}
+
+#main #main-content .middle-container .deals-container {
+  height: 320px;
+  border: 3px solid orange;
 }
 
 #main #main-content .right-container {
-  background-color: red;
+  background-color: #302F2F;
+  display: flex;
+  flex-direction: column;
+}
+
+#main #main-content .right-container .calender-container {
+  height: 320px;
+  border: 3px solid red;
+}
+
+#main #main-content .right-container .todo-container {
+  height: 320px;
+  border: 3px solid green;
+}
+
+#main #main-content .right-container .survey-container {
+  height: 320px;
+  border: 3px solid blue;
 }
 
 @media only screen and (max-width: 479px) {
