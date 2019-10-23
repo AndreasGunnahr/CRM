@@ -24,19 +24,18 @@ class TodoList {
     collectItem() {
         let collect = new TodoItem();
         this.items.push(collect.item);
-        console.log(this.items);
     }
 
     //Lägger till nytt item och pushar upp till array.
     addNewItem() {
         let date = document.getElementById("todo_date").value;
-        console.log(date);
         let customer = document.getElementById("customer_id").value;
         let text = document.getElementById("new_todo").value;
         let item = new TodoItem(text, date, customer);
         item.createHTML();
         item.addToDatabase();
         this.items.push(item);
+        document.getElementById("new_todo").value = "";
     }
 
     //Hämtar 5 random todos för 5 random kunder från api.
@@ -47,8 +46,6 @@ class TodoList {
             return customer.companyName;
         })
 
-        console.log(companies);
-
         //För varje item ska ett random datum skrivas ut.
         items.forEach((item, i) => {
             let year = 2019 + Math.round(1 - Math.sin(Math.random() * (Math.PI / 2)));
@@ -56,7 +53,6 @@ class TodoList {
             let date = Math.round(Math.random() * 30 + 1);
             let rand = Math.floor(Math.random() * this.textExamples.length) - 1;
             let data = this.textExamples[rand];
-            console.log(date);
             let todoItem = new TodoItem(data, `${year}-${month}-${date}`, companies[i]);
             todoItem.createHTML();
         })
@@ -94,8 +90,6 @@ class TodoItem {
         i++;
 
         this.itemID++;
-        console.log(this.item);
-
         allTodos.collectItem();
 
         //Lägger till X för att kunna stänga/ta bort varje item
@@ -120,8 +114,6 @@ class TodoItem {
                 }
             });
         }
-
-        console.log(allTodos.finished);
     }
 
     //Sätter in itemet i databasen

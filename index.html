@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/comments.css">
+        <link rel="stylesheet" href="css/todo.css">
         <script src = "js/mockup.js"></script>
         <script src="https://kit.fontawesome.com/fca6d7d29b.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -51,7 +52,24 @@
             </div>
             <div class = "right-container">
                 <div class = "calender-container"></div>
-                <div class = "todo-container"></div>
+                <div class = "todo-container">
+                    <div class="todo">
+                        <h2>Todo</h2>
+                        <button class="addItem" onclick="allTodos.addNewItem();"><i class="fa fa-plus"></i></button>
+                        <div class="items_container">
+                            <ul id="current_items_list" class="checked">
+                                <!-- <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> -->
+                            </ul>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> <i class="fa fa-calendar"
+                            onclick="openDate()" id="calendar">
+                            </i> <i class="fa fa-id-card" onclick="openCustomerId()" id="id"></i>
+                            <input type="date" name="todo_date" placeholder="Choose a date" id="todo_date"></input>
+                            <input type="text" name="customer_id" placeholder="Assign task to a customer" id="customer_id"></input>
+                        </div>
+                    </div>
+                </div>
                 <div class = "survey-container"></div>
             </div>
         </div>
@@ -59,5 +77,6 @@
         <script src = "js/addCustomer.js"></script>
         <script src = "js/navbar.js"></script>
         <script src = "js/comments.js"></script>
+        <script src="js/todo.js"></script>
     </body>
 </html>
