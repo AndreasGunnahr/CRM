@@ -35,6 +35,10 @@ class Mockup{
                 filtered.push(items[num]);
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Todo
         return filtered;
     }
 
@@ -58,6 +62,10 @@ class Mockup{
     }
 
     async post(table, data) {
+<<<<<<< HEAD
+=======
+        console.log(data);
+>>>>>>> Todo
         fetch(`${this.url}${table}`, {
             method: 'post',
             body: data
@@ -72,5 +80,9 @@ let mockup = new Mockup();
 
 async function get() {
     let random = await mockup.getRandom('Order', 10);
+<<<<<<< HEAD
     console.log(random);
 }
+=======
+}
+>>>>>>> Todo
