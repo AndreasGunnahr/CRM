@@ -291,6 +291,7 @@ button {
   border: none;
   outline: none;
   padding-left: 20px;
+  z-index: 999;
 }
 
 #main #main-content {

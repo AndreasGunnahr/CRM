@@ -1,0 +1,43 @@
+@import "_global";
+
+// .customer-container{
+//     height: 300px;
+//     width:65%;
+//     position: absolute;
+//     background-color: red;
+//     top: 60px;
+// }
+
+
+.search-list{
+    position: absolute;
+    display: none; 
+    flex-direction: column;
+    width: 65%;
+    max-height: 50%;
+    top: 58px;
+    overflow-y: scroll;
+    color: black;
+    background-color: #EEEEEE;
+    font-size: 18px;
+    font-family: $font-text;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    // border-top-right-radius: 10px;
+    // border-top-left-radius: 10px;
+    // border-radius: 15px;
+    .search-customer{
+        font-weight: 900;
+        padding: 2.5px 0 5px 15px;
+        &:hover{
+            background:#E5E5E5;
+            cursor: pointer;
+        }
+        .search-company{
+            font-weight: 300;
+            font-size: 15px;
+            padding-left: 5px;
+            pointer-events: none;
+        }
+    }  
+}

@@ -30,6 +30,7 @@ class Navbar{
         let input = document.createElement("INPUT");
         input.classList.add(this.fontAwesome);
         input.classList.add(this.dropBtn);
+        input.setAttribute("id","searchBar");
         input.setAttribute("placeholder", "\uf002 Search for customer");
         position.appendChild(input);
     }

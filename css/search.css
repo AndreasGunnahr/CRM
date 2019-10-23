@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+.fontAwesome {
+  font-family: Helvetica, FontAwesome, sans-serif;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: black;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.search-list {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 65%;
+  max-height: 50%;
+  top: 58px;
+  overflow-y: scroll;
+  color: black;
+  background-color: #EEEEEE;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.search-list .search-customer {
+  font-weight: 900;
+  padding: 2.5px 0 5px 15px;
+}
+
+.search-list .search-customer:hover {
+  background: #E5E5E5;
+  cursor: pointer;
+}
+
+.search-list .search-customer .search-company {
+  font-weight: 300;
+  font-size: 15px;
+  padding-left: 5px;
+  pointer-events: none;
+}

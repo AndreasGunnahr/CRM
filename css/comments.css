@@ -64,7 +64,7 @@ button {
 .comment-outer-container .comment-inner-container .comment-span {
   font-family: "Roboto", sans-serif;
   font-style: italic;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -73,6 +73,7 @@ button {
   font-weight: 100;
   font-style: normal;
   word-break: break-all;
+  margin-bottom: 10px;
 }
 
 .comment-outer-container .comment-input {
