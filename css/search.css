@@ -29,6 +29,8 @@ button {
   font-family: "Roboto", sans-serif;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .search-list .search-customer {
@@ -46,4 +48,37 @@ button {
   font-size: 15px;
   padding-left: 5px;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 479px) {
+  .search-list {
+    width: 60%;
+    font-size: 14px;
+  }
+  .search-list .search-customer {
+    font-weight: 900;
+    padding: 2.5px 0 5px 15px;
+  }
+  .search-list .search-customer:hover {
+    background: #E5E5E5;
+    cursor: pointer;
+  }
+  .search-list .search-customer .search-company {
+    font-weight: 300;
+    font-size: 12px;
+    padding-left: 5px;
+    pointer-events: none;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 778px) {
+  .search-list {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 779px) and (max-width: 1166px) {
+  .search-list {
+    width: 45%;
+  }
 }

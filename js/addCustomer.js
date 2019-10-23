@@ -54,12 +54,13 @@ dropdownInformation.generateContent(createCustomerMenu);
 function toggleDropdown() {
     if(document.body.clientWidth < 779){
         document.getElementById("sidebar").style.width = "0px";
-        document.getElementById("wrapper").classList.toggle("overlay");
-        document.getElementsByClassName("create-screen")[0].classList.toggle('show');
+        document.getElementById("wrapper").classList.add("overlay");
+        console.log("här")
+        document.getElementsByClassName("create-screen")[0].classList.add('show');
         secondCheck = true;
     }else{
-        document.getElementById("myDropdown").classList.toggle("show");
-        document.getElementById("wrapper").classList.toggle("overlay");
+        document.getElementById("myDropdown").classList.add("show");
+        document.getElementById("wrapper").classList.add("overlay");
         firstCheck = true;
     }
 }

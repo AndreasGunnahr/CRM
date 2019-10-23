@@ -60,6 +60,7 @@ button {
   overflow-x: hidden;
   transition: 0.5s;
   white-space: nowrap;
+  z-index: 999999;
 }
 
 .sidebar .sidebar-content img {
