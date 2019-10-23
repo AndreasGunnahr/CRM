@@ -6,7 +6,7 @@ class CalendarDate {
 
 class Calendar {
     constructor() {
-        this.container = document.createElement('calendar-container');
+        this.container = document.querySelector('calendar-module');
         this.date = {};
         this.getDate();
         this.months =
@@ -19,6 +19,15 @@ class Calendar {
                 "Thursday", "Friday", "Saturday", "Sunday"];
         this.month = document.createElement('current-month');
         this.dates = [];
+        if(this.container) {
+            this.createHTML();
+            let head = document.querySelector('head');
+            let link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', 'css/calendar.css');
+
+            console.log(link);
+        }
     }
 
     posValid(day) {
@@ -103,7 +112,8 @@ class Calendar {
     }
 
 }
+let calendar;
+document.addEventListener('DOMContentLoaded', () => {
+    calendar = new Calendar();
+}) 
 
-let calendar = new Calendar();
-calendar.createHTML();
-calendar.append(document.querySelector('main-content'));

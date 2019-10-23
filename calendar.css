@@ -3,7 +3,7 @@
   font-size: 16px;
 }
 
-calendar-container week-day, calendar-container date-cell, calendar-container current-month {
+calendar-module week-day, calendar-module date-cell, calendar-module current-month {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,12 +24,12 @@ body {
   padding: 0;
 }
 
-calendar-container week-day, calendar-container date-cell {
+calendar-module week-day, calendar-module date-cell {
   font-family: 'Roboto', sans-serif;
   color: #f9f9f9;
 }
 
-calendar-container {
+calendar-module {
   padding: 20px;
   padding-top: 0;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ calendar-container {
   grid-template-columns: repeat(7, 1fr);
 }
 
-calendar-container current-month {
+calendar-module current-month {
   grid-column: 1 / span 7;
   text-align: center;
   font-family: 'Squada One', cursive;
@@ -49,14 +49,14 @@ calendar-container current-month {
   color: #f9f9f9;
 }
 
-calendar-container week-day {
+calendar-module week-day {
   font-size: 0.8em;
 }
 
-calendar-container .current {
+calendar-module .current {
   background-color: #FFA500;
 }
 
-calendar-container .event {
+calendar-module .event {
   background-color: #1d5dd4;
 }
