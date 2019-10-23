@@ -1,8 +1,10 @@
 let searchBar = document.getElementById("searchBar");
 let searchResult = document.getElementsByClassName("search-list")[0];
+let arr = [];
 
 const searchStates = async searchText => {
     const states = await mockup.getRandom('customer', 25);
+    arr = states;
     let matches = states.filter( state => {
         /* Filter our search results */
         let regex = new RegExp(`^${searchText}`, 'gi');
@@ -49,10 +51,10 @@ searchBar.addEventListener("focusout", (e) => {
 
 searchResult.addEventListener("mousedown",(e) =>{
     if(e.target.className == "search-customer" || e.target.className == "search-company" ){
-        let userInfo =e.target.textContent.trim().split("\n");
-        console.log(userInfo);
+        let userInfo = e.target.textContent.trim().split("\n");
         document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
         generateRandomComments();
+        generateContactInfo(arr,userInfo[0]);
     }
 });
 

@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+.fontAwesome {
+  font-family: Helvetica, FontAwesome, sans-serif;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: black;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.contact-container h1 {
+  font-size: 50px;
+  font-family: "Squada One", cursive;
+  color: #FFA500;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact-container h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  margin: 5px 0px 15px 0;
+  color: white;
+  text-align: center;
+}
+
+.contact-container h3 {
+  font-size: 30px;
+  font-family: "Squada One", cursive;
+  color: #FFA500;
+  letter-spacing: 1px;
+}
