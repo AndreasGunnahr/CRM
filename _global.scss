@@ -1,0 +1,30 @@
+$color: #FFA500;
+$bg-color: #302F2F;
+$font-size: 12px;
+
+.fontAwesome{ 
+    font-family: Helvetica, FontAwesome, sans-serif; 
+    font-size: 16px;
+}
+
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+::placeholder{
+    color: black;
+}
+
+button{
+    outline: none;
+    cursor: pointer; 
+    border: none;
+}
