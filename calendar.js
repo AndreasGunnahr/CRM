@@ -95,6 +95,9 @@ class Calendar {
     }
 
     linkCSS(pathToCSS) {
+        if(!pathToCSS) {
+            console.log('path to CSS not set');
+        }
         let head = document.querySelector('head');
         let link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');

@@ -26,7 +26,6 @@ body {
 
 calendar-module {
   padding: 20px;
-  padding-top: 0;
   box-sizing: border-box;
   background: #302F2F;
   width: 100vw;
@@ -61,9 +60,13 @@ calendar-module .event {
   background-color: #1d5dd4;
 }
 
+calendar-module .call {
+  background-color: #d4291d;
+}
+
 calendar-module event-root {
   position: absolute;
-  background-color: #1d5dd4;
+  background-color: inherit;
   height: auto;
   width: 100%;
   display: flex;
@@ -79,7 +82,8 @@ calendar-module event-root event-item {
   height: 50px;
   width: 100%;
   margin-top: 20px;
-  background-color: #6c98eb;
+  background-color: inherit;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 calendar-module .hidden {
