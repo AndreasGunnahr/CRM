@@ -30,12 +30,21 @@ button {
   margin-bottom: 30px;
 }
 
-.contact-container h2 {
+.contact-container a {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   margin: 5px 0px 15px 0;
   color: white;
   text-align: center;
+}
+
+.contact-container #sendEmail {
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.contact-container #sendEmail:hover {
+  transform: scale(1.04);
 }
 
 .contact-container h3 {
