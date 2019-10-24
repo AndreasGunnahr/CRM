@@ -8,15 +8,6 @@ class Deals {
 
     }
 
-    // addNewDeal() {
-    //     let com = document.getElementById("company").value;
-    //     let con = document.getElementById("contact").value;
-    //     let pro = document.getElementById("product").value;
-    //     let pri = document.getElementById("price").value;
-    //     let deal = new Deals(com, con, pro, pri);
-    //     deal.createDeal();
-    // }
-
 
 async getDeals() {
     let deals = await mockup.getRandom('Order', 5);
@@ -34,13 +25,6 @@ async getDeals() {
 }
 
 createDeal() {
-
-    // let row = $("<tr></tr>");
-
-    // row.append($("<tr></tr>").text(this.company));
-    // row.append($("<tr></tr>").text(this.contact));
-    // row.append($("<tr></tr>").text(this.product));
-    // row.append($("<tr></tr>").text(this.price));
     
     var table = document.getElementsByClassName("deals_table");
     console.log(table);
