@@ -13,12 +13,22 @@
         text-transform: uppercase;
         margin-bottom: 30px;
     }
-    h2{
+    a{
         font-family: $font-text;
         font-size: 14px;
         margin: 5px 0px 15px 0;
         color: white;
         text-align: center;
+        // &:hover{
+        //     color: blue;
+        // }
+    }
+    #sendEmail{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        &:hover{
+            transform: scale(1.04);
+        }
     }
     h3{
         font-size: 30px;
@@ -26,4 +36,5 @@
         color: $color;
         letter-spacing: 1px;
     }
+    
 }
