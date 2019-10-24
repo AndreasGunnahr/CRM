@@ -1,0 +1,88 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.deals {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(4, 1fr);
+border-radius: 10px;
+background-color: #FFA500;
+width: 100%;
+}
+
+#addDeal {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 30%;
+    margin: 3% 3% 3% 3%;
+    border-radius: 10px;
+    font-size: 28px;
+    background-color: #FFA500;
+    border: none;
+    cursor: pointer;
+    color: #F6F4F0;
+}
+
+h2 {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-family: 'Squada One', cursive;
+    color: #F6F4F0;
+    text-align: center;
+}
+
+.deals_container {
+
+}
+
+ .addDeal_container, .deals_table {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    border-radius: 10px;
+    margin: 2% 2% 2%;   
+    border: 5px solid #F6F4F0;
+    border-radius: 10px;
+    width: 95%;
+    color: #302F2F;
+}
+
+tr:nth-child(even) {
+    background: #F6F4F0
+}
+
+/* tr:nth-child {
+    margin: 1%;
+} */
+
+/* tr:nth-child(odd) {
+    background: #FFF
+} */
+
+.addDeal_container {
+    display: none;
+}
+
+th {
+    font-family: 'Squada One', cursive;
+    color: #F6F4F0;
+}
+
+td {
+    color: #302F2F;
+    text-align: center;
+}
+
+#product, #price, #customer, #contact {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    border: 5px solid #F6F4F0;
+    border-radius: 10px;
+    margin: 2% 2% 2%;  
+}
