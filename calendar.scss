@@ -1,15 +1,14 @@
 @import "_global.scss";
 @import "_reset.scss";
 
-$white: #f9f9f9;
-
-%paragraph{
-    @extend %flex-center;
-    font-family: 'Roboto', sans-serif;
-    color: $white;
-}
 
 calendar-module {
+    $white: #f9f9f9;
+    %paragraph{
+        @extend %flex-center;
+        font-family: 'Roboto', sans-serif;
+        color: $white;
+    }
     padding: 20px;
     padding-top: 0;
     box-sizing: border-box;

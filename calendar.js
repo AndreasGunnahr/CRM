@@ -1,11 +1,20 @@
-class CalendarDate {
-    constructor(element) {
+class Event {
+    constructor(date, element) {
         this.element = element;
+        this.date = new Date(date);
+        this.element.addEventListener('click', () => {
+            console.log('clicked event');
+        })
+    }
+
+    eventHTML() {
+
     }
 }
 
 class Calendar {
-    constructor() {
+    constructor(pathToCSS) {
+        this.linkCSS(pathToCSS);
         this.container = document.querySelector('calendar-module');
         this.date = {};
         this.getDate();
@@ -19,15 +28,16 @@ class Calendar {
                 "Thursday", "Friday", "Saturday", "Sunday"];
         this.month = document.createElement('current-month');
         this.dates = [];
-        if(this.container) {
-            this.createHTML();
-            let head = document.querySelector('head');
-            let link = document.createElement('link');
-            link.setAttribute('rel', 'stylesheet');
-            link.setAttribute('href', 'css/calendar.css');
+        this.createHTML();
+        this.events = [];
+    }
 
-            console.log(link);
-        }
+    linkCSS(pathToCSS) {
+        let head = document.querySelector('head');
+        let link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', pathToCSS + 'calendar.css');
+        head.appendChild(link);
     }
 
     posValid(day) {
@@ -98,22 +108,28 @@ class Calendar {
         return day == this.date.day && this.date.month == date.getMonth();
     }
 
-    isCurrentMonth(month){
+    isCurrentMonth(month) {
         return new Date().getMonth() == month;
     }
 
     createEvent(day) {
         if (this.posValid(day)) {
+            let event = new Event('2019-10-' + day, this.dates[day]);
+            console.log(event);
+
             this.dates[day].classList.add('event');
-            this.dates[day].addEventListener('click', () => {
-                console.log('clicked event');
-            })
+
+            this.events.push(event);
         }
     }
-
 }
+
 let calendar;
+
 document.addEventListener('DOMContentLoaded', () => {
-    calendar = new Calendar();
-}) 
+    calendar = new Calendar('');
+    calendar.createEvent(4);
+})
+
+
 
