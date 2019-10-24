@@ -192,7 +192,7 @@ class Calendar {
 let calendar;
 
 document.addEventListener('DOMContentLoaded', () => {
-    calendar = new Calendar('');
+    calendar = new Calendar('css/');
     calendar.createEvent(4);
     calendar.createEvent(25);
 })
