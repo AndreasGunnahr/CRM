@@ -1,14 +1,69 @@
+class EventItem {
+    constructor(parent, content) {
+        this.parent = parent;
+        this.content = content;
+        this.content = 'wowow test test';
+        this.html = {}
+    }
+
+    createHTML() {
+        this.html = {
+            root: document.createElement('event-item')
+        }
+        
+        this.parent.appendChild(this.html.root);
+    }
+}
+
 class Event {
-    constructor(date, element) {
-        this.element = element;
+    constructor(date, parent) {
+        this.parent = parent;
         this.date = new Date(date);
-        this.element.addEventListener('click', () => {
-            console.log('clicked event');
+        this.parent.addEventListener('click', () => {
+            this.toggle();        
+        })
+        this.html = {};
+        this.items = [];
+        this.createHTML();
+        this.populateItems();
+    }
+
+    populateItems() {
+        this.items.forEach((item) => {
+            item.createHTML();
         })
     }
 
-    eventHTML() {
+    createHTML() {
+        this.html = {
+            root: document.createElement('event-root')
+        }
 
+        this.html.root.classList.add('hidden');
+
+        this.parent.appendChild(this.html.root);
+
+        for(let i = 0; i < 5; i++) {
+            let item = new EventItem(this.html.root, 'wowowow');
+            this.items.push(item);
+        }   
+    }
+
+    updateMargin() {
+        console.log('resized');
+        let offset = this.parent.offsetTop;
+        let height = getComputedStyle(this.parent).height;
+        height = Math.round(height.replace('px', ''));
+        this.html.root.style.top = offset + height + 'px';
+        this.html.root.style.left = this.parent.parentNode.offsetLeft + 'px';
+        console.log(this.parent.parentNode.offsetLeft);
+
+        console.log(this.html.root.style.top);
+    }
+
+    toggle() {   
+        this.updateMargin();    
+        this.html.root.classList.toggle('hidden');
     }
 }
 
@@ -30,6 +85,13 @@ class Calendar {
         this.dates = [];
         this.createHTML();
         this.events = [];
+        window.addEventListener('resize', () => {
+            if(this.events.length > 0) {
+                this.events.forEach((event) => {
+                    event.updateMargin();
+                })
+            }
+        })
     }
 
     linkCSS(pathToCSS) {
@@ -129,6 +191,7 @@ let calendar;
 document.addEventListener('DOMContentLoaded', () => {
     calendar = new Calendar('');
     calendar.createEvent(4);
+    calendar.createEvent(25);
 })
 
 

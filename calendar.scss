@@ -44,4 +44,30 @@ calendar-module {
     .event {
         background-color: #1d5dd4;
     }
+
+    event-root {
+        position: absolute;
+        background-color: transparentize(#1d5dd4, 0);
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 10px;
+        padding-top: 0;
+        overflow: hidden;
+        opacity: 1;
+
+        event-item {
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            background-color: lighten(#1d5dd4, 20);
+        }
+    }
+
+    .hidden {
+        height: 0;
+        opacity: 0;
+    }
 }
