@@ -94,8 +94,8 @@ li {
     grid-template-rows: 1fr 1fr;
     border-radius: 5px;
     grid-column-gap: 1%;
-    margin: 2%;
-    width: 90%;
+    margin-left: 1%;
+    width: 92%;
 }
 
 .input_container button {
@@ -103,7 +103,7 @@ li {
     grid-column-end: 2;
     grid-column-end: auto;
     height: 90%;
-    width: 80%;
+    width: 70%;
     justify-self: end;
     border: none;
     background-color: #302F2F;
@@ -120,7 +120,7 @@ li {
 
 #new_todo {
     grid-column-start: 2;
-    grid-column-end: 7; 
+    grid-column-end: 6; 
     grid-row-start: 1;
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
