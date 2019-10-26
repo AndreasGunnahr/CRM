@@ -65,16 +65,17 @@
     
     #input_container {
         display: none;
-
-        /* display: grid;
-        grid-row-start: 4;
+        /* display: grid; */
+        grid-row-start: 2;
         grid-row-end: 5;
-        grid-template-columns: repeat(5, 1fr);
+        grid-column-start: 1;
+        grid-column-end: 6; 
+        /* grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 1fr 1fr; */
         border-radius: 5px;
         grid-column-gap: 1%;
-        /* margin: 2%; */
-        /* width: 100%; */
+        margin: 2%; 
+        width: 100%; 
     }
     
     /* .input_container button { */
@@ -91,17 +92,14 @@
     
     
     #new_todo {
-        /* grid-row: 5;
-        grid-column: ; */
-        /* grid-column-start: 2;
-        grid-column-end: 7; 
-        grid-row-start: 1; */
         font-family: 'Roboto', sans-serif;
         border-radius: 10px;
-        height: 90%;
-        width: 95%;
+        height: 20%;
+        width: 60%;
         border: none;
         padding-left: 5px;
+        font-size: 14px;
+        margin: 1%;
     }
     
     ::placeholder{
@@ -111,22 +109,18 @@
     
     
     #todo_date, #customer_id {
-        grid-column-start: 2;
-        grid-column-end: 5; 
-        grid-row-start: 1;
         font-family: 'Roboto', sans-serif;
         border-radius: 10px;
-        height: 90%;
+        height: 20%;
         border: none;
-        display: none;
+        margin: 1%;
+        height: 20%;
+        width: 60%;
     }
     
     #calendar, #id {
-        grid-row-start: 1;
-        grid-column-start: 5;
-        grid-column-end: 6;
         cursor: pointer;
-        margin-top: 2%;
+        margin-top: 2%; 
     }
     
     #calendar {
