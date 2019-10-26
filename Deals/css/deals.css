@@ -25,6 +25,14 @@ width: 100%;
     color: #F6F4F0;
 }
 
+#addDeal:focus {
+    outline: none;
+}
+
+#addDeal:active {
+    outline: none;
+}
+
 h2 {
     grid-row-start: 1;
     grid-column-start: 3;
@@ -38,7 +46,7 @@ h2 {
 
 }
 
- .addDeal_container, .deals_table {
+ .deals .addDeal_container, .deals .deals_table {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 2;
@@ -75,6 +83,7 @@ th {
 td {
     color: #302F2F;
     text-align: center;
+    width: 20%;
 }
 
 #product, #price, #customer, #contact {
