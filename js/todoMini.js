@@ -195,3 +195,11 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+function openInputContainer() {
+    var customer = document.getElementById("input_container");
+    if (customer.style.display === "block") {
+        customer.style.display = "none";
+    } else {
+        customer.style.display = "block";
+    }
+};

@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/comments.css">
-        <link rel="stylesheet" href="css/todo.css">
+        <link rel="stylesheet" href="css/todoMini.css">
         <link rel="stylesheet" href="css/search.css">
         <link rel="stylesheet" href="css/contact.css">
         <script src = "js/mockup.js"></script>
@@ -57,16 +57,19 @@
                 <div class = "calender-container">
                     <calendar-module></calendar-module>
                 </div>
+
+                <!-- TODOLIST -->
                 <div class = "todo-container">
                     <div class="todo">
                         <h2>Todo</h2>
-                        <button class="addItem" onclick="allTodos.addNewItem();"><i class="fa fa-plus"></i></button>
+                        <button class="open_input_container" onclick="openInputContainer();"><i class="fa fa-plus"></i></button>
                         <div class="items_container">
                             <ul id="current_items_list" class="checked">
-                                <!-- <li class="fa fa-check-circle" type="checkbox" name="item" id="item"></li> -->
+                                
                             </ul>
                         </div>
                         <div class="input_container">
+                                <button class="addItem" onclick="allTodos.addNewItem();"><i class="fa fa-plus"></i></button>
                             <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> <i class="fa fa-calendar"
                             onclick="openDate()" id="calendar">
                             </i> <i class="fa fa-id-card" onclick="openCustomerId()" id="id"></i>
@@ -75,6 +78,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- TODOLIST END -->
+
                 <div class = "survey-container"></div>
             </div>
         </div>
@@ -82,7 +87,7 @@
         <script src = "js/addCustomer.js"></script>
         <script src = "js/navbar.js"></script>
         <script src = "js/comments.js"></script>
-        <script src="js/todo.js"></script>
+        <script src="js/todoMini.js"></script>
         <script src="js/search.js"></script>
         <script src="js/contact.js"></script>
         <script src="js/calendar.js"></script>

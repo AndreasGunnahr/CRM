@@ -15,14 +15,6 @@ height: 100%;
 width: 100%;
 }
 
-@media only screen and (max-width: 300px) {
-    /* For mobile phones: */
-    [class*="todo"] {
-        max-height: 270px;
-        min-height: 270px;
-        font-size: 12px;
-    }
-  }
 
 .items_container {
     overflow: scroll;
@@ -63,12 +55,6 @@ ul {
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 360px) {
-    /* For mobile phones: */
-    [class*="checked"] {
-      font-size: 12px;
-    }
-}
 
  
 li {
@@ -87,20 +73,6 @@ li {
 }
 
 
-@media only screen and (max-width: 360px) {
-    /* For mobile phones: */
-    .input_container {
-      font-size: 11px;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: 1fr;
-      border-radius: 5px;
-      grid-column-gap: 1%;
-      margin: 2%;
-      width: 90%;
-
-    }
-  }
 
 .input_container {
     grid-row: 5/6;
@@ -129,13 +101,7 @@ li {
     font-size: 24px;
 } */
 
-@media only screen and (max-width: 360px) {
-    /* For mobile phones: */
-    .input_container {
-        grid-column-start: 2;
-        grid-column-end: 7; 
-    }
-}
+
 
 #new_todo {
     /* grid-row: 5;
@@ -146,14 +112,14 @@ li {
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
     height: 90%;
-    width: 100%;
+    width: 95%;
     border: none;
     padding-left: 5px;
 }
 
 ::placeholder{
     color: #BDBCBB;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 
@@ -186,21 +152,7 @@ li {
     margin-right: 4%;
 }
 
-@media only screen and (max-width: 630px) {
-    #calendar {
-        grid-row-start: 1;
-        grid-column-start: 4;
-        grid-column-start: 5;
-    }
-    }
 
-    @media only screen and (max-width: 630px) {
-        #id {
-            grid-row-start: 1;
-            grid-column-start: 5;
-            grid-column-start: 6;
-        }
-    }
     .input_container i {
         color: #302F2F;
         font-size: 30px;
@@ -215,8 +167,8 @@ li {
 }
 
 .close {
-    /* float: right;
-    margin-top: 0.4%; */
+    float: right;
+    margin-top: 0.4%;
     justify-content: flex-end;
 }
 
@@ -227,15 +179,15 @@ input:focus{
     outline: none;   
 }
 
-.addItem {
+.addItem, .open_input_container {
     margin: auto auto;
     /* margin: 5px; */
     grid-row: 1;
     grid-column: 5/7;
     background-color: #FFA500;
     border-radius: 15px;
-    height: 90%;
-    width: 90%;
+    height: 70%;
+    width: 70%;
     /* justify-self: end; */
     border: none;
     /* min-width: 80px;s */
