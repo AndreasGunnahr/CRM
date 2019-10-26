@@ -36,6 +36,9 @@ class TodoList {
         item.addToDatabase();
         this.items.push(item);
         document.getElementById("new_todo").value = "";
+        document.getElementById("items_container").style.display = "block";
+        document.getElementById("input_container").style.display = "none";
+        document.getElementById("open_input_container").style = "block"
     }
 
     //Hämtar 5 random todos för 5 random kunder från api.
@@ -196,10 +199,27 @@ document.addEventListener("keydown", function (e) {
 });
 
 function openInputContainer() {
-    var customer = document.getElementById("input_container");
-    if (customer.style.display === "block") {
-        customer.style.display = "none";
+    var ic = document.getElementById("input_container");
+    var tc = document.getElementById("items_container");
+    var oic = document.getElementById("open_input_container");
+
+    if (ic.style.display === "block") {
+        ic.style.display = "none";
+        tc.style.display = "block";
+        oic.style.display = "block";
+        
     } else {
-        customer.style.display = "block";
+        ic.style.display = "block";
+        tc.style.display = "none";
+        oic.style.display = "none";
     }
 };
+
+// function openCustomerId() {
+//     var customer = document.getElementById("customer_id");
+//     if (customer.style.display === "block") {
+//         customer.style.display = "none";
+//     } else {
+//         customer.style.display = "block";
+//     }
+// };
