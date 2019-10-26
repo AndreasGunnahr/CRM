@@ -29,14 +29,6 @@
     }
     
     ul {
-        /* height: 100%;
-        width: 100%; */
-        /* grid-row-start: 2;
-        grid-row-end: 4;
-        grid-column-start: 1;
-        grid-column-end: 6; */
-        /* grid-row: 2/5;
-        grid-column: span 6; */
         font-family: 'Roboto', sans-serif;
         color: #302F2F;
         max-height: 100%;
@@ -156,17 +148,12 @@
         height: 70%;
         width: 70%;
         border: none;
-        font-size: 24px;
-        
+        font-size: 24px;  
     }
 
-
-    
-    
      input[type=checkbox] {
         background-color: #302F2F;
-    }
-    
+    }  
     
     #chk {
         background-color: #302F2F;
