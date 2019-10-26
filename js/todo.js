@@ -163,8 +163,10 @@ for (i = 0; i < close.length; i++) {
 //Döljer och visar datum-inputen
 function openDate() {
     var date = document.getElementById('todo_date');
+    var customer = document.getElementById("customer_id");
     if (date.style.display === 'block') {
         date.style.display = 'none';
+        customer.style.display = "none";
     } else {
         date.style.display = 'block';
     }
@@ -178,8 +180,10 @@ document.getElementById("todo_date").addEventListener("change", function () {
 //Döljer och visar kund-inputen och skriver ut när användaren skrivit in vald kund
 function openCustomerId() {
     var customer = document.getElementById("customer_id");
+    var date = document.getElementById('todo_date');
     if (customer.style.display === "block") {
         customer.style.display = "none";
+        date.style.display = "none";
     } else {
         customer.style.display = "block";
     }
