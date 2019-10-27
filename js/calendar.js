@@ -219,9 +219,13 @@ class Calendar extends CalendarUtils {
 
         this.month.innerText = this.months[this.date.getMonth()] + ` ${this.date.getFullYear()}`;
 
+        if(document.querySelector('.current')) {
+            document.querySelector('.current').classList.remove('current');
+        }
+        
         this.dates.forEach((date, i) => {
             date.querySelector('p').innerText = '';
-            date.querySelector('p').classList.remove('current');
+
 
             let offset = this.weekdayOfFirstOfMonth(this.date);
             
