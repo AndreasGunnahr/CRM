@@ -35,7 +35,8 @@ class EventItem {
             this.html = {
                 root: document.createElement('event-item'),
                 text: document.createElement('event-text'),
-                customer: document.createElement('event-customer')
+                customer: document.createElement('event-customer'),
+                icon: document.createElement('i')
             }
 
             this.html.text.innerText = this.content.text;
@@ -46,7 +47,9 @@ class EventItem {
                 this.html.customer.classList.add('strikethrough')
             }
 
-            this.html.customer.innerText = this.content.customer;
+            this.html.icon.classList.add('fa', 'fa-id-card');
+            this.html.root.appendChild(this.html.icon);
+            this.html.customer.innerHTML = this.content.customer;
             this.html.root.appendChild(this.html.customer);
             
             this.parent.appendChild(this.html.root);

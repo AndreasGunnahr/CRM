@@ -58,6 +58,7 @@ calendar-module nav-right, calendar-module nav-current, calendar-module nav-left
 
 calendar-module nav-right i, calendar-module nav-current i, calendar-module nav-left i {
   transform: scale(1.5);
+  z-index: 1;
 }
 
 calendar-module nav-right {
@@ -109,38 +110,38 @@ calendar-module .call {
 }
 
 calendar-module event-root {
+  transition: 0.2s all ease-in;
   position: absolute;
-  background-color: #302F2F;
   height: auto;
   width: 0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
   padding-top: 0;
   overflow: hidden;
   opacity: 1;
-  border: 2px solid #FFA500;
+  border-radius: 20px;
 }
 
 calendar-module event-root event-item {
+  opacity: inherit;
   height: 50px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 3px;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   display: grid;
   padding-left: 20px;
 }
 
 calendar-module event-root event-item event-text, calendar-module event-root event-item event-customer {
-  justify-self: center;
+  opacity: inherit;
   text-align: left;
-  grid-row: 2;
+  justify-self: left;
   grid-column: 1;
-  display: block;
-  color: black;
+  color: #302F2F;
+  padding: 5px;
   height: 100%;
 }
 
@@ -148,11 +149,21 @@ calendar-module event-root event-item .strikethrough {
   text-decoration: line-through;
 }
 
-calendar-module event-root event-item event-customer {
+calendar-module event-root event-item i {
   grid-column: 2;
+  justify-self: right;
+  align-self: center;
+  color: #4a4848;
+}
+
+calendar-module event-root event-item event-customer {
+  content: "\f2c2";
+  grid-column: 3;
   font-weight: bold;
   text-align: right;
-  margin-right: 20px;
+  justify-self: left;
+  margin-right: 10px;
+  font-size: 0.8em;
 }
 
 calendar-module daily-events {
@@ -176,4 +187,6 @@ calendar-module daily-events event-dot {
 calendar-module .hidden {
   height: 0;
   opacity: 0;
+  margin: 0;
+  padding: 0;
 }
