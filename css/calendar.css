@@ -89,6 +89,7 @@ calendar-module week-day {
 }
 
 calendar-module date-cell {
+  padding-top: 5px;
   display: grid;
   grid-template-rows: 2fr 1fr;
 }
@@ -110,7 +111,8 @@ calendar-module .call {
 }
 
 calendar-module event-root {
-  transition: 0.35s all ease-in-out;
+  transition: 0.35s transform ease-in-out;
+  transform-origin: 50% 0%;
   position: absolute;
   height: auto;
   width: 0;
@@ -168,7 +170,7 @@ calendar-module event-root event-item event-customer {
 }
 
 calendar-module daily-events {
-  transition: 0.2s all;
+  transition: 0.2s transform;
   grid-row: 2;
   width: 100%;
   height: 100%;
@@ -179,6 +181,7 @@ calendar-module daily-events {
 
 calendar-module daily-events event-dot {
   transition: 0.2s all;
+  transition-delay: 0.35s;
   margin-right: 2px;
   margin-left: 2px;
   display: block;
@@ -190,14 +193,11 @@ calendar-module daily-events event-dot {
 }
 
 calendar-module .hidden {
-  height: 0;
-  opacity: 0;
-  margin-top: -20px;
-  padding: -20px;
+  transform: scale(1, 0);
 }
 
 calendar-module .active {
-  border-bottom: 1px solid #FFA500;
+  background: #3d3c3c;
 }
 
 calendar-module .active event-dot {

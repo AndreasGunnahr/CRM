@@ -67,8 +67,10 @@ calendar-module {
     }
 
     date-cell {
+        padding-top: 5px;
         p {
             @extend %paragraph;
+
             user-select: none;
         }
         display: grid;
@@ -88,7 +90,8 @@ calendar-module {
     }
 
     event-root {
-        transition: 0.35s all ease-in-out;
+        transition: 0.35s transform ease-in-out;
+        transform-origin: 50% 0%;
         position: absolute;
         //background-color: lighten($bg-color, 10);
         height: auto;
@@ -150,7 +153,7 @@ calendar-module {
     }
 
     daily-events {
-        transition: 0.2s all;
+        transition: 0.2s transform;
         grid-row: 2;
         width: 100%;
         height: 100%;
@@ -160,6 +163,7 @@ calendar-module {
 
         event-dot {
             transition: 0.2s all;
+            transition-delay: 0.35s;
             margin-right: 2px;
             margin-left: 2px;
             display: block;
@@ -172,14 +176,11 @@ calendar-module {
     }
 
     .hidden {
-        height: 0;
-        opacity: 0;
-        margin-top: -20px;
-        padding: -20px;
+        transform: scale(1, 0);
     }
 
     .active {
-        border-bottom: 1px solid $color;
+        background: lighten($bg-color, 5);
 
         event-dot {
             opacity: 0;
