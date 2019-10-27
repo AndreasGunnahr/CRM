@@ -1,31 +1,75 @@
+class CalendarUtils {
+    posValid(date) {
+        return date.getDay() >= 1 && 
+                date.getDay() <= this.daysInMonth(date);
+    }
+
+    daysInMonth(date) {
+        return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+    }
+
+    weekdayOfFirstOfMonth(date) {
+        date = new Date(date.getFullYear(), date.getMonth(), 1);
+        return date.getDay();
+    }
+
+    isCurrentDate(day) {
+        return day == this.currentDate.getDate() && this.date.getMonth() == this.currentDate.getMonth();
+    }
+
+    isCurrentMonth(month) {
+        return new Date().getMonth() == month;
+    }
+}
+
 class EventItem {
     constructor(parent, content) {
         this.parent = parent;
         this.content = content;
-        this.content = 'wowow test test';
-        this.html = {}
+        this.html = {};
+        this.created = false;
     }
 
     createHTML() {
-        this.html = {
-            root: document.createElement('event-item')
+        if(!this.created) {
+            this.html = {
+                root: document.createElement('event-item'),
+                text: document.createElement('event-text'),
+                customer: document.createElement('event-customer')
+            }
+
+            this.html.text.innerText = this.content.text;
+            this.html.root.appendChild(this.html.text);
+
+            if(this.content.ckecked == 1){
+                this.html.text.classList.add('strikethrough')
+                this.html.customer.classList.add('strikethrough')
+            }
+
+            this.html.customer.innerText = this.content.customer;
+            this.html.root.appendChild(this.html.customer);
+            
+            this.parent.appendChild(this.html.root);
+            
+            this.created = true;
         }
-        
-        this.parent.appendChild(this.html.root);
     }
 }
 
-class Event {
-    constructor(date, parent) {
+class EventList {
+    constructor(parent, date) {
+        this.date = date;
         this.parent = parent;
-        this.date = new Date(date);
-        this.parent.addEventListener('click', () => {
-            this.toggle();        
-        })
         this.html = {};
         this.items = [];
         this.createHTML();
         this.populateItems();
+        this.checkCurrent = new CustomEvent('checkCurrent', {
+            detail: this.parent.querySelector('p').innerText
+        });
+        this.parent.addEventListener('click', () => {
+            this.parent.parentNode.dispatchEvent(this.checkCurrent);  
+        })
     }
 
     populateItems() {
@@ -40,39 +84,50 @@ class Event {
         }
 
         this.html.root.classList.add('hidden');
-
         this.parent.appendChild(this.html.root);
-
-        for(let i = 0; i < 5; i++) {
-            let item = new EventItem(this.html.root, 'wowowow');
-            this.items.push(item);
-        }   
     }
 
     updateMargin() {
-        console.log('resized');
         let offset = this.parent.offsetTop;
         let height = getComputedStyle(this.parent).height;
         height = Math.round(height.replace('px', ''));
         this.html.root.style.top = offset + height + 'px';
         this.html.root.style.left = this.parent.parentNode.offsetLeft + 'px';
-        console.log(this.parent.parentNode.offsetLeft);
-
-        console.log(this.html.root.style.top);
+        this.html.root.style.width = getComputedStyle(this.parent.parentNode).width;
     }
 
     toggle() {   
         this.updateMargin();    
         this.html.root.classList.toggle('hidden');
     }
+
+    hide() {
+        this.updateMargin();
+        this.html.root.classList.add('hidden');        
+    }
+
+    checkToggle(date) {
+        if(this.parent.querySelector('p').innerText == date) {
+            this.toggle();
+        } else {
+            this.hide();
+        }
+    }
 }
 
-class Calendar {
+class Calendar extends CalendarUtils {
     constructor(pathToCSS) {
+        super();
         this.linkCSS(pathToCSS);
         this.container = document.querySelector('calendar-module');
-        this.date = {};
-        this.getDate();
+        this.container.addEventListener('checkCurrent', (e) => {
+            this.events.forEach((event) => {
+                event.checkToggle(e.detail);
+            })
+        })
+
+        this.date = new Date();
+        this.currentDate = new Date();
         this.months =
             ["January", "February", "March",
                 "April", "May", "June",
@@ -82,9 +137,16 @@ class Calendar {
             ["Monday", "Tuesday", "Wednesday",
                 "Thursday", "Friday", "Saturday", "Sunday"];
         this.month = document.createElement('current-month');
+        this.nav = [
+            document.createElement('nav-right'),
+            document.createElement('nav-current'),
+            document.createElement('nav-left')
+        ]
         this.dates = [];
         this.createHTML();
         this.events = [];
+        this.todoItems = [];
+
         window.addEventListener('resize', () => {
             if(this.events.length > 0) {
                 this.events.forEach((event) => {
@@ -105,24 +167,24 @@ class Calendar {
         head.appendChild(link);
     }
 
-    posValid(day) {
-        return day >= 1 && day <= this.daysInMonth();
-    }
-
-    getDate() {
-        let date = new Date();
-        this.date = {
-            year: date.getFullYear(),
-            month: date.getMonth(),
-            day: date.getDate(),
-            functions: date
-        }
-
-        return this.date;
-    }
-
     createHTML() {
-        this.month.innerText = this.months[this.date.month];
+        this.nav.forEach(element => {
+            this.container.appendChild(element);
+        })
+
+        this.nav[0].addEventListener('click', () => {
+            this.decrMonth();
+        })
+
+        this.nav[1].addEventListener('click', () => {
+            this.setToCurrentMonth();
+        })
+
+        this.nav[2].addEventListener('click', () => {
+            this.incrMonth();
+        })
+
+        this.month.innerText = this.months[this.date.getMonth()];
         this.container.appendChild(this.month);
 
         this.weekdays.forEach((day) => {
@@ -133,6 +195,8 @@ class Calendar {
 
         for (let i = 0; i < 7 * 5; i++) {
             let cell = document.createElement('date-cell');
+            cell.appendChild(document.createElement('p'));
+            cell.appendChild(document.createElement('daily-events'));
             this.container.appendChild(cell);
             this.dates.push(cell);
         }
@@ -145,47 +209,92 @@ class Calendar {
     }
 
     renderMonth() {
-        this.month.innerText = this.months[this.date.month];
+        this.month.innerText = this.months[this.date.getMonth()] + ` ${this.date.getFullYear()}`;
 
         this.dates.forEach((date, i) => {
-            date.classList.remove('current');
-            let day = i + 2 - this.weekdayOfFirstOfMonth();
-            if (this.posValid(day)) {
-                date.innerText = day;
-                if (this.isCurrentDate(day)) {
-                    date.classList.add('current');
+            date.querySelector('p').innerText = '';
+            date.querySelector('p').classList.remove('current');
+
+            let offset = this.weekdayOfFirstOfMonth(this.date);
+            
+            if(offset == 0) {
+                offset = 7;
+            }
+
+            if (i + 1 >= offset && i - offset + 2 <= this.daysInMonth(this.date)) {
+                date.querySelector('p').innerText = i - offset + 2;
+                if (this.isCurrentDate(i)) {
+                    date.querySelector('p').classList.add('current');
                 }
             }
         })
     }
 
-    daysInMonth() {
-        return new Date(this.date.year, this.date.month + 1, 0).getDate();
+    renderEvents() {
+        let eventList;
+        this.clearEvents();
+        this.todoItems.forEach((event) => {
+            if(event.date != '' && event.date) {
+                let eventDate = new Date(event.date);
+
+                if(eventDate.getFullYear() == this.date.getFullYear() && eventDate.getMonth() == this.date.getMonth()) {
+                    let dateCells = document.querySelectorAll('date-cell');
+                    
+                    dateCells.forEach((date) => {
+                        let dateText = date.querySelector('p').innerHTML;
+    
+                        if(dateText == eventDate.getDate()) {
+                            date.querySelector('daily-events').appendChild(document.createElement('event-dot'));
+                                                  
+                            if(!date.querySelector('event-root')) {
+                                eventList = new EventList(date, eventDate);
+                                this.events.push(eventList);
+                                eventList.items.push(new EventItem(eventList.html.root, event))                             
+                            } else {
+                                eventList = this.events.find(event => {
+                                    return event.date.getDay() == eventDate.getDay();
+                                })
+                                eventList.items.push(new EventItem(eventList.html.root, event))
+                            }
+                        }          
+                    }) 
+                }
+    
+                if(eventList) {
+                    eventList.populateItems(); 
+                }
+            }
+        })
     }
 
-    weekdayOfFirstOfMonth() {
-        let date = new Date(this.date.year, this.date.month, 1);
-        return date.getDay();
+    clearEvents() {
+        this.dates.forEach((date) => {
+            while(date.querySelector('event-root')) {
+                date.removeChild(date.querySelector('event-root'))
+            }
+
+            date.querySelector('daily-events').innerHTML = '';
+        })
+
+        this.events = [];
     }
 
-    isCurrentDate(day) {
-        let date = new Date();
-        return day == this.date.day && this.date.month == date.getMonth();
+    incrMonth() {
+        this.date.setMonth(this.date.getMonth() + 1);
+        this.renderMonth();
+        this.renderEvents();
     }
 
-    isCurrentMonth(month) {
-        return new Date().getMonth() == month;
+    decrMonth() {
+        this.date.setMonth(this.date.getMonth() - 1);
+        this.renderMonth();
+        this.renderEvents();
     }
 
-    createEvent(day) {
-        if (this.posValid(day)) {
-            let event = new Event('2019-10-' + day, this.dates[day]);
-            console.log(event);
-
-            this.dates[day].classList.add('event');
-
-            this.events.push(event);
-        }
+    setToCurrentMonth(){
+        this.date = this.currentDate;
+        this.renderMonth();
+        this.renderEvents();
     }
 }
 
@@ -193,8 +302,10 @@ let calendar;
 
 document.addEventListener('DOMContentLoaded', () => {
     calendar = new Calendar('css/');
-    calendar.createEvent(4);
-    calendar.createEvent(25);
+    document.addEventListener('todoDone', (e) => {    
+        calendar.todoItems = e.detail.items;   
+        calendar.renderEvents();
+    })
 })
 
 
