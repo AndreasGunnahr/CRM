@@ -39,6 +39,7 @@ class TodoList {
         document.getElementById("items_container").style.display = "block";
         document.getElementById("input_container").style.display = "none";
         document.getElementById("open_input_container").style = "block"
+        exportTodo(this.items);
     }
 
     //Hämtar 5 random todos för 5 random kunder från api.
@@ -58,6 +59,8 @@ class TodoList {
             let data = this.textExamples[rand];
             let todoItem = new TodoItem(data, `${year}-${month}-${date}`, companies[i]);
             todoItem.createHTML();
+            this.items.push(todoItem);
+            exportTodo(this.items);
         })
     }
 }
@@ -69,7 +72,7 @@ class Item {
 }
 
 class TodoItem {
-    constructor(text, customer, date) {
+    constructor(text, date, customer) {
         this.item;
         this.text = text;
         this.date = date;
@@ -87,13 +90,13 @@ class TodoItem {
         checkbox.id = "chk";
         this.item.appendChild(checkbox);
         this.item.setAttribute("id", "itemID" + i);
-        this.x = document.createTextNode(this.text + "  -  " + this.date + "  -  " + this.customer);
+        this.x = document.createTextNode(this.text + "  -  " + this.customer + "  -  " + this.date);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;
 
         this.itemID++;
-        allTodos.collectItem();
+        //allTodos.collectItem();
 
         //Lägger till X för att kunna stänga/ta bort varje item
         var span = document.createElement("SPAN");

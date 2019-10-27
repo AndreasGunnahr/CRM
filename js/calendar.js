@@ -67,6 +67,7 @@ class EventList {
         this.checkCurrent = new CustomEvent('checkCurrent', {
             detail: this.parent.querySelector('p').innerText
         });
+
         this.parent.addEventListener('click', () => {
             this.parent.parentNode.dispatchEvent(this.checkCurrent);  
         })
@@ -193,14 +194,6 @@ class Calendar extends CalendarUtils {
             this.container.appendChild(element);
         })
 
-        for (let i = 0; i < 7 * 5; i++) {
-            let cell = document.createElement('date-cell');
-            cell.appendChild(document.createElement('p'));
-            cell.appendChild(document.createElement('daily-events'));
-            this.container.appendChild(cell);
-            this.dates.push(cell);
-        }
-
         this.renderMonth();
     }
 
@@ -209,6 +202,21 @@ class Calendar extends CalendarUtils {
     }
 
     renderMonth() {
+        if(document.querySelector('date-cell')) {
+            this.dates = [];
+            while(document.querySelector('date-cell')) {
+                this.container.removeChild(document.querySelector('date-cell'));
+            }
+        }
+
+        for (let i = 0; i < 7 * 5; i++) {
+            let cell = document.createElement('date-cell');
+            cell.appendChild(document.createElement('p'));
+            cell.appendChild(document.createElement('daily-events'));
+            this.container.appendChild(cell);
+            this.dates.push(cell);
+        }
+
         this.month.innerText = this.months[this.date.getMonth()] + ` ${this.date.getFullYear()}`;
 
         this.dates.forEach((date, i) => {
@@ -302,7 +310,8 @@ let calendar;
 
 document.addEventListener('DOMContentLoaded', () => {
     calendar = new Calendar('css/');
-    document.addEventListener('todoDone', (e) => {    
+    document.addEventListener('todoDone', (e) => {
+        console.log(e);    
         calendar.todoItems = e.detail.items;   
         calendar.renderEvents();
     })
