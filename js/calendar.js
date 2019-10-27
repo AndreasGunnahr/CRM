@@ -169,7 +169,9 @@ class Calendar extends CalendarUtils {
     }
 
     createHTML() {
-        this.nav.forEach(element => {
+        let text = ["<i class=\"fas fa-arrow-alt-circle-left\"></i>", "Back to Current Month", "<i class=\"fas fa-arrow-alt-circle-right\"></i>"];
+        this.nav.forEach((element, i) => {
+            element.innerHTML = text[i];
             this.container.appendChild(element);
         })
 
@@ -304,7 +306,7 @@ class Calendar extends CalendarUtils {
     }
 
     setToCurrentMonth(){
-        this.date = this.currentDate;
+        this.date = new Date(this.currentDate);
         this.renderMonth();
         this.renderEvents();
     }
