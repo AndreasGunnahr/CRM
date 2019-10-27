@@ -73,9 +73,11 @@ tr:nth-child(even) {
     background: #FFF
 } */
 
-.addDeal_container {
+.deals .addDeal_container {
     display: none;
     padding: 1%;
+    font-family: 'Squada One', cursive;
+    color: #F6F4F0;
 }
 
 th {
@@ -94,7 +96,8 @@ td {
     border: 1px solid #F6F4F0;
     border-radius: 10px;
     margin: 1%;
-    margin-right: 15%;  
+    margin-right: 15%;
+    color: #302F2F;
     
 }
 
@@ -105,7 +108,8 @@ td {
     border: none;
     cursor: pointer;
     background: #F6F4F0;
-    padding: 0.5%;
+    padding: 1%;
+    font-family: 'Squada One', cursive;
 }
 
 #product {
