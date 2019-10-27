@@ -103,11 +103,13 @@ class EventList {
     toggle() {   
         this.updateMargin();    
         this.html.root.classList.toggle('hidden');
+        this.parent.classList.toggle('active');
     }
 
     hide() {
         this.updateMargin();
-        this.html.root.classList.add('hidden');        
+        this.html.root.classList.add('hidden');
+        this.parent.classList.remove('active');        
     }
 
     checkToggle(date) {
