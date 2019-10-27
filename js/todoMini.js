@@ -36,6 +36,9 @@ class TodoList {
         item.addToDatabase();
         this.items.push(item);
         document.getElementById("new_todo").value = "";
+        document.getElementById("items_container").style.display = "block";
+        document.getElementById("input_container").style.display = "none";
+        document.getElementById("open_input_container").style = "block"
     }
 
     //Hämtar 5 random todos för 5 random kunder från api.
@@ -153,14 +156,14 @@ for (i = 0; i < close.length; i++) {
 }
 
 //Döljer och visar datum-inputen
-function openDate() {
-    var date = document.getElementById('todo_date');
-    if (date.style.display === 'block') {
-        date.style.display = 'none';
-    } else {
-        date.style.display = 'block';
-    }
-};
+// function openDate() {
+//     var date = document.getElementById('todo_date');
+//     if (date.style.display === 'block') {
+//         date.style.display = 'none';
+//     } else {
+//         date.style.display = 'block';
+//     }
+// };
 
 document.getElementById("todo_date").addEventListener("change", function () {
     var date = this.value;
@@ -168,14 +171,14 @@ document.getElementById("todo_date").addEventListener("change", function () {
 });
 
 //Döljer och visar kund-inputen och skriver ut när användaren skrivit in vald kund
-function openCustomerId() {
-    var customer = document.getElementById("customer_id");
-    if (customer.style.display === "block") {
-        customer.style.display = "none";
-    } else {
-        customer.style.display = "block";
-    }
-};
+// function openCustomerId() {
+//     var customer = document.getElementById("customer_id");
+//     if (customer.style.display === "block") {
+//         customer.style.display = "none";
+//     } else {
+//         customer.style.display = "block";
+//     }
+// };
 
 document.getElementById("customer_id").addEventListener("change", function () {
     var customerID = this.value;
@@ -194,4 +197,21 @@ document.addEventListener("keydown", function (e) {
         allTodos.addNewItem();
     }
 });
+
+function openInputContainer() {
+    var ic = document.getElementById("input_container");
+    var tc = document.getElementById("items_container");
+    var oic = document.getElementById("open_input_container");
+
+    if (ic.style.display === "block") {
+        ic.style.display = "none";
+        tc.style.display = "block";
+        oic.style.display = "block";
+        
+    } else {
+        ic.style.display = "block";
+        tc.style.display = "none";
+        oic.style.display = "none";
+    }
+};
 
