@@ -1,0 +1,189 @@
+@import "_global.scss";
+@import "_reset.scss";
+
+calendar-module {
+    $white: #f9f9f9;
+    %paragraph{
+        @extend %flex-center;
+        font-family: 'Roboto', sans-serif;
+        color: $white;
+    }
+    padding: 20px;
+    box-sizing: border-box;
+    background: $bg-color;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.5fr repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+
+    nav-right, nav-current, nav-left{
+        @extend %paragraph;
+        font-size: 0.8em;
+        user-select: none;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: $color;
+        margin: 5px;
+        box-sizing: border-box;
+        margin-right: 2px;
+        margin-left: 2px;
+
+        i {
+            transform: scale(1.5);
+            z-index:1;
+        }
+    }
+
+    nav-right {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    nav-left {
+        grid-row: 2;
+        grid-column: 7;    
+    }
+
+    nav-current {
+        grid-row: 1;
+        grid-column: 2 / span 5;
+    }
+
+    current-month {
+        @extend %flex-center;     
+        grid-column: 2 / span 5;
+        text-align: center;
+        font-family: 'Squada One', cursive;
+        font-size: 2.5em;
+        color: $white;
+    }
+
+    week-day {
+        @extend %paragraph;
+        font-size: 0.8em;
+    }
+
+    date-cell {
+        padding-top: 5px;
+        p {
+            @extend %paragraph;
+
+            user-select: none;
+        }
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .current {
+        color: $color;
+    }
+
+    .event {
+        background-color: $bg-color;
+    }
+
+    .call {
+        background-color: #d4291d;
+    }
+
+    event-root {
+        transition: 0.35s transform ease-in-out;
+        transform-origin: 50% 0%;
+        position: absolute;
+        //background-color: lighten($bg-color, 10);
+        height: auto;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px;
+        padding-top: 0;
+        overflow: hidden;
+        opacity: 1;
+        border-radius: 20px;
+
+        event-item {
+            opacity: inherit;
+            height: 50px;
+            width: 100%;
+            margin-top: 3px;
+            background-color: white;
+            border-radius: 20px;
+            //box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+            display: grid;
+            padding-left: 20px;
+
+
+            event-text, event-customer {
+                @extend %paragraph;
+                opacity: inherit;
+                text-align: left;
+                justify-self: left;
+                grid-column: 1;
+                color: $bg-color;
+                padding: 5px;
+                height: 100%;
+            }
+
+            .strikethrough {
+                text-decoration: line-through;
+            }
+
+            i {
+                grid-column: 2;
+                justify-self: right;
+                align-self: center;
+                color: lighten($bg-color, 10);
+                transition-duration: 0.1s;
+            }
+
+            event-customer {
+                content: "\f2c2";
+                grid-column: 3;
+                font-weight: bold;
+                text-align: right;
+                justify-self: left;
+                margin-right: 10px;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    daily-events {
+        transition: 0.2s transform;
+        grid-row: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        border-bottom: 0px solid $color;
+
+        event-dot {
+            transition: 0.2s all;
+            transition-delay: 0.35s;
+            margin-right: 2px;
+            margin-left: 2px;
+            display: block;
+            border-radius: 20px;
+            height: 10px;
+            width: 10px;
+            background: $color;
+            opacity: 1;
+        }
+    }
+
+    .hidden {
+        transform: scale(1, 0);
+    }
+
+    .active {
+        background: lighten($bg-color, 5);
+
+        event-dot {
+            opacity: 0;
+        }
+    }
+}
