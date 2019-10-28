@@ -191,10 +191,5 @@ document.addEventListener("DOMContentLoaded", function () {
     allTodos.getItems();
 });
 
-//Kallar på addNew items för att användaren ska kunna addera ett item genom att klicka på enter.
-document.addEventListener("keydown", function (e) {
-    if (e.keyCode === 13) {
-        allTodos.addNewItem();
-    }
-});
+
 
