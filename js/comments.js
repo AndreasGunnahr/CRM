@@ -27,7 +27,7 @@ function createComments() {
         let date = new Date();
         let commentSpan = document.createElement("SPAN");
         let commentP = document.createElement("P");
-        let fullDate = date.getUTCFullYear() + "-" + date.getUTCDate() + "-" + date.getUTCMonth();
+        let fullDate = date.getUTCFullYear().toString().padStart(2, "0") + "-" + (date.getMonth() + 1).toString().padStart(2, "0") + "-" + date.getUTCDate().toString().padStart(2, "0");
         let hours = date.getHours();
         let minutes = date.getMinutes();
         let seconds = date.getSeconds();
@@ -38,8 +38,9 @@ function createComments() {
         commentP.innerHTML = commentInput.value;
         commentSpan.appendChild(commentP);
         commentContainer.appendChild(commentSpan);
+        commentSpan.scrollIntoView(false);
         commentInput.value = "";
-        let newComment = new Comment("Andreas", "Ringde ICA", "1970-01-01");
+        // let newComment = new Comment("Andreas", "Ringde ICA", "1970-01-01");
         // let postComment = mockup.post("comment");
         // console.log(values);
     }

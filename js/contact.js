@@ -50,6 +50,7 @@ function generateContactInfo(arr,name){
         var emailBodyText = fetch("email.json")
             .then((response) => response.json())
             .then((responseJSON) => {
+                console.log("här");
             // do stuff with responseJSON here...
             // console.log(responseJSON.body);
             let subjectEmail= "Help your company create better customer relationships! ";
