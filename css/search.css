@@ -31,6 +31,7 @@ button {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  z-index: 99;
 }
 
 .search-list .search-customer {

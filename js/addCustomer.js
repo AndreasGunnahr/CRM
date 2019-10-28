@@ -80,7 +80,7 @@ function resetStates(){
 
 /* Resetting our menus depending on which screen size we have */ 
 let firstCheck,secondCheck;
-window.addEventListener('resize', () =>{
+window.addEventListener('resize', () => {
     let firstBreakpoint = window.matchMedia( "(min-width: 779px)" );
     let secondBreakpoint = window.matchMedia( "(max-width: 779px)" );
     if(secondBreakpoint.matches){;
