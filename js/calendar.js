@@ -56,17 +56,20 @@ class EventItem {
 
             this.created = true;
 
-            if (() => {
-                let eventDate = new Date(this.item.date);
-                let currentDate = new Date();
-
-                return currentDate.getDate() == eventDate.getDate() &&
-                    currentDate.getMonth() == eventDate.getMonth() &&
-                    currentDate.getFullYear() == eventDate.getFullYear()
-            }) {
+            if(this.checkDate()) {
                 this.sendNotification();
             }
         }
+    }
+
+    checkDate() {
+        let eventDate = new Date(this.content.date);
+        let currentDate = new Date();
+
+        return currentDate.getDate() == eventDate.getDate() &&
+            currentDate.getMonth() == eventDate.getMonth() &&
+            currentDate.getFullYear() == eventDate.getFullYear()
+
     }
 
     sendNotification() {
@@ -75,8 +78,7 @@ class EventItem {
                 item: this.content
             }
         })
-
-        console.log('notification sent');
+        console.log('sent notification');
         this.parent.parentNode.parentNode.dispatchEvent(notif);
     }
 }
