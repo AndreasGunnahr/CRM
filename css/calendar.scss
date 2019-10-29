@@ -60,8 +60,8 @@ calendar-module {
         position: absolute;
         z-index: 1;
         background: $bg-color;
-        transition: 0.5s transform ease-in-out;
-        overflow: scroll;
+        transition: 0s transform ease-in-out;
+        overflow-y: scroll;
         padding: 20px 0;
 
         notification-item {
@@ -259,5 +259,10 @@ calendar-module {
         event-dot {
             opacity: 0;
         }
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px; 
+        background: transparent; 
     }
 }

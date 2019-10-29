@@ -78,7 +78,6 @@ class EventItem {
                 item: this.content
             }
         })
-        console.log('sent notification');
         this.parent.parentNode.parentNode.dispatchEvent(notif);
     }
 }
@@ -181,6 +180,9 @@ class NotificationList {
     createHTML() {
         this.parent.appendChild(this.icon);
         this.container.classList.toggle('hidden');
+        setTimeout(() => {
+            
+        }, 500)
         this.parent.appendChild(this.container);
         this.resize();
 
@@ -428,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calendar = new Calendar('css/');
     document.addEventListener('todoDone', (e) => {
         calendar.todoItems = e.detail.items;
-        calendar.renderEvents();
+        calendar.setToCurrentMonth();
     })
 })
 

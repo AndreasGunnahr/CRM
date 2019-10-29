@@ -84,8 +84,8 @@ calendar-module notification-list {
   position: absolute;
   z-index: 1;
   background: #302F2F;
-  transition: 0.5s transform ease-in-out;
-  overflow: scroll;
+  transition: 0s transform ease-in-out;
+  overflow-y: scroll;
   padding: 20px 0;
 }
 
@@ -273,4 +273,9 @@ calendar-module .active {
 
 calendar-module .active event-dot {
   opacity: 0;
+}
+
+calendar-module ::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
