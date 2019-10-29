@@ -26,6 +26,7 @@ class Order {
         this.product = product;
         this.price = price;
         this.table = document.getElementsByClassName("deals_table");
+        
 
     }
 
@@ -76,6 +77,14 @@ class Order {
         document.getElementsByClassName("deals_table")[0].style.display = "block";
         document.getElementsByClassName("addDeal_container")[0].style.display = "none";
     };
+
+    removeTd () {
+        window.location.pathname("customer");
+        document.getElementsByClassName("thcompany")[0].style.display = "none";
+        document.getElementById("company")[0].style.display = "none";
+        this.company.style.display = "none";
+
+    }
 }
 
 
@@ -98,3 +107,8 @@ function openPlus() {
 document.addEventListener("DOMContentLoaded", function () {
     allDeals.getDeals();
 });
+
+
+
+
+
