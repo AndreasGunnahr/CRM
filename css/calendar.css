@@ -5,7 +5,7 @@
   font-size: 16px;
 }
 
-calendar-module nav-right, calendar-module nav-current, calendar-module nav-left, calendar-module week-day, calendar-module date-cell p, calendar-module event-root event-item event-text, calendar-module event-root event-item event-customer, calendar-module current-month {
+calendar-module nav-right, calendar-module nav-current, calendar-module nav-left, calendar-module notification-list notification-item notification-text, calendar-module notification-list notification-item notification-customer, calendar-module week-day, calendar-module date-cell p, calendar-module event-root event-item event-text, calendar-module event-root event-item event-customer, calendar-module current-month {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,7 @@ calendar-module {
   grid-template-columns: repeat(7, 1fr);
 }
 
-calendar-module nav-right, calendar-module nav-current, calendar-module nav-left, calendar-module week-day, calendar-module date-cell p, calendar-module event-root event-item event-text, calendar-module event-root event-item event-customer {
+calendar-module nav-right, calendar-module nav-current, calendar-module nav-left, calendar-module notification-list notification-item notification-text, calendar-module notification-list notification-item notification-customer, calendar-module week-day, calendar-module date-cell p, calendar-module event-root event-item event-text, calendar-module event-root event-item event-customer {
   font-family: 'Roboto', sans-serif;
   color: #f9f9f9;
 }
@@ -58,7 +58,78 @@ calendar-module nav-right, calendar-module nav-current, calendar-module nav-left
 
 calendar-module nav-right i, calendar-module nav-current i, calendar-module nav-left i {
   transform: scale(1.5);
+  z-index: 0;
+}
+
+calendar-module .fas.fa-bell {
+  cursor: pointer;
+  grid-column: 7;
+  transform: scale(1.5);
+  color: black;
+  grid-row: 1;
+  justify-self: right;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+calendar-module .fas.fa-bell.unread {
+  color: #FFA500;
+}
+
+calendar-module notification-list {
+  transform-origin: 50% 0;
+  grid-column: 1 / 7;
+  grid-row: 3;
+  display: grid;
+  position: absolute;
   z-index: 1;
+  background: #302F2F;
+  transition: 0.5s transform ease-in-out;
+  overflow: scroll;
+  padding: 20px 0;
+}
+
+calendar-module notification-list notification-item {
+  opacity: inherit;
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 20px;
+  display: grid;
+  padding-left: 20px;
+}
+
+calendar-module notification-list notification-item notification-text, calendar-module notification-list notification-item notification-customer {
+  opacity: inherit;
+  text-align: left;
+  justify-self: left;
+  grid-column: 1;
+  color: #302F2F;
+  padding: 5px;
+  height: 100%;
+}
+
+calendar-module notification-list notification-item .strikethrough {
+  text-decoration: line-through;
+}
+
+calendar-module notification-list notification-item i {
+  grid-column: 2;
+  justify-self: right;
+  align-self: center;
+  color: #4a4848;
+  transition-duration: 0.1s;
+}
+
+calendar-module notification-list notification-item notification-customer {
+  content: "\f2c2";
+  grid-column: 3;
+  font-weight: bold;
+  text-align: right;
+  justify-self: left;
+  margin-right: 10px;
+  font-size: 0.8em;
 }
 
 calendar-module nav-right {
