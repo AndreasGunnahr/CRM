@@ -3,28 +3,29 @@
 }
 
 .deals {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(4, 1fr);
-border-radius: 10px;
-background-color: #FFA500;
-width: 100%;
-max-height: 300px;
-min-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: #FFA500;
+    width: 100%;
+    height: 100%;
+    /* max-height: 520px; */
+    /* min-height: 320px; */
 }
 
 #addDeal {
     grid-row-start: 1;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 30%;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    width: 85%;
     margin: 3% 3% 3% 3%;
     border-radius: 10px;
-    font-size: 28px;
+    font-size: 36px;
     background-color: #FFA500;
     border: none;
     cursor: pointer;
     color: #F6F4F0;
+    text-align: right;
 }
 
 #addDeal:focus {
@@ -35,10 +36,10 @@ min-height: 300px;
     outline: none;
 }
 
-h2 {
+.h2-header {
     grid-row-start: 1;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
     font-family: 'Squada One', cursive;
     color: #F6F4F0;
     text-align: center;
@@ -50,14 +51,12 @@ h2 {
     grid-row-start: 2;
     grid-row-end: 5;
     border-radius: 10px;
-    margin: 2% 2% 2%;   
     border: 5px solid #F6F4F0;
     border-radius: 10px;
-    /* width: 95.5%; */
     color: #302F2F;
     overflow: auto;
-    max-height: 200px;
-    padding: 1%;
+    /* max-height: 200px; */
+    margin: 1%;
     font-size: 14px;
 }
 

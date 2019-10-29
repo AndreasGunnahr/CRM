@@ -5,8 +5,8 @@ class Deals {
     }
 
     async getDeals() {
-        let deals = await mockup.getRandom('Order', 5);
-        let companies = await mockup.getRandom('customer', 5);
+        let deals = await mockup.getRandom('Order', 10);
+        let companies = await mockup.getRandom('customer', 10);
         companies = companies.map((customer) => {
             return customer.companyName;
         })
