@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deals</title>
+    <link rel="stylesheet" href="/css/deals.css">
+    <script src="https://kit.fontawesome.com/3a12e18fd4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/mockup.js"></script>
+</head>
+
+<body>
+
+    <div class="deals">
+        <button id="addDeal" class="fas fa-plus" onclick="openPlus()"></button>
+        <h2>LATEST DEALS</h2>
+
+        <!-- <div class="deals_container"> -->
+        <table class="deals_table">
+            <tr>
+                <th class="thcompany">Company</th>
+                <th>Contact </th>
+                <th>Product</th>
+                <th>Price (SEK)</th>
+            </tr>
+        </table>
+        
+        <div class="addDeal_container">
+             Company: <input type="text" id="company"></input><br>
+             Contact person: <input type="text" id="contact"></input> <br>
+             Product: <input type="text" id="product"></input><br>
+             Price: <input type="number" id="price"></input> 
+            <button class="add" onclick="allOrders.createDeal()">Add</button>
+        </div>
+    <!-- </div> -->
+    </div>
+
+
+    <script src="/js/deals.js"></script>
+</body>
+
+</html>
