@@ -2,6 +2,7 @@ class Navbar{
     constructor(){
         this.icons = ["\uf015","\uf007","\uf234","\uf2f5"];
         this.text = ["Dashboard", "Customer","Add customer", "Log out"];
+        this.href = ["dashboard.html","index.html"];
         this.fontAwesome = "fontAwesome";
         this.dropBtn = "drop-btn";
     }
@@ -14,6 +15,13 @@ class Navbar{
             span.innerHTML = this.text[x];
             link.appendChild(span);
             link.classList.add(this.fontAwesome);
+            if(x == 0){
+                link.href = this.href[0];       // Behöver ändras för iconerna, respektive tas bort! 
+
+            }
+            else if(x == 1){
+                link.href = this.href[1];   
+            }
             if(x == 2){
                 link.classList.add(this.dropBtn);
                 span.classList.add(this.dropBtn);
