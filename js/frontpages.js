@@ -1,7 +1,9 @@
 document.getElementById("front-page").style.display = "none";
+let loginBtn = document.getElementById("loginBtn");
 
 
-// Creating eventListener for our 3 different kind of buttons. 
+
+/* Creating eventListener for our 3 different kind of buttons. */
 const backButton = document.getElementsByClassName("back");
 [...backButton].forEach((button) => {
     button.addEventListener("click", () => {
