@@ -2,7 +2,7 @@ class Navbar{
     constructor(){
         this.icons = ["\uf015","\uf007","\uf234","\uf2f5"];
         this.text = ["Dashboard", "Customer","Add customer", "Log out"];
-        this.href = ["dashboard.html","index.html"];
+        this.href = ["dashboard.html","index.html","frontpages.html"];
         this.fontAwesome = "fontAwesome";
         this.dropBtn = "drop-btn";
     }
@@ -16,18 +16,23 @@ class Navbar{
             link.appendChild(span);
             link.classList.add(this.fontAwesome);
             if(x == 0){
-                link.href = this.href[0];       // Behöver ändras för iconerna, respektive tas bort! 
-
+                link.href = this.href[0];       
             }
             else if(x == 1){
-                link.href = this.href[1];   
+                link.href = this.href[1];   // Behöver ändras för iconerna, respektive tas bort! 
             }
             if(x == 2){
                 link.classList.add(this.dropBtn);
                 span.classList.add(this.dropBtn);
                 dropdownContainer.appendChild(link).addEventListener("click", toggleDropdown);
                 sidebarContent.appendChild(link.cloneNode(true)).addEventListener("click", toggleDropdown);
-            } else{
+            } 
+            else if(x == 3){
+                link.href = this.href[2];
+                position.appendChild(link);
+                sidebarContent.appendChild(link.cloneNode(true));
+            }
+            else{
                 position.appendChild(link);
                 sidebarContent.appendChild(link.cloneNode(true));
             }

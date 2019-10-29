@@ -1,4 +1,4 @@
-document.getElementById("front-page").style.display = "none";
+document.getElementById("forgotPassword-page").style.display = "none";
 let loginBtn = document.getElementById("loginBtn");
 
 
@@ -46,3 +46,8 @@ const forgotPasswordButton = document.getElementsByClassName("forgot-password");
 });
 
 
+
+/* If the user click login this event runs */ 
+loginBtn.addEventListener("click", () => {
+    window.location.href = "dashboard.html";
+});
