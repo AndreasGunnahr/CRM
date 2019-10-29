@@ -1,0 +1,271 @@
+@import  url(https://fonts.googleapis.com/css?family=Squada+One&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-font: 'Roboto', sans-serif;
+    --h1-font:'Squada One', cursive;
+    --h1-color: #FFA500; 
+    --text-color: #FFFFFF;
+    --bg-color: #FFA500;
+    --font-weight: 900;
+}
+
+#wrapper{   
+    height: 100vh;
+    background: url('../img/bg-1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+} 
+
+#front-page,
+#register-page,
+#login-page,
+#forgotPassword-page{
+    height: 100vh;
+    display: grid; 
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Displaying only the front page in the beginning. */
+#register-page,
+#login-page{
+    display: none;
+}
+
+.fontAwesome{ 
+    font-family: var(--h1-font), FontAwesome, sans-serif; 
+    font-size: 16px;
+}
+
+
+/* -------- FRONT PAGE - START --------------- */
+/* Some of the styling is also used for login-page and register-page */
+
+.header-container{
+    grid-column: span 12;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--h1-font);
+    color: var(--h1-color);
+    margin-bottom: 25px;
+}
+
+.header-container h1{
+    font-size: 55px;
+}
+
+.header-container span{
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.middle-container{
+    grid-column: 3/7;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#front-page .middle-container .login,
+#login-page .middle-container .sign-up,
+#register-page .middle-container .login{
+    color: var(--h1-color);
+    font-family: var(--text-font);
+}
+
+
+
+.middle-container .button{
+    width: 90%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    margin-top: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-color) !important;
+    font-family: var(--text-font);
+    font-weight: bold;
+    outline: none;
+}
+
+.middle-container a:hover{
+    cursor: pointer;
+}
+
+.middle-container i{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.middle-container h3{
+    color: var(--h1-color);
+    font-family: var(--text-font);
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+/* -------- FRONT PAGE - END --------------- */
+
+
+
+
+/* -------- CREATE ACCOUNT - START --------------- */
+
+.back-container{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px;
+}
+
+.back-container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;  
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+    cursor: pointer;
+}
+
+.back-container i{
+    font-size: 35px;
+    margin-right: 5px;
+}
+
+input{
+    height: 60px;
+    width: 90%;
+    padding-left: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+
+#register-page .button,
+#login-page .button,
+#forgotPassword-page .button{
+    font-size: 25px;
+    height: 70px;
+    font-family: var(--h1-font);
+    font-weight: 300;
+}
+/* -------- CREATE ACCOUNT - END ------------- */
+
+
+/* -------- LOGIN - START ------------- */
+#login-page .header-container h1{
+    letter-spacing: 2px;
+}
+
+#login-page .middle-container .button{
+    margin-top: 50px;
+}
+
+#login-page .middle-container .forgot-password{
+    width: 90%;
+    font-family: var(--text-font);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--h1-color);
+    text-decoration: none;
+    text-align: right;
+    /* margin: -5px 10px 0 auto; */
+    letter-spacing: .5px;
+}
+
+/* -------- LOGIN - END ------------- */
+
+/* -------- FORGOT PASSWORD - START ------------- */
+
+#forgotPassword-page .header-container h1{
+    font-size: 50px;
+}
+
+.hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+    color: var(--h1-color);
+    font-family: var(--h1-font);
+    font-size: 20px;
+    letter-spacing: 1px;
+    width: 90%;
+    margin: 10px 0 10px 0;
+}
+.hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+    background: var(--h1-color);
+	height: 2px;
+	line-height: 0px;
+	margin: 0px 8px 0px 8px;
+}
+
+
+/* -------- FORGOT PASSWORD - END ------------- */
+
+/* -------- MEDIA  QUERIES - START ------------- */
+
+/* Being used for Iphone 5 */
+@media screen and (max-width: 520px){
+    .middle-container{
+        grid-column: span 8;
+    }
+    input{
+        width: 90%;
+    }
+
+    #front-page .header-container h1,
+    #register-page .header-container h1,
+    #login-page .header-container h1,
+    #forgotPassword-page .header-container h1{
+        font-size: 45px;
+    }
+
+    .back-container a{
+        font-size: 20px;
+    }
+
+    .back-container i {
+        font-size: 25px;
+    }
+}
+/* grid-column: 3 / 7; */
+
+@media screen and (min-width: 520px) and (max-width:1268px){
+    .middle-container{
+        grid-column: 2/8;
+    }
+}
+
+
+
+
+/* -------- MEDIA  QUERIES - END ------------- */

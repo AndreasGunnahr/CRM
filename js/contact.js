@@ -1,15 +1,14 @@
 let contactArray = ["Contact","Name","Email","Phone","Company"];
 
 let contactContainer = document.getElementsByClassName("contact-container")[0];
-let contactH1 = document.createElement("h1");
-contactH1.innerHTML = contactArray[0]
-contactContainer.appendChild(contactH1);
+// let contactH1 = document.createElement("h1");
+// contactH1.innerHTML = contactArray[0]
+// contactContainer.appendChild(contactH1);
+let emailAdress,fullName;  
 
 
 
 function generateContactInfo(arr,name){
-    let fullName;
-    let emailAdress;  
     contactContainer.innerHTML = "";
     let contactH1 = document.createElement("h1");
     contactH1.innerHTML = contactArray[0]
@@ -35,7 +34,6 @@ function generateContactInfo(arr,name){
                         if(item == "email"){
                             emailAdress = element[item];
                             contactA.setAttribute("id","sendEmail");
-                            
                         }
                         contactContainer.appendChild(contactA);
                     }
@@ -46,23 +44,18 @@ function generateContactInfo(arr,name){
      
     });
 
-    document.getElementById("sendEmail").addEventListener("click", () => { 
-        var emailBodyText = fetch("email.json")
-            .then((response) => response.json())
-            .then((responseJSON) => {
-                console.log("här");
-            // do stuff with responseJSON here...
-            // console.log(responseJSON.body);
-            let subjectEmail= "Help your company create better customer relationships! ";
-            let bodyEmail = responseJSON.body.replace(/\s\s+/g, "%0D%0A%0D%0A");
+    // let emailSend = document.getElementById("sendEmail").addEventListener("click", () => { 
+    //     var emailBodyText = fetch("email.json")
+    //         .then((response) => response.json())
+    //         .then((responseJSON) => {
+    //         let subjectEmail= "Help your company create better customer relationships! ";
+    //         let bodyEmail = responseJSON.body.replace(/\s\s+/g, "%0D%0A%0D%0A");
     
-            // console.log(bodyEmail);
-            // let test = responseJSON.body;
-            // console.log(test);
-            window.open("mailto:" + emailAdress + "?subject=" + subjectEmail +  "&body=" + bodyEmail);
+
+    //         window.open("mailto:" + emailAdress + "?subject=" + subjectEmail +  "&body=" + bodyEmail);
             
-        });
-    }); 
+    //     });
+    // }); 
 }
 
 

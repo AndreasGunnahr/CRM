@@ -33,7 +33,81 @@ calendar-module {
 
         i {
             transform: scale(1.5);
-            z-index:1;
+            z-index: 0;
+        }
+    }
+
+    .fas.fa-bell {
+        cursor: pointer;
+        grid-column: 7;
+        transform: scale(1.5);
+        color: darken($bg-color, 20);
+        grid-row: 1;
+        justify-self: right;
+        margin-right: 20px;
+        z-index: 2;
+    }
+
+    .fas.fa-bell.unread {
+        color: $color;
+    }
+
+    notification-list {
+        transform-origin: 50% 0;
+        grid-column: 1 / 7;
+        grid-row: 3;
+        display: grid;
+        position: absolute;
+        z-index: 1;
+        background: $bg-color;
+        transition: 0s transform ease-in-out;
+        overflow-y: scroll;
+        padding: 20px 0;
+
+        notification-item {
+            opacity: inherit;
+            height: 50px;
+            width: 100%;
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 20px;
+            //box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+            display: grid;
+            padding-left: 20px;
+
+
+            notification-text, notification-customer {
+                @extend %paragraph;
+                opacity: inherit;
+                text-align: left;
+                justify-self: left;
+                grid-column: 1;
+                color: $bg-color;
+                padding: 5px;
+                height: 100%;
+            }
+
+            .strikethrough {
+                text-decoration: line-through;
+            }
+
+            i {
+                grid-column: 2;
+                justify-self: right;
+                align-self: center;
+                color: lighten($bg-color, 10);
+                transition-duration: 0.1s;
+            }
+
+            notification-customer {
+                content: "\f2c2";
+                grid-column: 3;
+                font-weight: bold;
+                text-align: right;
+                justify-self: left;
+                margin-right: 10px;
+                font-size: 0.8em;
+            }
         }
     }
 
@@ -185,5 +259,10 @@ calendar-module {
         event-dot {
             opacity: 0;
         }
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px; 
+        background: transparent; 
     }
 }
