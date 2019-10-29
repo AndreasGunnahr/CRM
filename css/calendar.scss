@@ -36,6 +36,19 @@ calendar-module {
             z-index:1;
         }
     }
+        .fas.fa-bell {
+            cursor: pointer;
+            grid-column: 7;
+            transform: scale(1.5);
+            color: darken($bg-color, 20);
+            grid-row: 1;
+            justify-self: right;
+            margin-right: 20px;
+        }
+    
+        .unread {
+            color: $color;
+        }
 
     nav-right {
         grid-row: 2;

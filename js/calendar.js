@@ -67,6 +67,7 @@ class EventList {
         this.items = [];
         this.createHTML();
         this.populateItems();
+        this.sendNotifications();
         this.checkCurrent = new CustomEvent('checkCurrent', {
             detail: this.parent.querySelector('p').innerText
         });
@@ -74,6 +75,20 @@ class EventList {
         this.parent.addEventListener('click', () => {
             this.parent.parentNode.dispatchEvent(this.checkCurrent);  
         })
+    }
+
+    sendNotifications() {
+        let notif = new CustomEvent('notifications', {
+            detail: {
+                items: this.items
+            }
+        })
+
+        if(this.date == new Date()) {
+            
+        }
+
+        this.parent.dispatchEvent(notif);
     }
 
     populateItems() {
@@ -121,6 +136,29 @@ class EventList {
     }
 }
 
+class NotificationList {
+    constructor(parent) {
+        this.parent = parent;
+        this.icon = this.createIcon();
+        this.container = document.createElement('notification-list');
+        this.createHTML();
+    }
+
+    createHTML() {
+        this.parent.appendChild(this.icon);
+        this.parent.addEventListener('notifications', (e) => {
+            console.log('recieved notifications');
+            console.log(e.detail.items)
+        })
+    }
+
+    createIcon() {
+        let i = document.createElement('i');
+        i.classList.add('fas', 'fa-bell');
+        return i;
+    }
+}
+
 class Calendar extends CalendarUtils {
     constructor(pathToCSS) {
         super();
@@ -131,6 +169,8 @@ class Calendar extends CalendarUtils {
                 event.checkToggle(e.detail);
             })
         })
+
+        this.notificationList = new NotificationList(this.container);
 
         this.date = new Date();
         this.currentDate = new Date();
