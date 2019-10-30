@@ -1,9 +1,6 @@
 let contactArray = ["Contact","Name","Email","Phone","Company"];
 
 let contactContainer = document.getElementsByClassName("contact-container")[0];
-// let contactH1 = document.createElement("h1");
-// contactH1.innerHTML = contactArray[0]
-// contactContainer.appendChild(contactH1);
 let emailAdress,fullName;  
 
 

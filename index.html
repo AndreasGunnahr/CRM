@@ -44,14 +44,25 @@
                 <div class = "contact-container"></div>
             </div>
             <div class = "middle-container">
-                <h1 class = "customer-name-h1">Customer name</h1>
-                <div class = "comment-container">
-                    <div class = "comment-outer-container">
-                        <h1 class = "comment-header-h1">Customer History</h1>
-                        <div class = "comment-inner-container">
+                <div class = "all-customers-container">
+                    <h1>Customers</h1>
+                    <div class = "show-all-customers">
+                        <div class = "show-all-customers-container">
+                            <div class = "show-all-table"></div>
+                            <input id = "searchAllCustomer" placeholder = "Search for customer or company">
                         </div>
-                        <input class = "comment-input" placeholder = "Write your comment here">
-                        <button class = "comment-add-btn">ADD</button>
+                    </div>
+                </div>
+                <div class = "comments-container">
+                    <h1 class = "customer-name-h1">Customer name</h1>
+                    <div class = "comment-container">
+                        <div class = "comment-outer-container">
+                            <h1 class = "comment-header-h1">Customer History</h1>
+                            <div class = "comment-inner-container">
+                            </div>
+                            <input class = "comment-input" placeholder = "Write your comment here">
+                            <button class = "comment-add-btn">ADD</button>
+                        </div>
                     </div>
                 </div>
                 <div class = "deals-container">
@@ -89,7 +100,6 @@
                         <button id="open_input_container" onclick="openInputContainer()"><i class="fa fa-plus"></i></button>
                         <div id="items_container">
                             <ul id="current_items_list" class="checked">
-                                
                             </ul>
                         </div>
                         <div id="input_container">
@@ -104,8 +114,7 @@
                 </div>
                 <!-- TODOLIST END -->
 
-                <div class = "survey-container">
-                </div>
+                <div class = "survey-container"></div>
             </div>
         </div>
         </div>  
@@ -116,6 +125,7 @@
         <script src="js/todoMini.js"></script>
         <script src = "js/survey.js"></script>
         <script src = "js/deals.js"></script>
+        <script src = "js/AllCustomers.js"></script>
         <script src="js/contact.js"></script>
         <script src="js/search.js"></script>
     </body>
