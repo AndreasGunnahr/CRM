@@ -6,6 +6,22 @@ class Comment {
         this.name = name;
         this.comment = comment;
         this.date = date;
+        this.image1 = '<i class="fas fa-phone-alt"></i>';
+        this.image2 = '<i class="fas fa-envelope"></i>';
+        this.image3 = '<i class="fas fa-envelope"></i>';
+        this.image4 = '<i class="fas fa-poll"></i>';
+        this.image5 = '<i class="fas fa-poll"></i>';
+        this.image6 = '<i class="fas fa-comment-dots"></i>';
+        this.image7 = '<i class="fas fa-comment-dots"></i>';
+        this.events = [
+            {image: this.image1, title: "Logged phone call"},
+            {image: this.image2, title: "Sent email"},
+            {image: this.image3, title: "Email received"},
+            {image: this.image4, title: "Sent NPS-survey"},
+            {image: this.image5, title: "NPS-survey answered"},
+            {image: this.image6, title: "Sent text message"},
+            {image: this.image7, title: "Text message received"}
+        ]; 
     }
 }
 
@@ -40,7 +56,7 @@ function createComments() {
         commentContainer.appendChild(commentSpan);
         commentSpan.scrollIntoView(false);
         commentInput.value = "";
-        // let newComment = new Comment("Andreas", "Ringde ICA", "1970-01-01");
+        // let newComment = new Comment("Ella", "Ringde ICA", "1970-01-01");
         // let postComment = mockup.post("comment");
         // console.log(values);
     }
@@ -50,6 +66,7 @@ function createComments() {
 async function generateRandomComments() {
     commentContainer.innerHTML = "";
     let randomComments = await mockup.getRandom("comment", 8);
+
     randomComments.forEach(comment => {
         let commentSpan = document.createElement("SPAN");
         let commentP = document.createElement("P");
@@ -57,7 +74,28 @@ async function generateRandomComments() {
         commentP.classList.add("comment-p");
         commentSpan.innerHTML = comment.date.substr(0, 10);
         commentP.innerHTML = comment.comment;
-        commentSpan.appendChild(commentP);
+
         commentContainer.appendChild(commentSpan);
+        commentSpan.appendChild(commentP);
+        
+        //Creates random events and append it randomly between ordinary comments
+        let rand = Math.floor((Math.random() * newComment.events.length));
+        let historyEvents = newComment.events[rand]; 
+
+        let eventSpan = document.createElement("SPAN");
+        let eventP = document.createElement("P");
+        eventSpan.classList.add("event-span");
+        eventP.classList.add("event-p");
+        
+        eventSpan.innerHTML = comment.date.substr(0, 10);
+        eventP.innerHTML = historyEvents.image + " " + historyEvents.title;
+        
+        if ((Math.random() < 0.5)) {
+            commentContainer.appendChild(eventSpan);
+            eventSpan.appendChild(eventP);
+        }
+        
     });
-}
+ }
+
+let newComment = new Comment();
