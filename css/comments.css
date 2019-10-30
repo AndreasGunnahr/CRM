@@ -68,12 +68,30 @@ button {
   font-weight: 900;
 }
 
+.comment-outer-container .comment-inner-container .event-span {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 900;
+  color: #FFA500;
+}
+
 .comment-outer-container .comment-inner-container .comment-span .comment-p {
   font-size: 16px;
   font-weight: 100;
   font-style: normal;
   word-break: break-all;
   margin-bottom: 10px;
+ 
+}
+
+.comment-outer-container .comment-inner-container .event-span .event-p {
+  font-size: 16px;
+  font-weight: 100;
+  font-style: normal;
+  word-break: break-all;
+  margin-bottom: 10px;
+  color: #FFA500;
 }
 
 .comment-outer-container .comment-input {
