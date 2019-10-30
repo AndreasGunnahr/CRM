@@ -30,7 +30,7 @@ function createSurveyContent(){
             var emailBodyText = fetch("email.json")
                 .then((response) => response.json())
                 .then((responseJSON) => {
-                let subjectEmail= "Help your company create better customer relationships! ";
+                let subjectEmail= "We value your opinion! ";
                 let bodyEmail = responseJSON.body.replace(/\s\s+/g, "%0D%0A%0D%0A");
     
     
