@@ -152,6 +152,19 @@
         font-size: 24px;  
     }
 
+    .todo-container #input_container .closeContainer {
+        margin: auto auto;
+        grid-row: 1;
+        grid-column: 5/6;
+        background-color: #FFA500;
+        border-radius: 15px;
+        height: 30%;
+        width: 30%;
+        border: none;
+        font-size: 24px;
+
+    }
+
      input[type=checkbox] {
         background-color: #302F2F;
     }  
