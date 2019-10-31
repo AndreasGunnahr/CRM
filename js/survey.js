@@ -35,13 +35,9 @@ function createSurveyContent(){
     
     
                 window.open("mailto:" + emailAdress + "?subject=" + subjectEmail +  "&body=" + bodyEmail);
-                console.log(emailAdress)
          });
         }
     });
-
-
-
 
 }
 
