@@ -80,6 +80,7 @@ window.onload  = function(){
     let movedToDashboardPage = localStorage.getItem("movedToDashboardPage");
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
+    createSurveyContent();
     if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
         document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
         document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
@@ -92,7 +93,7 @@ window.onload  = function(){
         document.getElementsByTagName("bg-container")[0].style.left = "0";
         document.getElementsByTagName("bg-container")[0].style.width = "calc(100vw - 420px)";
         createAllCustomerContent();
-        createSurveyContent();
+        // createSurveyContent();
     
         
         localStorage.setItem("clickedCustomersNav", false);
@@ -105,14 +106,14 @@ window.onload  = function(){
             let userInfo = JSON.parse(localStorage.getItem("UserInfo"));
             document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
             generateRandomComments();
+            
             generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
-            createSurveyContent();
+            // createSurveyContent();
         }
         
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
-        createSurveyContent();
-        console.log("här")
+        // createSurveyContent();
         localStorage.setItem("movedToDashboardPage", false);
         localStorage.setItem("clickedCustomersNav", false);
     }
