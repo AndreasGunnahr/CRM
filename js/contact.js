@@ -1,6 +1,9 @@
 let contactArray = ["Contact","Name","Email","Phone","Company"];
 
 let contactContainer = document.getElementsByClassName("contact-container")[0];
+// let contactH1 = document.createElement("h1");
+// contactH1.innerHTML = contactArray[0]
+// contactContainer.appendChild(contactH1);
 let emailAdress,fullName;  
 
 
@@ -10,10 +13,8 @@ function generateContactInfo(arr,name){
     let contactH1 = document.createElement("h1");
     contactH1.innerHTML = contactArray[0]
     contactContainer.appendChild(contactH1);
-    console.log(name);
     arr.forEach(element => {
         fullName = element.firstName + " " + element.lastName; 
-        console.log(fullName);
         if(fullName === name){
             let index = 1;
             for(let item in element){

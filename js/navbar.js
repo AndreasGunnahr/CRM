@@ -16,19 +16,10 @@ class Navbar{
             link.appendChild(span);
             link.classList.add(this.fontAwesome);
             if(x == 0){
-                link.href = this.href[0];   
-                link.addEventListener("click", () => {
-                    localStorage.setItem("clickedCustomersNav", false);
-                    localStorage.setItem("movedToDashboardPage", true);
-                })    
+                link.href = this.href[0];       
             }
             else if(x == 1){
-                link.href = this.href[1];
-                link.setAttribute("id","customerNav");
-                link.addEventListener("click", () => {
-                    localStorage.setItem("clickedCustomersNav", true);
-                    localStorage.setItem("movedToDashboardPage", false);
-                })
+                link.href = this.href[1];   // Behöver ändras för iconerna, respektive tas bort! 
             }
             if(x == 2){
                 link.classList.add(this.dropBtn);
@@ -115,5 +106,3 @@ function closeNav() {
     document.getElementById("sidebar").style.width = "0";
     // document.getElementById("main").style.marginLeft= "0";
 }
-
-
