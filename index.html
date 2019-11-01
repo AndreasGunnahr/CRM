@@ -1,92 +1,100 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/comments.css">
-        <link rel="stylesheet" href="css/deals.css">
-        <link rel="stylesheet" href="css/todoMini.css">
-        <link rel="stylesheet" href="css/search.css">
-        <link rel="stylesheet" href="css/contact.css">
-        <link rel="stylesheet" href="css/survey.css">
-        <script src = "js/mockup.js"></script>
-        <script src="js/calendar.js"></script>
-        <script src="https://kit.fontawesome.com/fca6d7d29b.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    </head>
-    <body> 
-        <div id = "wrapper"></div> 
-        <div id="sidebar" class="sidebar">
-            <div class = "sidebar-content"></div>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/comments.css">
+    <link rel="stylesheet" href="css/deals.css">
+    <link rel="stylesheet" href="css/todoMini.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/survey.css">
+    <script src="js/mockup.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="https://kit.fontawesome.com/fca6d7d29b.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="wrapper"></div>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content"></div>
+    </div>
+    <div id="main">
+        <nav>
+            <div id="hamburger" onclick="openNav()"></div>
+            <div class="left"></div>
+            <div class="center">
+                <div class="search-list"></div>
+            </div>
+            <div class="right">
+                <div class="dropdown">
+                    <div id="myDropdown" class="dropdown-content"></div>
+                </div>
+            </div>
+        </nav>
+        <div class="create-screen">
+            <div id="createCustomer" class="create-content"></div>
         </div>
-        <div id = "main">
-            <nav>
-                <div id="hamburger" onclick="openNav()"></div>
-                <div class = "left"></div>
-                <div class = "center">
-                    <div class = "search-list"></div>
-                </div>
-                <div class = "right">
-                    <div class = "dropdown">
-                        <div id="myDropdown" class="dropdown-content"></div>
+        <!-- </div> -->
+        <div id=main-content>
+            <div class="contact-container"></div>
+            <div class="all-customers-container">
+                <h1>Customers</h1>
+                <div class="show-all-customers">
+                    <div class="show-all-customers-container">
+                        <div class="show-all-table"></div>
+                        <input id="searchAllCustomer" placeholder="Search for customer or company">
                     </div>
                 </div>
-            </nav>
-            <div class = "create-screen">
-                <div id = "createCustomer" class = "create-content"></div>
             </div>
-        <div id = main-content>
-            <div class = "left-container">
-                <div class = "contact-container"></div>
-            </div>
-            <div class = "middle-container">
-                <h1 class = "customer-name-h1">Customer name</h1>
-                <div class = "comment-container">
-                    <div class = "comment-outer-container">
-                        <h1 class = "comment-header-h1">Customer History</h1>
-                        <div class = "comment-inner-container">
+            <div class="comments-container">
+                <h1 class="customer-name-h1">Customer name</h1>
+                <div class="comment-container">
+                    <div class="comment-outer-container">
+                        <h1 class="comment-header-h1">Customer History</h1>
+                        <div class="comment-inner-container">
                         </div>
-                        <input class = "comment-input" placeholder = "Write your comment here">
-                        <button class = "comment-add-btn">ADD</button>
-                    </div>
-                </div>
-
-                <!-- DEALS -->
-                <div class = "deals-container">
-                    <div class="deals">
-                        <button id="addDeal" class="fas fa-plus" onclick="openPlus()"></button>
-                        <h2 class = "h2-header">LATEST DEALS</h2>
-                        <table class="deals_table">
-                            <tr>
-                                <th class="thcompany">Company</th>
-                                <th>Contact </th>
-                                <th>Product</th>
-                                <th>Price (SEK)</th>
-                            </tr>
-                        </table>
-                        
-                        <div class="addDeal_container">
-                             Company: <br> <input type="text" id="company"></input><br>
-                             Contact person: <br> <input type="text" id="contact"></input> <br>
-                             Product: <br> <input type="text" id="product"></input><br>
-                             Price: <br> <input type="number" id="price"></input> 
-                            <button class="add" onclick="allOrders.createDeal()">Add</button>
-                        </div>
+                        <input class="comment-input" placeholder="Write your comment here">
+                        <button class="comment-add-btn">ADD</button>
                     </div>
                 </div>
             </div>
-            <div class = "right-container">
-                <div class = "calender-container">
-                    <calendar-module></calendar-module>
+
+            <!-- DEALS -->
+            <div class = "deals-container">
+                <div class="deals">
+                    <button id="addDeal" class="fas fa-plus" onclick="openPlus()"></button>
+                    <h2 class = "h2-header">LATEST DEALS</h2>
+                    <table class="deals_table">
+                        <tr>
+                            <th class="thcompany">Company</th>
+                            <th>Contact </th>
+                            <th>Product</th>
+                            <th>Price (SEK)</th>
+                        </tr>
+                    </table>
+                    
+                    <div class="addDeal_container">
+                         Company: <br> <input type="text" id="company"></input><br>
+                         Contact person: <br> <input type="text" id="contact"></input> <br>
+                         Product: <br> <input type="text" id="product"></input><br>
+                         Price: <br> <input type="number" id="price"></input> 
+                        <button class="add" onclick="allOrders.createDeal()">Add</button>
+                    </div>
                 </div>
-
-                <!-- DEALS END -->
-
-                <!-- TODOLIST -->
+            </div>
+            <div class="calender-container">
+                <calendar-module></calendar-module>
+            </div>
+            <!-- DEALS END -->
+            <!-- TODOLIST -->
+            <div class="todo-container">
                 <div class = "todo-container">
                     <div class="todo">
                         <h2>Todo</h2>
@@ -112,20 +120,21 @@
                     </div>
                 </div>
                 <!-- TODOLIST END -->
-
-                <div class = "survey-container">
-                </div>
             </div>
+            <!-- TODOLIST END -->
+            <div class="survey-container"></div>
         </div>
-        </div>  
-        <script src="js/todoCalendarSync.js"></script>
-        <script src = "js/addCustomer.js"></script>
-        <script src = "js/navbar.js"></script>
-        <script src = "js/comments.js"></script>
-        <script src="js/todoMini.js"></script>
-        <script src = "js/survey.js"></script>
-        <script src = "js/deals.js"></script>
-        <script src="js/contact.js"></script>
-        <script src="js/search.js"></script>
-    </body>
+    </div>
+    <script src="js/todoCalendarSync.js"></script>
+    <script src="js/addCustomer.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/todoMini.js"></script>
+    <script src="js/survey.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/deals.js"></script>
+    <script src="js/AllCustomers.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
 </html>

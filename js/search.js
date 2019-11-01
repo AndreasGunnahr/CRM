@@ -57,8 +57,9 @@ searchResult.addEventListener("mousedown",(e) =>{
     if(e.target.className == "search-customer" || e.target.className == "search-company" ){
         localStorage.setItem("UserInfo", JSON.stringify(e.target.textContent.trim().split("\n")));
         /* Checks if the user have made a search from the dashboard - then redirect the user to the customer page */
-        if(window.location.pathname == ("/dashboard.html")){
-            localStorage.setItem("checker", true);
+        if(window.location.pathname == ("/dashboard.html") || window.location.pathname == ("/index.html")){
+            localStorage.setItem("movedToDashboardPage", false);
+            localStorage.setItem("pickedCustomerDropdown",true);
             document.location.href = "index.html";
         }
         else{
@@ -68,27 +69,46 @@ searchResult.addEventListener("mousedown",(e) =>{
             generateContactInfo(arr,userInfo[0]);
             
         }
-        
     }
 });
 
 
-/* Checks if the user have made a search from the dash  */
+
+
+/* Checks if the user have made a search from the dashboard  */
 window.onload  = function(){
-    let check = localStorage.getItem("checker");
-    if((window.location.pathname == ("/index.html")) && check){
-        let userInfo = JSON.parse(localStorage.getItem("UserInfo"));
-        localStorage.setItem("checker", false);
-        document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
-        generateRandomComments();
-        generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
+    let movedToDashboardPage = localStorage.getItem("movedToDashboardPage");
+    let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
+    let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown")
+    if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
+        document.getElementsByClassName("contact-container")[0].style.display = "none";
+        document.getElementsByClassName("deals-container")[0].style.display = "none";
+        document.getElementsByClassName("comments-container")[0].style.display = "none";
+        document.getElementById("main-content").style.gridTemplateColumns = "1fr 420px";
+        createAllCustomerContent();
         createSurveyContent();
+        
+        localStorage.setItem("clickedCustomersNav", false);
+
+    }
+    
+    else if(window.location.pathname == "/index.html" && pickedCustomerDropdown == "true"){
+        document.getElementsByClassName("all-customers-container")[0].style.display = "none";
+        
+            let userInfo = JSON.parse(localStorage.getItem("UserInfo"));
+            document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
+            generateRandomComments();
+            generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
+            createSurveyContent();
+        }
+        
+
+    else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
+  
+        localStorage.setItem("movedToDashboardPage", false);
+        localStorage.setItem("clickedCustomersNav", false);
     }
 }
-
-
-
-
 
 
 

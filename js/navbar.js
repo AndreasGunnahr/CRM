@@ -16,10 +16,19 @@ class Navbar{
             link.appendChild(span);
             link.classList.add(this.fontAwesome);
             if(x == 0){
-                link.href = this.href[0];       
+                link.href = this.href[0];   
+                link.addEventListener("click", () => {
+                    localStorage.setItem("clickedCustomersNav", false);
+                    localStorage.setItem("movedToDashboardPage", true);
+                })    
             }
             else if(x == 1){
-                link.href = this.href[1];   // Behöver ändras för iconerna, respektive tas bort! 
+                link.href = this.href[1];
+                link.setAttribute("id","customerNav");
+                link.addEventListener("click", () => {
+                    localStorage.setItem("clickedCustomersNav", true);
+                    localStorage.setItem("movedToDashboardPage", false);
+                })
             }
             if(x == 2){
                 link.classList.add(this.dropBtn);

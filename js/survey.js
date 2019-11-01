@@ -1,5 +1,5 @@
-let surveyTexts = ["Total number of survey sent: ", "Total number of answers: ", "Latest survey sent: "];
-let surveySpan = [Math.floor(Math.random() * (200 - 180 + 1) + 180), Math.floor(Math.random() * (150 - 100 + 1) + 100), "Work Ethics"];
+let surveyTexts = ["Total number of survey sent: ", "Total number of answers: "];
+let surveySpan = [Math.floor(Math.random() * (200 - 180 + 1) + 180), Math.floor(Math.random() * (150 - 100 + 1) + 100)];
 let surveyContainer = document.getElementsByClassName("survey-container")[0];
 
 function createSurveyContent(){
