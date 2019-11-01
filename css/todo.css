@@ -3,7 +3,7 @@
     color: #F6F4F0;
     border: 5px solid #FFA500;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 400px;
     font-size: 26px;
     /* height: 90%; */
@@ -145,7 +145,7 @@
         padding: 2%;
     }
 
-    ::placeholder {
+    #new_todo::placeholder {
         font-size: 12px;
         font-family: 'Roboto', sans-serif;
     }
@@ -158,7 +158,7 @@
         color: #302F2F;
         align-self: center;
         font-size: 30px;
-        margin: 1%;
+        margin-bottom: 2%;
     }
     
     #calendar {
