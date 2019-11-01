@@ -45,8 +45,6 @@ const forgotPasswordButton = document.getElementsByClassName("forgot-password");
     });
 });
 
-
-
 /* If the user click login this event runs */ 
 loginBtn.addEventListener("click", () => {
     let uid = document.getElementById('email');
