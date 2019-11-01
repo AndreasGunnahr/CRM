@@ -61,19 +61,26 @@ button {
   overflow-y: scroll;
 }
 
-.comment-outer-container .comment-inner-container .comment-span {
+.comment-outer-container .comment-inner-container .comment-span,
+.comment-outer-container .comment-inner-container .event-span  {
   font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 13px;
   font-weight: 900;
 }
 
-.comment-outer-container .comment-inner-container .comment-span .comment-p {
+.comment-outer-container .comment-inner-container .comment-span .comment-p,
+.comment-outer-container .comment-inner-container .event-span .event-p {
   font-size: 16px;
   font-weight: 100;
   font-style: normal;
   word-break: break-all;
   margin-bottom: 10px;
+}
+
+.comment-outer-container .comment-inner-container .event-span .event-p, .comment-outer-container .comment-inner-container .event-span { 
+  color: #FFA500;
+  text-shadow: 0.3px 0.3px #916109;
 }
 
 .comment-outer-container .comment-input {
