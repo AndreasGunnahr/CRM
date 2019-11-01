@@ -85,27 +85,16 @@ li {
     grid-template-rows: 1fr 1fr; */
     border-radius: 5px;
     grid-column-gap: 1%;
-<<<<<<< HEAD
-    /* margin: 2%; */
-    /* width: 100%; */
-=======
     margin-left: 1%;
     width: 92%;
->>>>>>> Todo
 }
 
 /* .input_container button { */
     /* grid-column-start: 1;
     grid-column-end: 2;
-<<<<<<< HEAD
-    grid-column-end: auto; */
-    /* height: 90%;
-    width: 80%;
-=======
     grid-column-end: auto;
     height: 90%;
     width: 70%;
->>>>>>> Todo
     justify-self: end;
     border: none;
     background-color: #302F2F;
@@ -115,17 +104,9 @@ li {
 
 
 #new_todo {
-<<<<<<< HEAD
-    /* grid-row: 5;
-    grid-column: ; */
-    /* grid-column-start: 2;
-    grid-column-end: 7; 
-    grid-row-start: 1; */
-=======
     grid-column-start: 2;
     grid-column-end: 6; 
     grid-row-start: 1;
->>>>>>> Todo
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
     height: 90%;
