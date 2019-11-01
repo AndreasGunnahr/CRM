@@ -41,6 +41,7 @@ button {
   grid-gap: 10px;
   background-color: #302F2F;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .comment-outer-container .comment-header-h1 {
