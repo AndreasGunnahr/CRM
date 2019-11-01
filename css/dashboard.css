@@ -19,62 +19,24 @@ button {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 520px !important;
-  background-image: url("../img/bg-1.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-#main-content .left-container {
   background-color: #302F2F;
 }
 
-#main-content .left-container .contact-container {
-  margin-top: 20px;
-  height: 620px;
-  border: 3px solid yellow;
-}
-
-#main-content .middle-container {
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-#main-content .middle-container .customer-name-h1 {
-  font-size: 50px;
-  color: #FFA500;
-  font-family: "Squada One", cursive;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#main-content .middle-container .comment-container {
+#main-content .deals-container {
   height: 520px;
-  border: 3px solid purple;
-  margin-bottom: 40px;
+  padding: 20px;
 }
 
-#main-content .middle-container .deals-container {
-  height: 520px;
-  border: 3px solid orange;
-}
-
-#main-content .right-container {
-  background-color: #302F2F;
-  display: flex;
-  flex-direction: column;
-}
-
-#main-content .right-container .calender-container {
+#main-content .calender-container {
   height: 320px;
   margin: 20px 0 20px 0;
 }
 
-#main-content .right-container .todo-container {
-  height: 320px;
-  margin-bottom: 20px;
+#main-content .todo-container {
+  padding: 20px;
 }
 
-#main-content .right-container .survey-container {
+#main-content .survey-container {
   height: 320px;
   border: 3px solid blue;
   margin-bottom: 20px;

@@ -4,54 +4,25 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 520px !important;
-    background-image: url("../img/bg-1.jpg");
-    background-size: cover;
-    background-position: center;
-    .left-container{
-        background-color: $bg-color;
-        .contact-container{
-            margin-top: 20px;
-            height: 620px;
-            border: 3px solid yellow;
-        }
+    background-color: $bg-color;
+    .deals-container{
+        height: 520px;
+        // border: 3px solid orange;
+        padding: 20px;
     }
-    .middle-container{
-        padding: 40px;
-        background: rgba(0, 0, 0, 0.4);
-        .customer-name-h1{
-            font-size: 50px;
-            color: $color;
-            font-family: $font-h1;
-            text-align: center;
-            margin-bottom: 20px;
-            
-        }
-        .comment-container{
-            height: 520px;
-            border: 3px solid purple;
-            margin-bottom: 40px;
-        }
-        .deals-container{
-            height: 520px;
-            border: 3px solid orange;
-        }
+    
+    .calender-container{
+        height: 320px;
+        margin: 20px 0 20px 0;
     }
-    .right-container{
-        background-color: $bg-color;
-        display:flex;
-        flex-direction: column;
-        .calender-container{
-            height: 320px;
-            margin: 20px 0 20px 0;
-        }
-        .todo-container{
-            height: 320px;
-            margin-bottom: 20px;
-        }
-        .survey-container{
-            height: 320px;
-            border: 3px solid blue;
-            margin-bottom: 20px;
-        }
+    .todo-container{
+        // height: 620px;
+        padding: 20px;
     }
+    .survey-container{
+        height: 320px;
+        border: 3px solid blue;
+        margin-bottom: 20px;
+    }
+    
 }

@@ -11,7 +11,7 @@ let arrayAllCustomers,tempArr = [];
 const searchAllCustomer = async searchText => {
     const states = await mockup.getRandom('customer', 25);
     arrayAllCustomers = states;
-    localStorage.setItem("")
+    // localStorage.setItem("")
     let matches = states.filter( state => {
         /* Filter our search results */
         let regex = new RegExp(`^${searchText}`, 'gi');
