@@ -51,22 +51,25 @@ const forgotPasswordButton = document.getElementsByClassName("forgot-password");
 loginBtn.addEventListener("click", () => {
     let uid = document.getElementById('email');
     let pwd = document.getElementById('password');
+    let found = false;
 
+    //Redirects to dashboard if pwd/uid matches existing account
     accounts.forEach((acc) => {
         if(acc.uid == uid.value && acc.pwd == pwd.value) {
+            found = true;
             window.location.href = "dashboard.html";
         }
     })
 
-    uid.value = '';
-    pwd.value = '';
-    
-    alert('Incorrect e-mail/password');
-
+    if(!found) {
+        uid.value = '';
+        pwd.value = '';
+        
+        alert('Incorrect e-mail/password');
+    }
 });
 
 //Usernames and passwords
-
 let accounts = [
     {
         uid: 'micke@emmio.se',
