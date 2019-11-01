@@ -434,8 +434,11 @@ html {
 
 #main #main-content .comments-container .comment-container {
   height: 520px;
-  border: 3px solid #FFA500;
   margin: 20px;
+}
+
+#main #main-content .comments-container .comment-container .comment-outer-container {
+  border-radius: 10px;
 }
 
 #main #main-content .deals-container {
