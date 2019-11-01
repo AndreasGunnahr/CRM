@@ -28,7 +28,6 @@ button {
   font-family: "Squada One", cursive;
   font-size: 35px;
   text-align: center;
-  text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
 }
@@ -47,6 +46,7 @@ button {
   width: 100%;
   font-size: 15px;
   color: white;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 

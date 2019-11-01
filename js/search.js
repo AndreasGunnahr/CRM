@@ -108,7 +108,8 @@ window.onload  = function(){
         
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
-  
+        createSurveyContent();
+        console.log("här")
         localStorage.setItem("movedToDashboardPage", false);
         localStorage.setItem("clickedCustomersNav", false);
     }

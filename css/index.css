@@ -425,6 +425,7 @@ html {
   font-family: "Squada One", cursive;
   text-align: center;
   margin: 40px 20px 40px 20px;
+  text-transform: uppercase;
 }
 
 #main #main-content .comments-container {
