@@ -319,7 +319,8 @@ html {
   top: 0;
   width: calc(100vw - 660px);
   height: 100vh;
-  background: url("../img/bg-1.jpg");
+  background: url("../img/bg-1.jpg") rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
 }
@@ -327,6 +328,7 @@ html {
 #main #main-content .contact-container {
   grid-column: 1;
   height: 620px;
+  border: 3px solid #FFA500;
   padding: 20px;
   z-index: 1;
 }
@@ -434,11 +436,8 @@ html {
 
 #main #main-content .comments-container .comment-container {
   height: 520px;
+  border: 3px solid #FFA500;
   margin: 20px;
-}
-
-#main #main-content .comments-container .comment-container .comment-outer-container {
-  border-radius: 10px;
 }
 
 #main #main-content .deals-container {

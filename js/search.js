@@ -81,16 +81,19 @@ window.onload  = function(){
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
     if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
+        document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
+        document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
         document.getElementsByClassName("contact-container")[0].style.display = "none";
         document.getElementsByClassName("deals-container")[0].style.display = "none";
         document.getElementsByClassName("comments-container")[0].style.display = "none";
         document.getElementsByClassName("survey-container")[0].style.display = "none";
         document.getElementsByClassName("todo-container")[0].style.gridRow = "2";
         document.getElementsByClassName("todo-container")[0].style.margin = "0 0 auto 0";
-        document.getElementById("main-content").style.gridTemplateColumns = "1fr 420px";
-        document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
+        document.getElementsByTagName("bg-container")[0].style.left = "0";
+        document.getElementsByTagName("bg-container")[0].style.width = "calc(100vw - 420px)";
         createAllCustomerContent();
         createSurveyContent();
+    
         
         localStorage.setItem("clickedCustomersNav", false);
 

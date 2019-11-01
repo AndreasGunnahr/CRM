@@ -43,7 +43,6 @@ function showAllCustomers(matches){
         let rows = document.getElementsByClassName("row");
         for(var row in rows){
            rows[row].addEventListener("click", (e) =>{
-            //    console.log(JSON.stringify(e.path[1].children[0].innerHTML + "." + e.path[1].children[1].innerHTML).split("."))
                 window.location.href = "/index.html";
                 tempArr[0] = e.path[1].children[0].innerHTML;
                 tempArr[1] = e.path[1].children[1].innerHTML;

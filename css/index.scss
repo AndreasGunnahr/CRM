@@ -284,7 +284,8 @@ html {
             top: 0;
             width: calc(100vw - 660px);
             height: 100vh;
-            background: url('../img/bg-1.jpg');
+            background: url('../img/bg-1.jpg') rgba(0,0,0,0.4);
+            background-blend-mode: multiply;
             background-size: cover;
             background-position: center;
         }
@@ -298,6 +299,8 @@ html {
             z-index: 1;
         }
         .all-customers-container{
+            // overflow: auto;
+            // width: fit-content;
             z-index: 1;
             height: 80vh;
             padding: 20px;
