@@ -93,7 +93,7 @@
         grid-row-start: 4;
         grid-row-end: 5;
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-rows: 40px;
         border-radius: 5px;
         grid-column-gap: 1%;
         margin-left: 1%;
@@ -105,7 +105,7 @@
         grid-column-start: 1;
         grid-column-end: 2;
         grid-column-end: auto;
-        height: 90%;
+        height: 100%;
         width: 70%;
         justify-self: end;
         border: none;
@@ -128,9 +128,9 @@
         grid-row-start: 1;
         font-family: 'Roboto', sans-serif;
         border-radius: 10px;
-        height: 90%;
+        height: 100%;
         border: none;
-        padding: 2%;
+        font-size: 14px;
     }
     
     #todo_date, #customer_id {
@@ -139,14 +139,15 @@
         grid-row-start: 1;
         font-family: 'Roboto', sans-serif;
         border-radius: 10px;
-        height: 90%;
+        height: 100%;
         border: none;
         display: none;
-        padding: 2%;
+        height: 90%;
+        font-size: 14px;
     }
 
-    #new_todo::placeholder {
-        font-size: 12px;
+    input::placeholder {
+        font-size: 14px;
         font-family: 'Roboto', sans-serif;
     }
     
