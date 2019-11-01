@@ -1,10 +1,10 @@
-let surveyTexts = ["Total number of survey sent: ", "Total number of answers: "];
-let surveySpan = [Math.floor(Math.random() * (200 - 180 + 1) + 180), Math.floor(Math.random() * (150 - 100 + 1) + 100)];
+let surveyTexts = ["Total number of survey sent: ", "Total number of answers: ", "Average NPS:  "];
+let surveySpan = [Math.floor(Math.random() * (200 - 180 + 1) + 180), Math.floor(Math.random() * (150 - 100 + 1) + 100),"7.8"];
 let surveyContainer = document.getElementsByClassName("survey-container")[0];
 
 function createSurveyContent(){
     let h1 = document.createElement("H1");
-    h1.innerHTML = "NPS-Survey History";
+    h1.innerHTML = "NPS History";
     surveyContainer.appendChild(h1);
     let div = document.createElement("DIV");
     let index = 0;
