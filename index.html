@@ -70,10 +70,10 @@
                         </table>
                         
                         <div class="addDeal_container">
-                             Company: <input type="text" id="company"></input><br>
-                             Contact person: <input type="text" id="contact"></input> <br>
-                             Product: <input type="text" id="product"></input><br>
-                             Price: <input type="number" id="price"></input> 
+                             Company: <br> <input type="text" id="company"></input><br>
+                             Contact person: <br> <input type="text" id="contact"></input> <br>
+                             Product: <br> <input type="text" id="product"></input><br>
+                             Price: <br> <input type="number" id="price"></input> 
                             <button class="add" onclick="allOrders.createDeal()">Add</button>
                         </div>
                     </div>
@@ -90,6 +90,7 @@
                 <div class = "todo-container">
                     <div class="todo">
                         <h2>Todo</h2>
+                        <button class="closeContainer" onclick="openInputContainer();"><i class="fas fa-times"></i></button>
                         <button id="open_input_container" onclick="openInputContainer()"><i class="fa fa-plus"></i></button>
                         <div id="items_container">
                             <ul id="current_items_list" class="checked">
@@ -97,7 +98,6 @@
                             </ul>
                         </div>
                         <div id="input_container">
-                                <button class="closeContainer" onclick="openInputContainer();"></i>X</button>
                                 <button class="addItem" onclick="allTodos.addNewItem();"><i class="fa fa-check"></i></button>
                                 <input type="text" name="new_todo" id="new_todo" placeholder="Write a task"> 
                             </i> <br>
