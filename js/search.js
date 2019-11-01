@@ -107,6 +107,7 @@ window.onload  = function(){
             generateRandomComments();
             generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
             createSurveyContent();
+            // document.getElementsByClassName("td1")[0].style.display = "none";
         }
         
 

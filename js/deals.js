@@ -33,6 +33,7 @@ class Order {
     generateRandom() {
         var row = document.createElement("tr");
         let td1 = document.createElement("td");
+        td1.setAttribute("class", "td1");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
         let td4 = document.createElement("td");
@@ -48,7 +49,7 @@ class Order {
         row.appendChild(td4);
         this.table[0].children[0].appendChild(row);
 
-// if (window.location.pathname("/customers")) {
+// if (window.location.pathname("/index.html")) {
 //     td1.style.display = "none";   
 // }
     }
