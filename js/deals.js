@@ -47,6 +47,10 @@ class Order {
         row.appendChild(td3);
         row.appendChild(td4);
         this.table[0].children[0].appendChild(row);
+
+// if (window.location.pathname("/customers")) {
+//     td1.style.display = "none";   
+// }
     }
 
     createDeal() {
@@ -107,7 +111,6 @@ function openPlus() {
 document.addEventListener("DOMContentLoaded", function () {
     allDeals.getDeals();
 });
-
 
 
 

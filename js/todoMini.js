@@ -44,17 +44,17 @@ class TodoList {
 
     //Hämtar 5 random todos för 5 random kunder från api.
     async getItems() {
-        let items = await mockup.getRandom('todo', 5);
-        let companies = await mockup.getRandom('customer', 5);
+        let items = await mockup.getRandom('todo', 6);
+        let companies = await mockup.getRandom('customer', 6);
         companies = companies.map((customer) => {
             return customer.companyName;
         })
 
         //För varje item ska ett random datum skrivas ut.
         items.forEach((item, i) => {
-            let year = 2019 + Math.round(1 - Math.sin(Math.random() * (Math.PI / 2)));
-            let month = Math.round(Math.random() * 12 + 1);
-            let date = Math.round(Math.random() * 30 + 1);
+            let year = 2019 + Math.round(1 - Math.sin(Math.random() * (Math.PI / 1)));
+            let month = Math.round(Math.random() * (12 - 8 + 1) + 8);
+            let date = Math.round(Math.random() * 30);
             let rand = Math.floor(Math.random() * this.textExamples.length) - 1;
             let data = this.textExamples[rand];
             let todoItem = new TodoItem(data, `${year}-${month}-${date}`, companies[i]);
