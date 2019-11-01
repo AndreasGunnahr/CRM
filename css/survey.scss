@@ -13,7 +13,6 @@
         font-family: $font-h1;
         font-size: 35px;
         text-align: center;
-        text-transform: uppercase;
         color: white;
         letter-spacing: 1px;
     }
@@ -30,6 +29,7 @@
             width: 100%;
             font-size: 15px;
             color: white;
+            font-family: $font-text;
             font-weight: 300;
             
         }
