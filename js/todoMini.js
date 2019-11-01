@@ -158,30 +158,11 @@ for (i = 0; i < close.length; i++) {
     }
 }
 
-//Döljer och visar datum-inputen
-// function openDate() {
-//     var date = document.getElementById('todo_date');
-//     if (date.style.display === 'block') {
-//         date.style.display = 'none';
-//     } else {
-//         date.style.display = 'block';
-//     }
-// };
-
 document.getElementById("todo_date").addEventListener("change", function () {
     var date = this.value;
     console.log(date);
 });
 
-//Döljer och visar kund-inputen och skriver ut när användaren skrivit in vald kund
-// function openCustomerId() {
-//     var customer = document.getElementById("customer_id");
-//     if (customer.style.display === "block") {
-//         customer.style.display = "none";
-//     } else {
-//         customer.style.display = "block";
-//     }
-// };
 
 document.getElementById("customer_id").addEventListener("change", function () {
     var customerID = this.value;
