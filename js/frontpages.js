@@ -49,5 +49,39 @@ const forgotPasswordButton = document.getElementsByClassName("forgot-password");
 
 /* If the user click login this event runs */ 
 loginBtn.addEventListener("click", () => {
-    window.location.href = "dashboard.html";
+    let uid = document.getElementById('email');
+    let pwd = document.getElementById('password');
+
+    accounts.forEach((acc) => {
+        if(acc.uid == uid.value && acc.pwd == pwd.value) {
+            window.location.href = "dashboard.html";
+        }
+    })
+
+    uid.value = '';
+    pwd.value = '';
+    
+    alert('Incorrect e-mail/password');
+
 });
+
+//Usernames and passwords
+
+let accounts = [
+    {
+        uid: 'micke@emmio.se',
+        pwd: 'emmio'
+    },
+    {
+        uid: 'fabian@fabian.se',
+        pwd: 'fabian'
+    },
+    {
+        uid: 'ella@ella.se',
+        pwd: 'ella'
+    },
+    {
+        uid: 'andreas@andreas.se',
+        pwd: 'andreas'
+    },
+]
