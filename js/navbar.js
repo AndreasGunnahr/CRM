@@ -53,7 +53,7 @@ class Navbar{
         input.classList.add(this.fontAwesome);
         input.classList.add(this.dropBtn);
         input.setAttribute("id","searchBar");
-        input.setAttribute("placeholder", "\uf002 Search for customer");
+        input.setAttribute("placeholder", "\uf002 Search for customer or company");
         position.appendChild(input);
     }
 

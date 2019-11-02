@@ -53,13 +53,13 @@ dropdownInformation.generateContent(createCustomerMenu);
 /* When the user clicks on the button, toggle between hiding and showing the dropdown */ 
 function toggleDropdown() {
     if(document.body.clientWidth < 779){
-        document.getElementById("sidebar").style.width = "0px";
-        document.getElementById("wrapper").classList.add("overlay");
-        console.log("här")
+        document.getElementById("sidebar").style.width = "0px"; 
         document.getElementsByClassName("create-screen")[0].classList.add('show');
+        document.getElementById("main-content").style.display = "none";
         secondCheck = true;
     }else{
         document.getElementById("myDropdown").classList.add("show");
+        document.getElementById("searchBar").style.zIndex = "2";
         document.getElementById("wrapper").classList.add("overlay");
         firstCheck = true;
     }
@@ -75,6 +75,7 @@ function resetStates(){
     dropdownContent.classList.remove('show');
     document.getElementsByClassName("create-screen")[0].classList.remove('show');
     document.getElementById('wrapper').classList.remove('overlay')
+    document.getElementById("main-content").style.display = "grid";
 }
 
 
@@ -87,6 +88,7 @@ window.addEventListener('resize', () => {
         if(firstCheck){
             document.getElementById("wrapper").classList.remove("overlay");
             dropdownContent.classList.remove('show')
+            // document.getElementById("main-content").style.display = "grid";
             firstCheck = false;
         }
        
@@ -96,6 +98,7 @@ window.addEventListener('resize', () => {
             document.getElementById("sidebar").style.width = "0px";
             document.getElementById("wrapper").classList.remove("overlay");
             document.getElementsByClassName("create-screen")[0].classList.remove('show');
+            document.getElementById("main-content").style.display = "grid";
             secondCheck = false;
         }
     }
