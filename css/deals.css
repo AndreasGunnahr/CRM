@@ -53,15 +53,15 @@
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 5;
+    border-collapse: collapse;
     border-radius: 10px;
     border: 5px solid #F6F4F0;
     border-radius: 10px;
     color: #302F2F;
     overflow: auto;
     height: 90%;
-    /* max-height: 200px; */
     margin: 1%;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -81,6 +81,9 @@ th {
     font-family: 'Squada One', cursive;
     color: #F6F4F0;
     font-size: 20px;
+    position: sticky;
+    background: #FFA500;
+    top: 0;  
 }
 
 td {
