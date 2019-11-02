@@ -3,7 +3,7 @@
 #main-content{
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 520px !important;
+    grid-template-columns: 1fr 420px !important;
     background-color: $bg-color;
     .deals-container{
         height: 520px;
@@ -25,4 +25,85 @@
         margin-bottom: 20px;
     }
     
+}
+
+@media all and (max-width: 1280px) {
+    #main-content{
+        // bg-container {
+        //     width: calc(100vw - 420px) !important;
+        //     left: 0 !important;
+        // }
+        .todo-container{
+            grid-row: 1 !important;
+            grid-column: span 2 !important;
+        }
+        .calender-container{
+            grid-row: 1 !important;
+            grid-column: 3 !important;
+        }
+        .deals-container{
+            grid-row: 2 !important;
+            grid-column: span 2 !important;
+        }
+        .survey-container{
+            grid-row: 2 !important;
+            grid-column: 3 !important;
+        }
+    }
+}
+
+@media all and (max-width: 980px) {
+    #main-content{
+        grid-template-columns: 50% 50% !important;
+        // bg-container {
+        //     background: url('../img/bg-1.jpg') rgba(0,0,0,.6) !important;
+        //     width: calc(100vw) !important;
+        //     background-size: cover !important;
+        //     background-position: center !important;
+        // }
+        .todo-container{
+            grid-row: 1 !important;
+            grid-column: span 2 !important;
+        }
+        .calender-container{
+            grid-row: 3 !important;
+            grid-column: 1 !important;
+        }
+        .deals-container{
+            grid-row: 2 !important;
+            grid-column: span 2 !important;
+        }
+        .survey-container{
+            grid-row: 3 !important;
+            grid-column: 2 !important;
+        }
+    }
+}
+@media all and (max-width: 749px) { 
+    #main-content{
+        grid-template-columns: 100% !important;
+
+        // bg-container {
+        //     background: url('../img/bg-1.jpg') rgba(0,0,0,.6) !important;
+        //     width: calc(100vw) !important;
+        //     background-size: cover !important;
+        //     background-position: center !important;
+        // }
+        .todo-container{
+            grid-row: 1 !important;
+            grid-column: 1 !important;
+        }
+        .calender-container{
+            grid-row: 3 !important;
+            grid-column: 1 !important;
+        }
+        .deals-container{
+            grid-row: 2 !important;
+            grid-column: 1 !important;
+        }
+        .survey-container{
+            grid-row: 4 !important;
+            grid-column: 1 !important;
+        }
+    }
 }

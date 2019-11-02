@@ -18,7 +18,7 @@ button {
 #main-content {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 520px !important;
+  grid-template-columns: 1fr 420px !important;
   background-color: #302F2F;
 }
 
@@ -39,4 +39,67 @@ button {
 #main-content .survey-container {
   height: 320px;
   margin-bottom: 20px;
+}
+
+@media all and (max-width: 1280px) {
+  #main-content .todo-container {
+    grid-row: 1 !important;
+    grid-column: span 2 !important;
+  }
+  #main-content .calender-container {
+    grid-row: 1 !important;
+    grid-column: 3 !important;
+  }
+  #main-content .deals-container {
+    grid-row: 2 !important;
+    grid-column: span 2 !important;
+  }
+  #main-content .survey-container {
+    grid-row: 2 !important;
+    grid-column: 3 !important;
+  }
+}
+
+@media all and (max-width: 980px) {
+  #main-content {
+    grid-template-columns: 50% 50% !important;
+  }
+  #main-content .todo-container {
+    grid-row: 1 !important;
+    grid-column: span 2 !important;
+  }
+  #main-content .calender-container {
+    grid-row: 3 !important;
+    grid-column: 1 !important;
+  }
+  #main-content .deals-container {
+    grid-row: 2 !important;
+    grid-column: span 2 !important;
+  }
+  #main-content .survey-container {
+    grid-row: 3 !important;
+    grid-column: 2 !important;
+  }
+}
+
+@media all and (max-width: 749px) {
+  #main-content {
+    grid-template-columns: 100% !important;
+  }
+  #main-content .todo-container {
+    grid-row: 1 !important;
+    grid-column: 1 !important;
+  }
+  #main-content .calender-container {
+    grid-row: 3 !important;
+    grid-column: 1 !important;
+  }
+  #main-content .deals-container {
+    grid-row: 2 !important;
+    grid-column: 1 !important;
+  }
+  #main-content .survey-container {
+    grid-row: 4 !important;
+    grid-column: 1 !important;
+  }
 }
