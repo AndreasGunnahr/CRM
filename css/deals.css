@@ -18,7 +18,7 @@
     grid-row-start: 1;
     grid-column-start: 5;
     grid-column-end: 6;
-    width: 85%;
+    /* width: 85%; */
     margin: 3% 3% 3% 3%;
     border-radius: 10px;
     font-size: 36px;
@@ -48,12 +48,11 @@
     letter-spacing: 1px;
 }
 
- .deals .addDeal_container, .deals .deals_table {
+ .deals .addDeal_container {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 5;
-    border-collapse: collapse;
     border-radius: 10px;
     border: 5px solid #F6F4F0;
     border-radius: 10px;
@@ -63,6 +62,29 @@
     margin: 1%;
     font-size: 14px;
 }
+
+.deals .deals_table {
+grid-column-start: 1;
+grid-column-end: 6;
+grid-row-start: 2;
+grid-row-end: 5;
+border-collapse: collapse;
+border-radius: 10px;
+border: 5px solid #F6F4F0;
+border-radius: 10px;
+color: #302F2F;
+overflow: auto;
+height: 90%;
+margin: 1%;
+font-size: 14px;
+/* width: 100%; */
+}
+
+.deals .deals_table tbody {
+    width: 100%;
+    height: 100%;
+}
+
 
 tr:nth-child(even) {
     background: #F6F4F0;
@@ -74,7 +96,6 @@ tr:nth-child(even) {
     font-family: 'Squada One', cursive;
     color: #F6F4F0;
     font-size: 20px;
-    
 }
 
 th {
@@ -84,12 +105,13 @@ th {
     position: sticky;
     background: #FFA500;
     top: 0;  
+    
 }
 
-td {
+.deals_table td {
     color: #302F2F;
     text-align: center;
-    width: 20%;
+
 }
 
 #product, #price, #company, #contact {
@@ -113,5 +135,4 @@ td {
     /* margin: 2%; */
     font-family: 'Squada One', cursive;
     float: right;
-    margin-top: 10%;
 }

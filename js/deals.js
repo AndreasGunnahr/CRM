@@ -99,12 +99,14 @@ let allOrders = new Order();
 
 function openPlus() {
     var add = document.getElementsByClassName("addDeal_container")[0];
+    var table = document.getElementsByClassName("deals_table")[0];
+    
     if (add.style.display === "block") {
         add.style.display = "none";
-        document.getElementsByClassName("deals_table")[0].style.display = "block";
+        table.style.display = "block";
     } else {
         add.style.display = "block";
-        document.getElementsByClassName("deals_table")[0].style.display = "none";
+        table.style.display = "none";
     }
 };
 
