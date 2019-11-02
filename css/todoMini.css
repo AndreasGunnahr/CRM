@@ -39,7 +39,7 @@
         border-radius: 10px;
         text-align: left;
         font-weight: 900;
-        
+        align-self: center;
     }
     
      
@@ -50,14 +50,13 @@
         align-items: center;
         /* padding: 5px; */
         min-height: 40px;
-        border-radius: 15px;
+        border-radius: 10px;
         /* width: 92%; */
         margin: 0 auto 5px auto;
         /* margin: 1%; */
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
         justify-content: space-between;
-        
     }
     
     .icon_container {
@@ -169,6 +168,9 @@
         display: flex;
     }
     
+    input[type=checkbox]:checked + ul.strikethrough{
+        text-decoration: line-through;
+      }
     
       ul li {
         -webkit-user-select: none;
