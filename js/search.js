@@ -80,8 +80,11 @@ window.onload  = function(){
     let movedToDashboardPage = localStorage.getItem("movedToDashboardPage");
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
-    createSurveyContent();
-    if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
+    if(localStorage.getItem("Login") == "true"){
+        createSurveyContent();
+        localStorage.setItem("Login",false);
+    }
+    else if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
         document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
         document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
         document.getElementsByClassName("contact-container")[0].style.display = "none";
@@ -93,7 +96,6 @@ window.onload  = function(){
         document.getElementsByTagName("bg-container")[0].style.left = "0";
         document.getElementsByTagName("bg-container")[0].style.width = "calc(100vw - 420px)";
         createAllCustomerContent();
-        // createSurveyContent();
     
         
         localStorage.setItem("clickedCustomersNav", false);
@@ -109,12 +111,11 @@ window.onload  = function(){
             
             generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
             createSurveyContent();
-            // document.getElementsByClassName("td1")[0].style.display = "none";
         }
         
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
-        // createSurveyContent();
+        createSurveyContent();
         localStorage.setItem("movedToDashboardPage", false);
         localStorage.setItem("clickedCustomersNav", false);
     }

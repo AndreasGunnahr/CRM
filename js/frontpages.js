@@ -56,6 +56,7 @@ loginBtn.addEventListener("click", () => {
         if(acc.uid == uid.value && acc.pwd == pwd.value) {
             found = true;
             window.location.href = "dashboard.html";
+            localStorage.setItem("Login",true);
         }
     })
 
