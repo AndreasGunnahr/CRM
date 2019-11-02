@@ -64,15 +64,20 @@
       }
     
     li {
+        display: flex;
         background-color: #F6F4F0;
-        padding: 1.5% 1%;
+        padding: 0.5%;
         border-radius: 10px;
-        /* width: 92%; */
         margin-bottom: 1%;
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
+        margin: 0 auto 5px auto;
+        align-items: center;
+        text-align: left;
+        justify-content: space-between;
         
     }
+
     
     @media only screen and (max-width: 360px) {
         /* For mobile phones: */
@@ -144,7 +149,7 @@
         border: none;
         display: none;
         height: 90%;
-        font-size: 14px;
+        font-size: 14px; 
     }
 
     input::placeholder {
@@ -161,10 +166,11 @@
         align-self: center;
         font-size: 30px;
         margin-bottom: 2%;
+        margin-right: 20px;
     }
     
     #calendar {
-     justify-self: center;
+     justify-self: start;
     
     } 
     
@@ -196,15 +202,11 @@
     }
     
     li .close {
-        /* margin-top: 0.4%; */
-        /* align-self: center; */
-        font-size: 26px;
-        /* padding: 1%; */
-        right: 2px;
-        float: right;
-        align-content: center;
-        margin: auto 0;
+        font-size: 40px;
     }
+
+ 
+    
     
     .input_container .addItem:focus {
         outline: none;
