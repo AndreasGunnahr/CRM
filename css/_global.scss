@@ -9,7 +9,7 @@ $font-text:"Roboto", sans-serif;
 
 .fontAwesome{ 
     font-family: Helvetica, FontAwesome, sans-serif; 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 %flex-center{
@@ -26,6 +26,7 @@ $font-text:"Roboto", sans-serif;
 
 ::placeholder{
     color: black;
+    font-size: $font-size !important;
 }
 
 button{

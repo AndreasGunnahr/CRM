@@ -137,6 +137,7 @@
         height: 100%;
         border: none;
         font-size: 14px;
+        padding-left: 10px; 
     }
     
     #todo_date, #customer_id {
@@ -150,12 +151,14 @@
         display: none;
         height: 90%;
         font-size: 14px; 
+        padding-left: 10px; 
     }
 
-    input::placeholder {
+    #new_todo::placeholder,
+    #customer_id::placeholder {
         font-size: 14px;
         font-family: 'Roboto', sans-serif;
-        padding-left: 10px; 
+        color: #BDBCBB;
     }
     
     #calendar, #id {

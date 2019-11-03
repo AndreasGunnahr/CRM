@@ -1,5 +1,4 @@
 const tableHeaders = ["Name","Company","Email","Phone"];
-// const namesAPI = ["companyName","email","phoneNumber"];
 const tableContainer = document.getElementsByClassName("show-all-table")[0];
 const customerContainer = document.getElementsByClassName("show-all-customers-container")[0];
 let searchCustomer = document.getElementById("searchAllCustomer");

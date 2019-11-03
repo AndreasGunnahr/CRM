@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .create-screen .create-content, #main nav .center {
@@ -19,6 +19,7 @@
 
 ::placeholder {
   color: black;
+  font-size: 14px !important;
 }
 
 button {
@@ -414,13 +415,13 @@ html {
 }
 
 #main #main-content .all-customers-container .show-all-customers-container input::placeholder {
-  font-size: 12px;
+  font-size: 14px;
   color: #BDBCBB;
 }
 
 #main #main-content .customer-name-h1 {
   z-index: 1;
-  font-size: 50px;
+  font-size: 40px;
   color: #FFA500;
   font-family: "Squada One", cursive;
   text-align: center;
@@ -467,9 +468,16 @@ html {
 @media only screen and (max-width: 479px) {
   .sidebar .sidebar-content a {
     padding: 15px;
+    font-size: 20px;
+  }
+  .sidebar .sidebar-content a span {
+    font-size: 16px;
   }
   .sidebar .sidebar-content img {
     margin: 25px 0 25px 0;
+  }
+  .sidebar .fa-times {
+    font-size: 35px !important;
   }
   .create-screen {
     margin-top: -70px;
@@ -669,5 +677,62 @@ html {
   #main-content .contact-container {
     grid-column: 1 !important;
     grid-row: 6 !important;
+  }
+}
+
+@media all and (max-width: 480px) {
+  input::placeholder {
+    font-size: 12px !important;
+  }
+  #main-content .customer-name-h1 {
+    font-size: 35px !important;
+  }
+  #main-content .comment-header-h1 {
+    font-size: 30px !important;
+  }
+  #main-content .comment-p {
+    margin-bottom: 5px !important;
+  }
+  #main-content .event-span {
+    font-size: 10px;
+  }
+  #main-content .event-p {
+    font-size: 12px;
+  }
+  #main-content .comment-add-btn {
+    font-size: 15px;
+  }
+  #main-content .h2-header {
+    font-size: 30px;
+  }
+  #main-content th {
+    font-size: 15px;
+  }
+  #main-content td {
+    font-size: 12px;
+  }
+  #main-content li {
+    font-size: 12px;
+  }
+  #main-content .todo-container h2 {
+    font-size: 30px;
+  }
+  #main-content .survey-container h1 {
+    font-size: 30px;
+  }
+  #main-content .survey-container h2 {
+    font-size: 12px;
+  }
+  #main-content .survey-container span {
+    font-size: 25px;
+  }
+  #main-content .survey-container .survey-send {
+    font-size: 20px;
+  }
+  #main-content .contact-container h1 {
+    font-size: 30px;
+  }
+  #main-content .contact-container h3 {
+    font-size: 25px;
   }
 }

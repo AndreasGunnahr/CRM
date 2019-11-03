@@ -1,13 +1,42 @@
 @import "_global";
 
+#main{
+    .center {
+        @extend %flex-center;
+
+        input {
+            height: 50px;
+            width: 100%;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            padding-left: 20px;
+            z-index: 98;
+            font-size: $font-size;
+        }
+    }
+    
+}
+
 #main-content{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 420px !important;
-    background-color: $bg-color;
+    // background-color: $bg-color;
+    bg-container {
+        position: fixed;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: calc(100vw - 420px);
+        height: 100vh;
+        background: url('../img/bg-1.jpg') rgba(0,0,0,0.4);
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center;
+    }
     .deals-container{
         height: 520px;
-        // border: 3px solid orange;
         padding: 20px;
     }
     
@@ -16,12 +45,10 @@
         margin: 20px 0 20px 0;
     }
     .todo-container{
-        // height: 620px;
         padding: 20px;
     }
     .survey-container{
         height: 320px;
-        // border: 3px solid blue;
         margin-bottom: 20px;
     }
     
@@ -29,10 +56,9 @@
 
 @media all and (max-width: 1280px) {
     #main-content{
-        // bg-container {
-        //     width: calc(100vw - 420px) !important;
-        //     left: 0 !important;
-        // }
+        bg-container {
+            width: calc(100vw - 330px) !important;
+        }
         .todo-container{
             grid-row: 1 !important;
             grid-column: span 2 !important;
@@ -55,12 +81,9 @@
 @media all and (max-width: 980px) {
     #main-content{
         grid-template-columns: 50% 50% !important;
-        // bg-container {
-        //     background: url('../img/bg-1.jpg') rgba(0,0,0,.6) !important;
-        //     width: calc(100vw) !important;
-        //     background-size: cover !important;
-        //     background-position: center !important;
-        // }
+        bg-container {
+            width: 100vw !important;
+        }
         .todo-container{
             grid-row: 1 !important;
             grid-column: span 2 !important;
@@ -82,13 +105,6 @@
 @media all and (max-width: 749px) { 
     #main-content{
         grid-template-columns: 100% !important;
-
-        // bg-container {
-        //     background: url('../img/bg-1.jpg') rgba(0,0,0,.6) !important;
-        //     width: calc(100vw) !important;
-        //     background-size: cover !important;
-        //     background-position: center !important;
-        // }
         .todo-container{
             grid-row: 1 !important;
             grid-column: 1 !important;

@@ -371,7 +371,7 @@ html {
                     border-radius: 10px;
                     border: 1px solid $bg-color;
                     &::placeholder{
-                        font-size: 12px;
+                        font-size: 14px;
                         color: #BDBCBB;
                     }
                 }
@@ -379,7 +379,7 @@ html {
         }
         .customer-name-h1{
             z-index: 1;
-            font-size: 50px;
+            font-size: 40px;
             color: $color;
             font-family: $font-h1;
             text-align: center;
@@ -436,10 +436,17 @@ html {
         .sidebar-content{
             a{
                 padding: 15px;
+                font-size: 20px;
+                span{
+                    font-size: 16px;
+                }
             }
             img{
                 margin: 25px 0 25px 0;
             }
+        }
+        .fa-times{
+            font-size: 35px !important;
         }
     }
     .create-screen{
@@ -689,5 +696,68 @@ html {
 }
 
 @media all and (max-width: 480px) { 
+    input::placeholder{
+        font-size: 12px !important;
+    }
+    #main-content{
+        .customer-name-h1{
+            font-size: 35px !important;
+        }
+        .comment-header-h1{
+            font-size: 30px !important;
+        }
+        .comment-p{
+            margin-bottom: 5px !important;
+        }
+        .event-span{
+            font-size: 10px;
+        }
+        .event-p{
+            font-size: 12px;
+        }
+        .comment-add-btn{
+            font-size: 15px;
+        }
+        .h2-header{
+            font-size: 30px;
+        }
+        th{
+            font-size: 15px;
+        }
+        td{
+            font-size: 12px;
+        }
 
+        li{
+            font-size: 12px;
+        }
+        .todo-container{
+            h2{
+                font-size: 30px;
+            }
+        }
+        .survey-container{
+            h1{
+                font-size: 30px;
+            }
+            h2{
+                font-size: 12px;
+            }
+            span{
+                font-size: 25px;
+            }
+            .survey-send{
+                font-size: 20px;
+            }
+        }
+
+        .contact-container{
+            h1{
+                font-size: 30px;
+            }
+            h3{
+                font-size: 25px;
+            }
+        }
+    }
 }
