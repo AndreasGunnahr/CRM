@@ -41,6 +41,8 @@
     }
     
     .calender-container{
+        background: $bg-color;
+        border-radius: 10px;
         height: 320px;
         margin: 20px 0 20px 0;
     }
@@ -48,6 +50,8 @@
         padding: 20px;
     }
     .survey-container{
+        background: $bg-color;
+        border-radius: 10px;
         height: 320px;
         margin-bottom: 20px;
     }
@@ -64,6 +68,8 @@
             grid-column: span 2 !important;
         }
         .calender-container{
+            height: 400px !important;
+            margin: 20px !important;
             grid-row: 1 !important;
             grid-column: 3 !important;
         }
@@ -72,6 +78,7 @@
             grid-column: span 2 !important;
         }
         .survey-container{
+            margin: 20px !important;
             grid-row: 2 !important;
             grid-column: 3 !important;
         }

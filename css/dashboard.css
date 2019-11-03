@@ -58,6 +58,8 @@ button {
 }
 
 #main-content .calender-container {
+  background: #302F2F;
+  border-radius: 10px;
   height: 320px;
   margin: 20px 0 20px 0;
 }
@@ -67,6 +69,8 @@ button {
 }
 
 #main-content .survey-container {
+  background: #302F2F;
+  border-radius: 10px;
   height: 320px;
   margin-bottom: 20px;
 }
@@ -80,6 +84,8 @@ button {
     grid-column: span 2 !important;
   }
   #main-content .calender-container {
+    height: 400px !important;
+    margin: 20px !important;
     grid-row: 1 !important;
     grid-column: 3 !important;
   }
@@ -88,6 +94,7 @@ button {
     grid-column: span 2 !important;
   }
   #main-content .survey-container {
+    margin: 20px !important;
     grid-row: 2 !important;
     grid-column: 3 !important;
   }
