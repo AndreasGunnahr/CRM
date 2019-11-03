@@ -10,6 +10,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    overflow: auto;
     /* max-height: 520px; */
     /* min-height: 320px; */
 }
@@ -73,8 +74,9 @@ border-radius: 10px;
 border: 5px solid #F6F4F0;
 border-radius: 10px;
 color: #302F2F;
-overflow: auto;
+overflow: scroll;
 height: 90%;
+max-height: 90%;
 margin: 1%;
 font-size: 14px;
 /* width: 100%; */
@@ -82,7 +84,7 @@ font-size: 14px;
 
 .deals .deals_table tbody {
     width: 100%;
-    height: 100%;
+    height: 95%;
 }
 
 
@@ -111,8 +113,8 @@ th {
 .deals_table td {
     color: #302F2F;
     text-align: center;
-
 }
+
 
 #product, #price, #company, #contact {
     border: 1px solid #F6F4F0;
