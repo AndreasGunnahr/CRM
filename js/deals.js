@@ -15,7 +15,14 @@ class Deals {
             let orderDeal = new Order(deal.company, deal.fullName, deal.productName, deal.price);
             orderDeal.generateRandom();
         })
+
+        // deals.forEach((deal, i) => {
+        //     let orderWhenOnCustomerPage = new DealsOnCustomerPage(deal.productName, deal.price);
+        //     orderWhenOnCustomerPage.noCompanyTd();
+        // })
     }
+
+
 }
 
 class Order {
@@ -26,14 +33,13 @@ class Order {
         this.product = product;
         this.price = price;
         this.table = document.getElementsByClassName("deals_table");
-        
+
 
     }
 
     generateRandom() {
         var row = document.createElement("tr");
         let td1 = document.createElement("td");
-        td1.setAttribute("class", "td1");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
         let td4 = document.createElement("td");
@@ -48,10 +54,6 @@ class Order {
         row.appendChild(td3);
         row.appendChild(td4);
         this.table[0].children[0].appendChild(row);
-
-// if (window.location.pathname("/index.html")) {
-//     td1.style.display = "none";   
-// }
     }
 
     createDeal() {
@@ -83,27 +85,47 @@ class Order {
         document.getElementsByClassName("addDeal_container")[0].style.display = "none";
     };
 
-    removeTd () {
-        window.location.pathname("customer");
-        document.getElementsByClassName("thcompany")[0].style.display = "none";
-        document.getElementById("company")[0].style.display = "none";
-        this.company.style.display = "none";
-
-    }
 }
+
+// class DealsOnCustomerPage {
+//     constructor() {
+//         this.deal;
+//         this.product = product;
+//         this.price = price;
+//         this.table = document.getElementsByClassName("deals_table");
+//     }
+
+//     noCompanyTd() {
+//         var row = document.createElement("tr");
+    
+//         let td3 = document.createElement("td");
+//         let td4 = document.createElement("td");
+    
+//         td3.innerHTML = this.product;
+//         td4.innerHTML = this.price;
+    
+//         row.appendChild(td3);
+//         row.appendChild(td4);
+//         this.table[0].children[0].appendChild(row);
+    
+//     }
+
+// }
+
 
 
 let allDeals = new Deals();
 let deal = null;
 let allOrders = new Order();
+// let allDealsOnCustomerPage = new DealsOnCustomerPage();
 
 function openPlus() {
     var add = document.getElementsByClassName("addDeal_container")[0];
     var table = document.getElementsByClassName("deals_table")[0];
-    
+
     if (add.style.display === "block") {
         add.style.display = "none";
-        table.style.display = "block";
+        table.style.display = "table";
     } else {
         add.style.display = "block";
         table.style.display = "none";
