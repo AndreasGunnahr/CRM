@@ -29,7 +29,6 @@ body {
 calendar-module {
   padding: 20px;
   box-sizing: border-box;
-  background: #302F2F;
   width: 100%;
   height: 100%;
   display: grid;
