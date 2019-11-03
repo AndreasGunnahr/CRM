@@ -81,7 +81,8 @@ window.onload  = function(){
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
     createSurveyContent();
-   
+   console.log("clicked customerNav" + clickedCustomersNav);
+   console.log("Moved to dashboard" + movedToDashboardPage);
     if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
         document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
         document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
@@ -119,6 +120,21 @@ window.onload  = function(){
     }
 }
 
+let customerNav = document.getElementsByClassName("customerNav");
+[...customerNav].forEach(nav => {
+    nav.addEventListener("click", () =>{
+         localStorage.setItem("clickedCustomersNav", true);
+        localStorage.setItem("movedToDashboardPage", false);
+    });
+});
+
+let dashboardNav = document.getElementsByClassName("dashboardNav");
+[...dashboardNav].forEach(nav => {
+    nav.addEventListener("click", () =>{
+        localStorage.setItem("clickedCustomersNav", false);
+        localStorage.setItem("movedToDashboardPage", true);
+    });
+});
 
 // async function getDeals() {
 //     let deals = await mockup.getRandom('Order', 10);

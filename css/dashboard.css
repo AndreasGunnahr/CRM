@@ -2,11 +2,18 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+#main .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ::placeholder {
   color: black;
+  font-size: 14px !important;
 }
 
 button {
@@ -15,11 +22,34 @@ button {
   border: none;
 }
 
+#main .center input {
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  z-index: 98;
+  font-size: 14px;
+}
+
 #main-content {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 420px !important;
-  background-color: #302F2F;
+}
+
+#main-content bg-container {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: calc(100vw - 420px);
+  height: 100vh;
+  background: url("../img/bg-1.jpg") rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
 }
 
 #main-content .deals-container {
@@ -42,6 +72,9 @@ button {
 }
 
 @media all and (max-width: 1280px) {
+  #main-content bg-container {
+    width: calc(100vw - 330px) !important;
+  }
   #main-content .todo-container {
     grid-row: 1 !important;
     grid-column: span 2 !important;
@@ -63,6 +96,9 @@ button {
 @media all and (max-width: 980px) {
   #main-content {
     grid-template-columns: 50% 50% !important;
+  }
+  #main-content bg-container {
+    width: 100vw !important;
   }
   #main-content .todo-container {
     padding: 0 !important;

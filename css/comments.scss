@@ -39,10 +39,10 @@
         .comment-span{
             font-family: $font-text;
             font-style: italic;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 900;
             .comment-p{
-                font-size: 16px;
+                font-size: $font-size;
                 font-weight: 100;
                 font-style: normal;
                 word-break: break-all;
@@ -58,9 +58,9 @@
         padding-left: 10px;
         border: none;
         outline: none;
-        font-size: 14px;
+        font-size: $font-size;
         &::placeholder{
-            font-size: 12px;
+            font-size: $font-size;
             color: #BDBCBB;
         }
     }
@@ -101,4 +101,26 @@
         height: 100%;
         height: 500px;
     }
+}
+
+
+.comment-outer-container .comment-inner-container .event-span  {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+.comment-outer-container .comment-inner-container .event-span .event-p {
+  font-size: 14px;
+  font-weight: 100;
+  font-style: normal;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
+.comment-outer-container .comment-inner-container .event-span .event-p, .comment-outer-container .comment-inner-container .event-span { 
+  color: #FFA500;
+  text-shadow: 0.3px 0.3px #916109;
 }

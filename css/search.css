@@ -2,11 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 ::placeholder {
   color: black;
+  font-size: 14px !important;
 }
 
 button {
@@ -25,7 +26,7 @@ button {
   overflow-y: scroll;
   color: black;
   background-color: #EEEEEE;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -46,7 +47,7 @@ button {
 
 .search-list .search-customer .search-company {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   padding-left: 5px;
   pointer-events: none;
 }

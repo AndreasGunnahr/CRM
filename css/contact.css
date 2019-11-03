@@ -2,11 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 .fontAwesome {
   font-family: Helvetica, FontAwesome, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 ::placeholder {
   color: black;
+  font-size: 14px !important;
 }
 
 button {
@@ -23,7 +24,7 @@ button {
 }
 
 .contact-container h1 {
-  font-size: 50px;
+  font-size: 35px;
   font-family: "Squada One", cursive;
   color: #FFA500;
   margin-bottom: 30px;
