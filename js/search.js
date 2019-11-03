@@ -111,7 +111,9 @@ window.onload  = function(){
             
             generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
             createSurveyContent();
-        }
+
+            // getDeals();
+    }
         
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
@@ -121,6 +123,15 @@ window.onload  = function(){
         localStorage.setItem("clickedCustomersNav", false);
     }
 }
+
+
+// async function getDeals() {
+//     let deals = await mockup.getRandom('Order', 10);
+// deals.forEach((deal, i) => {
+//     let orderWhenOnCustomerPage = new DealsOnCustomerPage(deal.productName, deal.price);
+//     orderWhenOnCustomerPage.noCompanyTd();
+// })
+// }
 
 
 
