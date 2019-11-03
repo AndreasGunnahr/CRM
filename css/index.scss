@@ -611,7 +611,9 @@ html {
         .contact-container{
             grid-row: 3;
             border: none !important;
-            grid-column: span 3 !important;
+            grid-column: 1 / 3 !important;
+            margin: 20px !important;
+            height: 400px !important;
         }
     }
 }
