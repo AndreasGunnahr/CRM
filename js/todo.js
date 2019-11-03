@@ -87,7 +87,7 @@ class TodoItem {
         checkbox.id = "chk";
         this.item.appendChild(checkbox);
         this.item.setAttribute("id", "itemID" + i);
-        this.x = document.createTextNode(this.text + "  -  " + this.customer + "  -  " + this.date);
+        this.x = document.createTextNode(this.date + "  -  " + this.text + "  -  " + this.customer);
         document.getElementById("current_items_list").appendChild(this.item);
         this.item.appendChild(this.x);
         i++;

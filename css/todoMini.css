@@ -107,18 +107,21 @@
     
     #calendar, #id {
         cursor: pointer;
-        font-size: 28px;
+        font-size: 34px;
         color: #FFA500 !important;
         margin-top: 2%;
         padding-right: 2%;
         align-self: center;
+        justify-content: space-around;
     }
+
+
 
     .addItem {
         background-color: #FFA500;
         border-radius: 10px;
         padding: 2%;
-        font-size: 12px;
+        font-size: 18px;
         font-family: 'Squada One', cursive;
         margin-top: 3%;
     }
