@@ -172,7 +172,9 @@
     
     #calendar {
      justify-self: center;
-    
+     margin-right: 4%;
+     
+     
     } 
     
     #id {
@@ -180,14 +182,24 @@
         margin-right: 4%;
     }
     
-    @media only screen and (max-width: 630px) {
+    @media only screen and (max-width: 700px) {
         #calendar {
             font-size: 20px;
             margin-right: 5px;
+            padding-right: 10px;
         }
         }
+
+        @media only screen and (max-width: 400px) {
+            #calendar {
+                font-size: 20px;
+                margin-right: 5px;
+                padding-right: 10px;
+                grid-column-start: 5;
+            }
+            }
     
-        @media only screen and (max-width: 630px) {
+        @media only screen and (max-width: 700px) {
             #id {
                 font-size: 20px;
                 margin-right: 5px;
@@ -197,15 +209,25 @@
     .input_container i {
         color: #302F2F;
         font-size: 30px;
-        /* margin-top: 4%; */
     }
+
+    @media only screen and (max-width: 400px) {
+        .input_container i {
+            font-size: 20px;
+        }
+        }
     
     li .close {
         font-size: 40px;
     }
 
- 
-    
+
+    @media only screen and (max-width: 400px) {
+       li .close {
+            font-size: 30px;
+
+        }
+        }
     
     .input_container .addItem:focus {
         outline: none;
@@ -216,25 +238,18 @@
     
     .input_container .addItem {
         background-color: #FFA500;
-        border-radius: 10px;
-        
+        border-radius: 10px;   
     }
     
     
      input[type=checkbox] {
-        background-color: #302F2F;
-        
+        background-color: #302F2F;   
     }
     
     
     ul li#chk {
         background-color: #302F2F;
     }
-    
-    
-    ul li#chk::before {
-    
-      }
     
       ul li {
         -webkit-user-select: none;
