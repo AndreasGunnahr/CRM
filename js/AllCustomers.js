@@ -8,6 +8,9 @@ let customerTable = document.createElement("TABLE");
 let hasClickedCustomer = false;
 let arrayAllCustomers,tempArr = [];
 
+if(window.innerWidth < 980) {
+    setDisplayTodoCalendar(false);
+}
 
 const searchAllCustomer = async searchText => {
     const states = await mockup.getRandom('customer', 25);
