@@ -5,6 +5,7 @@ const customerContainer = document.getElementsByClassName("show-all-customers-co
 let searchCustomer = document.getElementById("searchAllCustomer");
 let customerTbody = document.createElement("tbody");
 let customerTable = document.createElement("TABLE");
+let hasClickedCustomer = false;
 let arrayAllCustomers,tempArr = [];
 
 
@@ -48,8 +49,29 @@ function showAllCustomers(matches){
                 tempArr[1] = e.path[1].children[1].innerHTML;
                 localStorage.setItem("UserInfo", JSON.stringify(tempArr));
                 localStorage.setItem("pickedAllCustomer",true);
+                hasClickedCustomer = true;
            });
         }
+    }
+}
+
+window.addEventListener('resize', e => {
+    if(window.innerWidth < 980) {
+        setDisplayTodoCalendar(false);
+    } else {
+        setDisplayTodoCalendar(true);
+    }
+})
+
+function setDisplayTodoCalendar(display) {
+    let todo = document.getElementsByClassName('todo-container')[0];
+    let calendar = document.getElementsByClassName('calender-container')[0];
+    if(display && !hasClickedCustomer) {
+        todo.style.display = 'initial';
+        calendar.style.display = 'initial';
+    } else if(!display && !hasClickedCustomer) {
+        todo.style.display = 'none';
+        calendar.style.display = 'none';
     }
 }
 
