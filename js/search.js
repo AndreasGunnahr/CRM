@@ -80,11 +80,12 @@ window.onload  = function(){
     let movedToDashboardPage = localStorage.getItem("movedToDashboardPage");
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
-    if(localStorage.getItem("Login") == "true"){
-        createSurveyContent();
-        localStorage.setItem("Login",false);
-    }
-    else if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
+    createSurveyContent();
+    // if(localStorage.getItem("Login") == "true"){
+    //     createSurveyContent();
+    //     localStorage.setItem("Login",false);
+    // }
+    if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
         document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
         document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
         document.getElementsByClassName("contact-container")[0].style.display = "none";
@@ -115,9 +116,10 @@ window.onload  = function(){
             // getDeals();
     }
         
+        
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
-        createSurveyContent();
+        // createSurveyContent();
         console.log("här")
         localStorage.setItem("movedToDashboardPage", false);
         localStorage.setItem("clickedCustomersNav", false);
