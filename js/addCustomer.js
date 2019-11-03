@@ -95,7 +95,6 @@ window.addEventListener('resize', () => {
     }
     else if(firstBreakpoint.matches){
         if(secondCheck){
-            console.log("här")
             document.getElementById("sidebar").style.width = "0px";
             document.getElementById("wrapper").classList.remove("overlay");
             document.getElementsByClassName("create-screen")[0].classList.remove('show');

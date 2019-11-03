@@ -4,12 +4,12 @@ const customerContainer = document.getElementsByClassName("show-all-customers-co
 let searchCustomer = document.getElementById("searchAllCustomer");
 let customerTbody = document.createElement("tbody");
 let customerTable = document.createElement("TABLE");
-let hasClickedCustomer = false;
+let hasClickedCustomer = localStorage.getItem("pickedCustomerDropdown");
 let arrayAllCustomers,tempArr = [];
 
-if(window.innerWidth < 980) {
-    setDisplayTodoCalendar(false);
-}
+// if(window.innerWidth < 980) {
+//     setDisplayTodoCalendar(false);
+// }
 
 const searchAllCustomer = async searchText => {
     const states = await mockup.getRandom('customer', 25);
@@ -57,25 +57,25 @@ function showAllCustomers(matches){
     }
 }
 
-window.addEventListener('resize', e => {
-    if(window.innerWidth < 980) {
-        setDisplayTodoCalendar(false);
-    } else {
-        setDisplayTodoCalendar(true);
-    }
-})
+// window.addEventListener('resize', e => {
+//     if(window.innerWidth < 980) {
+//         setDisplayTodoCalendar(false);
+//     } else {
+//         setDisplayTodoCalendar(true);
+//     }
+// })
 
-function setDisplayTodoCalendar(display) {
-    let todo = document.getElementsByClassName('todo-container')[0];
-    let calendar = document.getElementsByClassName('calender-container')[0];
-    if(display && !hasClickedCustomer) {
-        todo.style.display = 'initial';
-        calendar.style.display = 'initial';
-    } else if(!display && !hasClickedCustomer) {
-        todo.style.display = 'none';
-        calendar.style.display = 'none';
-    }
-}
+// function setDisplayTodoCalendar(display) {
+//     let todo = document.getElementsByClassName('todo-container')[0];
+//     let calendar = document.getElementsByClassName('calender-container')[0];
+//     if(display && !hasClickedCustomer) {
+//         todo.style.display = 'initial';
+//         calendar.style.display = 'initial';
+//     } else if(!display && !hasClickedCustomer) {
+//         todo.style.display = 'none';
+//         calendar.style.display = 'none';
+//     }
+// }
 
 function createAllCustomerContent(){
     tableContainer.appendChild(customerTable);

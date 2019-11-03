@@ -1,0 +1,33 @@
+@import "_global";
+
+
+@media all and (max-width: 980px) {
+    #main-content{
+        .all-customers-container{
+            height: 100vh !important;
+            .show-all-customers-container{
+            height: 80vh !important;
+            }
+        }
+        .calender-container{
+            grid-row: 3 !important;
+            grid-column: 1 !important;
+        }
+        .todo-container{
+            grid-row: 3!important;
+            grid-column: 2 !important;        
+        }
+    }
+}
+@media all and (max-width: 749px) { 
+    #main-content{
+        .calender-container{
+            grid-column: 1 !important;
+            grid-row: 3 !important;
+        }
+        .todo-container{
+            grid-column: 1 !important;
+            grid-row: 4 !important;        
+        }
+    }
+}
