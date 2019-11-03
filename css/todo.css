@@ -134,10 +134,15 @@
         grid-row-start: 1;
         font-family: 'Roboto', sans-serif;
         border-radius: 10px;
+        padding-left: 20px;
         height: 100%;
         border: none;
         font-size: 14px;
+<<<<<<< HEAD
         padding-left: 10px; 
+=======
+
+>>>>>>> 85941ca826185abb3cf99ff2db10ecdbad8ab3da
     }
     
     #todo_date, #customer_id {
@@ -151,14 +156,21 @@
         display: none;
         height: 90%;
         font-size: 14px; 
+<<<<<<< HEAD
         padding-left: 10px; 
+=======
+        margin-right: 10px;
+>>>>>>> 85941ca826185abb3cf99ff2db10ecdbad8ab3da
     }
 
     #new_todo::placeholder,
     #customer_id::placeholder {
         font-size: 14px;
         font-family: 'Roboto', sans-serif;
+<<<<<<< HEAD
         color: #BDBCBB;
+=======
+>>>>>>> 85941ca826185abb3cf99ff2db10ecdbad8ab3da
     }
     
     #calendar, #id {

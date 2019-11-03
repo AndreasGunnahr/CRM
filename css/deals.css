@@ -65,21 +65,22 @@
 }
 
 .deals .deals_table {
-grid-column-start: 1;
-grid-column-end: 6;
-grid-row-start: 2;
-grid-row-end: 5;
-border-collapse: collapse;
-border-radius: 10px;
-border: 5px solid #F6F4F0;
-border-radius: 10px;
-color: #302F2F;
-overflow: scroll;
-height: 90%;
-max-height: 90%;
-margin: 1%;
-font-size: 14px;
-/* width: 100%; */
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    border-collapse: collapse;
+    border-radius: 10px;
+    border: 5px solid #F6F4F0;
+    border-radius: 10px;
+    color: #302F2F;
+    overflow: scroll;
+    height: 90%;
+    max-height: 90%;
+    margin: 1%;
+    font-size: 14px;
+    /* width: 100%; */
 }
 
 .deals .deals_table tbody {

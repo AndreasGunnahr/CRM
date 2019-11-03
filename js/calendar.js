@@ -14,7 +14,7 @@ class CalendarUtils {
     }
 
     isCurrentDate(day) {
-        return day == this.currentDate.getDate() && this.date.getMonth() == this.currentDate.getMonth();
+        return day == this.currentDate.getDate() && this.date.getMonth() == this.currentDate.getMonth() && this.date.getFullYear() == this.currentDate.getFullYear();
     }
 
     isCurrentMonth(month) {
@@ -347,7 +347,7 @@ class Calendar extends CalendarUtils {
 
             if (i + 1 >= offset && i - offset + 2 <= this.daysInMonth(this.date)) {
                 date.querySelector('p').innerText = i - offset + 2;
-                if (this.isCurrentDate(i)) {
+                if (this.isCurrentDate(i - offset + 2)) {
                     date.querySelector('p').classList.add('current');
                 }
             }
