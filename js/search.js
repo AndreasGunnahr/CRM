@@ -103,13 +103,11 @@ window.onload  = function(){
     
     else if(window.location.pathname == "/index.html" && pickedCustomerDropdown == "true"){
         document.getElementsByClassName("all-customers-container")[0].style.display = "none";
+        let userInfo = JSON.parse(localStorage.getItem("UserInfo"));
+        document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
+        generateRandomComments();
         
-            let userInfo = JSON.parse(localStorage.getItem("UserInfo"));
-            document.getElementsByClassName("customer-name-h1")[0].innerHTML = userInfo[0] + " - " + userInfo[1];
-            generateRandomComments();
-            
-            generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
-            // getDeals();
+        generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
     }
         
         

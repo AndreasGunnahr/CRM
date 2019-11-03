@@ -45,25 +45,6 @@ class Navbar {
         sidebarContent.appendChild(link.cloneNode(true));
       }
     }
-    // for(let x = 0; x < 2; x++){
-    //     console.log(dashboardNav[x])   
-    // }
-    // dashboardNav[0].addEventListener("click", () =>{
-    //     console.log("här")
-    // });
-    // }
-    // [...dashboardNav].forEach(nav => {
-    //     nav.addEventListener("click", () => {
-    //         document.location.href = this.href[0];
-    //         localStorage.setItem("clickedCustomersNav", false);
-    //         localStorage.setItem("movedToDashboardPage", true);
-    //     });
-    // });
-    // document.getElementById("customerNav").addEventListener("click", () => {
-    //   document.location.href = this.href[1];
-    //   localStorage.setItem("clickedCustomersNav", true);
-    //   localStorage.setItem("movedToDashboardPage", false);
-    // });
   }
 
   createInput(position) {
@@ -127,7 +108,6 @@ function openNav() {
   document.getElementById("wrapper").classList.add("overlay");
   document.getElementById("searchBar").style.zIndex = "0";
   secondCheck = true;
-  // document.getElementById("main").style.marginLeft = "200px";
 }
 
 /* Close our sidebar when clicking the X */
@@ -136,5 +116,4 @@ function closeNav() {
   document.getElementById("wrapper").classList.remove("overlay");
   document.getElementById("searchBar").style.zIndex = "1";
   secondCheck = false;
-  // document.getElementById("main").style.marginLeft= "0";
 }
