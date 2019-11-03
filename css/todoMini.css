@@ -55,6 +55,7 @@
         margin: 0 auto 5px auto;
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
+        justify-content: space-between;
     }
     
     .icon_container {
