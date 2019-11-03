@@ -124,6 +124,8 @@ hamburgerMenu.createLines(hamburger);
 /* Open our sidebar when clicking the hamburger menu */
 function openNav() {
   document.getElementById("sidebar").style.width = "300px";
+  document.getElementById("wrapper").classList.add("overlay");
+  document.getElementById("searchBar").style.zIndex = "0";
   secondCheck = true;
   // document.getElementById("main").style.marginLeft = "200px";
 }
@@ -131,6 +133,8 @@ function openNav() {
 /* Close our sidebar when clicking the X */
 function closeNav() {
   document.getElementById("sidebar").style.width = "0";
+  document.getElementById("wrapper").classList.remove("overlay");
+  document.getElementById("searchBar").style.zIndex = "1";
   secondCheck = false;
   // document.getElementById("main").style.marginLeft= "0";
 }
