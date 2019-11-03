@@ -81,10 +81,7 @@ window.onload  = function(){
     let clickedCustomersNav = localStorage.getItem("clickedCustomersNav");
     let pickedCustomerDropdown = localStorage.getItem("pickedCustomerDropdown");
     createSurveyContent();
-    // if(localStorage.getItem("Login") == "true"){
-    //     createSurveyContent();
-    //     localStorage.setItem("Login",false);
-    // }
+   
     if(window.location.pathname == "/index.html" && (clickedCustomersNav == "true")){ 
         document.getElementById("main-content").style.gridTemplateColumns = "1fr 1fr 420px";
         document.getElementById("main-content").style.gridTemplateRows = "50vh 50vh";
@@ -111,16 +108,12 @@ window.onload  = function(){
             generateRandomComments();
             
             generateContactInfo(JSON.parse(localStorage.getItem("array")),userInfo[0]);
-            createSurveyContent();
-
             // getDeals();
     }
         
         
 
     else if(window.location.pathname == "/dashboard.html" && movedToDashboardPage == "true"){
-        // createSurveyContent();
-        console.log("här")
         localStorage.setItem("movedToDashboardPage", false);
         localStorage.setItem("clickedCustomersNav", false);
     }
