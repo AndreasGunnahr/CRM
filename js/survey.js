@@ -39,10 +39,5 @@ function createSurveyContent(){
          });
         }
     });
-
-
-
-
 }
-
 
